@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mitt Gruppeprosjekt</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Hjem</a></li>
+      <li><a href="ia_wireframe.html">IA & Wireframes</a></li>
+      <li><a href="persona.html">Persona</a></li>
+      <li><a href="brukerhistorier.html">Brukerhistorier</a></li>
+      <li><a href="brukertesting.html">Brukertesting</a></li>
+      <li><a href="systemutvikling.html">Systemutviklingsmetoder</a></li>
+      <li><a href="agile.html">Agile metoder</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Velkommen til vårt prosjekt</h1>
+    <p>Dette er hovedsiden for gruppeprosjektet vårt. Bruk navigasjonen for å gå til de ulike oppgavene.</p>
+  </div>
+</body>
+</html>
