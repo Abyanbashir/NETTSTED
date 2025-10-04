@@ -1,33 +1,119 @@
+
+/* Generelle innstillinger */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
+    color: #333;
 }
 
-nav ul {
+a {
+    text-decoration: none;
+    color: #4CAF50;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header og navigasjon */
+header {
+    background-color: #FF69B4; /* Lys rosa for en inspirerende vibe */
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+header nav ul {
     list-style: none;
-    background-color: #333;
     display: flex;
     margin: 0;
     padding: 0;
+    gap: 20px;
 }
 
-nav ul li {
-    margin: 0;
-}
-
-nav ul li a {
-    display: block;
-    padding: 1em;
+header nav ul li a {
     color: white;
-    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-nav ul li a:hover {
-    background-color: #555;
+header nav ul li a:hover {
+    color: #FFD700;
 }
 
+/* Hovedinnhold */
 main {
-    padding: 2em;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Seksjoner */
+section {
+    margin-bottom: 50px;
+}
+
+/* Kort for interesser eller medlemsinfo */
+.card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+/* Liste-styling */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Tabell og tekstjustering */
+h1, h2, h3 {
+    color: #333;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* Responsivt design */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
 }
