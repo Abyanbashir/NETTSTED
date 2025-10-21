@@ -1,23 +1,22 @@
-
-/* ===== Minimal Pro – svart meny & premium kort ===== */
+/* === Elegant hvit topp + sort hovedmeny === */
 :root{
   --bg:#f6f7f9;
   --text:#0f1115;
   --muted:#5e6672;
 
-  /* NAV */
-  --nav:#000000;         /* helt sort */
+  --topbar:#ffffff;        /* øverste linje */
+  --toptext:#000000;
+
+  --nav:#000000;           /* hovedmeny */
   --navText:#ffffff;
-  --navActive:#171717;   /* mørk grå for aktiv pil */
+  --navActive:#171717;
 
-  /* KORT / BOKSER */
   --panel:#ffffff;
-  --panelGrad: linear-gradient(180deg, #fff 0%, #fafafa 100%);
+  --panelGrad:linear-gradient(180deg,#fff 0%,#fafafa 100%);
   --border:#e1e5ea;
-  --shadow-sm: 0 4px 14px rgba(0,0,0,.06);
-  --shadow-lg: 0 18px 44px rgba(0,0,0,.12);
+  --shadow-sm:0 4px 14px rgba(0,0,0,.06);
+  --shadow-lg:0 18px 44px rgba(0,0,0,.12);
 
-  /* LENKER */
   --link:#2563eb;
   --linkHover:#1e40af;
 }
@@ -25,133 +24,82 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
 body{
-  font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+  font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;
   color:var(--text);
-  background:
-    radial-gradient(900px 500px at 10% -10%, #ffffff 0%, #f3f4f7 60%, transparent 100%),
-    radial-gradient(900px 500px at 90% -10%, #ffffff 0%, #f3f4f7 60%, transparent 100%),
-    var(--bg);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  background:var(--bg);
 }
 
-/* ===== NAV – HELT SORT ===== */
+/* === Toppbar (hvit) === */
+.topbar{
+  background:var(--topbar);
+  color:var(--toptext);
+  text-align:center;
+  padding:.6rem 1rem;
+  font-weight:600;
+  letter-spacing:.02em;
+  box-shadow:0 1px 3px rgba(0,0,0,.05);
+}
+
+/* === Sort hovedmeny === */
 nav{
   background:var(--nav);
-  position:sticky; top:0; z-index:20;
+  position:sticky;top:0;z-index:20;
   box-shadow:0 1px 0 rgba(255,255,255,.06);
 }
 nav ul{
   list-style:none;
-  display:flex; gap:.75rem;
-  flex-wrap:nowrap;           /* én linje */
-  overflow-x:auto; white-space:nowrap;
+  display:flex;gap:.75rem;
+  flex-wrap:nowrap;
+  overflow-x:auto;
+  white-space:nowrap;
   scrollbar-width:thin;
-  max-width:1250px; margin:0 auto; padding:.75rem 1rem;
+  max-width:1250px;margin:0 auto;
+  padding:.75rem 1rem;
 }
 nav li{flex:0 0 auto}
 nav a{
-  color:var(--navText); text-decoration:none;
-  font-weight:700; letter-spacing:.02em;
-  padding:.55rem 1rem; border-radius:.7rem;
-  transition: background .15s ease, transform .06s ease;
+  color:var(--navText);
+  text-decoration:none;
+  font-weight:700;
+  padding:.55rem 1rem;
+  border-radius:.7rem;
+  transition:background .15s ease;
 }
-nav a:hover{background:rgba(255,255,255,.10)}
+nav a:hover{background:rgba(255,255,255,.1)}
 nav a.active,
 nav a[aria-current="page"]{background:var(--navActive)}
-nav a:active{transform:translateY(1px)}
 
-/* ===== LAYOUT ===== */
-main{max-width:1250px; margin:2.25rem auto; padding:0 1.25rem}
-h1{
-  font-size:clamp(1.85rem,1.2rem + 1.8vw,2.4rem);
-  line-height:1.2; font-weight:800; letter-spacing:.015em;
-  margin-bottom:.4rem;
-}
-.lead{color:var(--muted); margin-bottom:1.1rem; font-size:1.05rem}
-h2{font-size:1.12rem; font-weight:750; margin:1.6rem 0 .6rem}
+/* === Layout === */
+main{max-width:1250px;margin:2.25rem auto;padding:0 1.25rem}
+h1{font-size:clamp(1.85rem,1.2rem+1.8vw,2.4rem);font-weight:800;margin-bottom:.4rem}
+.lead{color:var(--muted);margin-bottom:1.1rem;font-size:1.05rem}
 
-/* ===== KORT – MER PREMIUM ===== */
+/* === Kort === */
 .cards{
-  display:grid; gap:1.25rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* fyller mer av siden */
-  grid-auto-rows: 1fr; /* jevn høyde */
+  display:grid;gap:1.25rem;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  grid-auto-rows:1fr;
 }
-
 .card{
-  display:flex; flex-direction:column; justify-content:space-between;
-  text-decoration:none; color:inherit;
-  background: var(--panelGrad);
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-  padding: 1.15rem 1.25rem;
-  box-shadow: var(--shadow-sm);
-  position:relative;
-  transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease, background .2s ease;
-}
-
-/* subtil “gloss”-linje øverst for dybde (ikke forstyrrende) */
-.card::before{
-  content:"";
-  position:absolute; left:0; right:0; top:0;
-  height:10px; border-radius:1rem 1rem 0 0;
-  background: linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,0));
-  pointer-events:none;
-}
-
-.card h3{
-  margin:0 0 .4rem;
-  font-size:1.08rem; font-weight:800; letter-spacing:.01em;
-}
-.card p{margin:0; color:var(--muted); font-size:.98rem}
-
-.card:hover{
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color:#cfd6de;
-  background: #fff; /* litt klarere på hover */
-}
-
-/* ===== GENERISKE BOKSER (undersider) ===== */
-.box{
-  background: var(--panelGrad);
+  display:flex;flex-direction:column;justify-content:space-between;
+  background:var(--panelGrad);
   border:1px solid var(--border);
-  border-radius: 1rem;
-  padding: 1.1rem 1.25rem;
-  margin: 1rem 0;
-  box-shadow: var(--shadow-sm);
+  border-radius:1rem;
+  padding:1.1rem 1.25rem;
+  box-shadow:var(--shadow-sm);
+  text-decoration:none;color:inherit;
+  transition:transform .14s ease,box-shadow .14s ease,border-color .14s ease;
 }
-.box h2{margin:.1rem 0 .6rem}
-.box a{color:var(--link); text-decoration:underline}
-.box a:hover{color:var(--linkHover)}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#cfd6de}
+.card h3{margin:0 0 .4rem;font-size:1.08rem;font-weight:800}
+.card p{margin:0;color:var(--muted);font-size:.98rem}
 
-.list{display:flex; flex-direction:column; gap:.55rem}
-.twocol{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit, minmax(300px,1fr))}
-
-/* ===== FOOTER ===== */
-footer{
-  text-align:center; color:var(--muted);
+/* === Footer === */
+footer{text-align:center;color:var(--muted);
   border-top:1px solid var(--border);
-  padding:2rem 1rem; margin-top:2.25rem;
-}
+  padding:2rem 1rem;margin-top:2.25rem}
 
-/* ===== A11Y ===== */
-.skip-link{position:absolute; left:-9999px}
-.skip-link:focus{
-  left:1rem; top:1rem; background:#000; color:#fff;
-  padding:.5rem .75rem; border-radius:.4rem; outline:none; z-index:1000;
-}
-a:focus-visible, .card:focus-visible, .box a:focus-visible{
-  outline:3px solid var(--linkHover); outline-offset:2px; border-radius:.4rem;
-}
 
-/* ===== RESPONSIV ===== */
-@media (prefers-reduced-motion: reduce){
-  .card:hover{transform:none; box-shadow: var(--shadow-sm)}
-}
-@media (max-width:640px){
-  nav ul{justify-content:flex-start}
-}
 
 
 
