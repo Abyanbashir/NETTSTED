@@ -1,57 +1,135 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HTML / CSS</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+:root {
+  --page-bg: #f5f6f8;
+  --text: #111827;
+  --muted: #6b7280;
+  --nav-bg: #0f172a;
+  --nav-text: #ffffff;
+  --nav-active: #111827;
+  --link: #2563eb;
+  --panel: #ffffff;
+  --border: #e5e7eb;
+}
 
-  <nav aria-label="Main navigation">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a class="active" href="html_css.html">HTML/CSS</a></li>
-      <li><a href="persona.html">Personas</a></li>
-      <li><a href="ia_wireframe.html">IA</a></li>
-      <li><a href="wireframes.html">Wireframes</a></li>
-      <li><a href="usability.html">Usability Testing</a></li>
-      <li><a href="systemdev.html">System Development</a></li>
-      <li><a href="agile.html">Agile Methods</a></li>
-      <li><a href="group_contract.html">Group Contract</a></li>
-    </ul>
-  </nav>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  <main id="main">
-    <h1>HTML/CSS Assignment</h1>
+html,
+body {
+  height: 100%;
+}
 
-    <h2>Example 1</h2>
-    <p>
-      Copy and paste the code of all students into a single text file and add a
-      link to that file below.
-    </p>
-    <div class="box">
-      <a href="#">Link to a shared text document where students can paste their individual code</a>
-    </div>
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--page-bg);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-    <h2>Example 2</h2>
-    <p>
-      Insert a link to the individual web page made by each student in your
-      group.
-    </p>
-    <div class="box list">
-      <strong>Links to each student's individual web page</strong>
-      <a href="#">Student 1 – Personal Portfolio</a>
-      <a href="#">Student 2 – Project Showcase</a>
-      <a href="#">Student 3 – Design Gallery</a>
-      <a href="#">Student 4 – Code Examples</a>
-    </div>
-  </main>
+/* Navigation Bar */
+nav {
+  background: var(--nav-bg);
+  padding: 0.75rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+nav a {
+  color: var(--nav-text);
+  text-decoration: none;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.5rem;
+  transition: background 0.15s ease;
+  font-weight: 500;
+}
+nav a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+nav a.active {
+  background: var(--nav-active);
+}
 
-  <footer>
-    <p>© 2025 Group Name</p>
-  </footer>
-</body>
-</html>
+/* Page Content */
+main {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+}
+h1 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 2rem 0 0.5rem;
+}
+p {
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+/* Card Boxes */
+.box {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  padding: 1rem 1.25rem;
+  margin: 0.75rem 0 1.5rem;
+}
+.box a {
+  color: var(--link);
+  text-decoration: underline;
+}
+.box a:hover {
+  color: #1e40af;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+}
+
+/* Accessibility */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  position: absolute;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  nav ul {
+    justify-content: center;
+  }
+}
 
