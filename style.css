@@ -1,170 +1,67 @@
-:root {
-  --page-bg: #f5f6f8;
-  --text: #111827;
-  --muted: #6b7280;
-  --nav-bg: #0f172a;
-  --nav-text: #ffffff;
-  --nav-active: #111827;
-  --link: #2563eb;
-  --panel: #ffffff;
-  --border: #e5e7eb;
+/* ---- Minimal layout ---- */
+:root{
+  --bg:#f6f7f9; --text:#111; --muted:#666;
+  --nav:#0f172a; --navText:#fff; --navActive:#1f2937;
+  --panel:#fff; --border:#e5e7eb; --link:#2563eb;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  background:var(--bg); color:var(--text);
 }
 
-html,
-body {
-  height: 100%;
+/* Nav */
+nav{background:var(--nav); position:sticky; top:0; z-index:10}
+nav ul{
+  display:flex; gap:.75rem; flex-wrap:wrap; list-style:none;
+  max-width:1100px; margin:0 auto; padding:.75rem 1rem;
 }
+nav a{
+  color:var(--navText); text-decoration:none; font-weight:500;
+  padding:.45rem .9rem; border-radius:.5rem;
+}
+nav a:hover{background:rgba(255,255,255,.08)}
+nav a.active,[aria-current="page"]{background:var(--navActive)}
 
-body {
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: var(--page-bg);
-  color: var(--text);
-  line-height: 1.6;
-}
+/* Main */
+main{max-width:920px; margin:2rem auto; padding:0 1rem}
+h1{font-size:1.9rem; font-weight:700; margin-bottom:1rem}
+h2{font-size:1.1rem; font-weight:700; margin:1.5rem 0 .5rem}
+p{color:var(--muted); margin-bottom:1rem}
 
-/* Navigation Bar */
-nav {
-  background: var(--nav-bg);
-  padding: 0.75rem 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-nav a {
-  color: var(--nav-text);
-  text-decoration: none;
-  padding: 0.45rem 0.9rem;
-  border-radius: 0.5rem;
-  transition: background 0.15s ease;
-  font-weight: 500;
-}
-nav a:hover {
-  background: rgba(255, 255, 255, 0.08);
-}
-nav a.active {
-  background: var(--nav-active);
-}
-
-/* Page Content */
-main {
-  max-width: 900px;
-  margin: 2.5rem auto;
-  padding: 0 1rem;
-}
-h1 {
-  font-size: 1.9rem;
-  font-weight: 600;
-  margin-bottom: 1.25rem;
-}
-h2 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 2rem 0 0.5rem;
-}
-p {
-  color: var(--muted);
-  margin-bottom: 1rem;
-}
-
-/* Card Boxes */
-.box {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 0.6rem;
-  padding: 1rem 1.25rem;
-  margin: 0.75rem 0 1.5rem;
-}
-.box a {
-  color: var(--link);
-  text-decoration: underline;
-}
-.box a:hover {
-  color: #1e40af;
-}
-.list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-/* Footer */
-footer {
-  border-top: 1px solid var(--border);
-  text-align: center;
-  color: var(--muted);
-  padding: 2rem 1rem;
-  margin-top: 3rem;
-}
-
-/* Accessibility */
-.skip-link {
-  position: absolute;
-  left: -9999px;
-}
-.skip-link:focus {
-  left: 1rem;
-  top: 1rem;
-  position: absolute;
-  background: #000;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  z-index: 1000;
-}
-
-/* Responsive */
-@media (max-width: 640px) {
-  nav ul {
-    justify-content: center;
-  }
-}
-/* --- Cards/grid på forsiden --- */
+/* Cards grid (homepage) */
 .cards{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap:1rem;
+  display:grid; gap:1rem;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   margin-top:1rem;
 }
 .card{
-  display:block;
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:.6rem;
-  padding:1rem 1.25rem;
-  text-decoration:none;
-  color:var(--text);
-  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-}
-.card:hover{
-  transform: translateY(-2px);
-  box-shadow:0 6px 20px rgba(0,0,0,.06);
-  border-color:#d1d5db;
+  display:block; background:var(--panel); color:inherit; text-decoration:none;
+  border:1px solid var(--border); border-radius:.6rem; padding:1rem 1.1rem;
 }
 .card h3{margin:0 0 .25rem; font-size:1.05rem}
 .card p{margin:0; color:var(--muted); font-size:.95rem}
 
-/* --- Nyanse-varianter for bokser på undersider --- */
-.box.success{border-color:#86efac; background:#f0fdf4}
-.box.warn{border-color:#fde68a; background:#fffbeb}
-.box.info{border-color:#93c5fd; background:#eff6ff}
+/* Generic box for subpages */
+.box{
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:.6rem; padding:1rem 1.1rem; margin:1rem 0;
+}
+.box a{color:var(--link); text-decoration:underline}
 
-/* --- To-kol layout for innholdsbokser (valgfritt) --- */
+/* Optional two-column layout */
 .twocol{
   display:grid; gap:1rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 }
 
+/* Footer */
+footer{
+  text-align:center; color:var(--muted);
+  border-top:1px solid var(--border); padding:2rem 1rem; margin-top:2rem;
+}
+
+/* Skip link (a11y) */
+.skip-link{position:absolute; left:-9999px}
+.skip-link:focus{left:1rem; top:1rem; background:#000; color:#fff; padding:.4rem .6rem}
