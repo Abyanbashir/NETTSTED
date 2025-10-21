@@ -1,38 +1,50 @@
-/* === A) Minimal & nøytral === */
-:root{
-  --bg:#fff; --text:#111; --muted:#4b5563;
-  --brand:#111; --brand-hover:#000; --border:#e5e7eb;
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
-  background:var(--bg); color:var(--text); line-height:1.6;
-}
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HTML/CSS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Hopp til hovedinnhold</a>
 
-/* tilgjengelighet */
-.skip-link{position:absolute;left:-9999px}
-.skip-link:focus{left:1rem;top:1rem;position:absolute;background:#000;color:#fff;padding:.5rem 1rem}
+  <nav aria-label="Hovedmeny">
+    <ul>
+      <li><a href="index.html">Hjem</a></li>
+      <li><a class="active" href="html_css.html">HTML/CSS</a></li>
+      <li><a href="persona.html">Personas</a></li>
+      <li><a href="ia_wireframe.html">IA</a></li>
+      <li><a href="wireframes.html">Wireframes</a></li>
+      <li><a href="brukertesting.html">Brukertesting</a></li>
+      <li><a href="systemutvikling.html">Systemutviklingsmetoder</a></li>
+      <li><a href="agile.html">Agile metoder</a></li>
+      <li><a href="gruppekontrakt.html">Gruppekontrakt</a></li>
+    </ul>
+  </nav>
 
-/* toppmeny: hvit bakgrunn, venstrejustert */
-nav{border-bottom:1px solid var(--border); background:#fff}
-nav ul{
-  list-style:none; margin:0; padding:.75rem 1rem;
-  display:flex; gap:.5rem; flex-wrap:wrap;
-}
-nav a{
-  color:var(--text); text-decoration:none; padding:.4rem .6rem; border-radius:.35rem;
-}
-nav a:hover{background:#f3f4f6}
-nav a.active{outline:2px solid var(--text)}
+  <main id="main">
+    <h1>HTML/CSS</h1>
 
-/* innhold venstrejustert */
-main{max-width:960px; margin:2rem auto; padding:0 1rem}
-h1{font-size:1.875rem; line-height:1.25; margin:0 0 .75rem}
-p{margin:.25rem 0 1rem; color:var(--muted)}
+    <h2>Kodeinnlevering (felles dokument – valgfritt)</h2>
+    <p>Her kan gruppen samle all HTML-koden i én tekstfil dersom dere ønsker det.</p>
+    <div class="box">
+      <a href="kode-samling.txt">Lenke til felles dokument med innlimt kode</a>
+    </div>
 
-footer{
-  border-top:1px solid var(--border); color:#6b7280;
-  text-align:center; padding:1.5rem 1rem; margin-top:2.5rem;
-}
+    <h2>Individuelle sider (påkrevd)</h2>
+    <p>Hvert medlem lager sin egen enkle HTML-side (med CSS) og limer inn koden sin i en underside ved hjelp av <code>&lt;pre&gt;&lt;code&gt;</code>.</p>
+    <div class="box list">
+      <strong>Lenker til hver students underside</strong>
+      <a href="student1.html">Student 1 – Min side</a>
+      <a href="student2.html">Student 2 – Min side</a>
+      <a href="student3.html">Student 3 – Min side</a>
+      <a href="student4.html">Student 4 – Min side</a>
+    </div>
+  </main>
 
+  <footer>
+    <p>© 2025 Gruppenavn</p>
+  </footer>
+</body>
+</html>
