@@ -1,155 +1,117 @@
+/* 🎨 Grunnleggende stil */
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --brand: #2563eb;
+  --brand-hover: #1e40af;
+  --border: #e5e7eb;
+  --muted: #6b7280;
+}
+
+/* Nullstill margin og padding */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🖋️ Generell styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* 🦮 Skip link (universell utforming) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+}
+
+/* 📌 Navigasjonsmeny */
+nav {
+  background: var(--brand);
+  border-bottom: 3px solid var(--brand-hover);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 nav ul {
-    list-style: none;
-    background-color: #333;
-    display: flex;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0.5rem;
+  margin: 0;
 }
 
-nav ul li {
-    margin: 0;
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
 }
 
-nav ul li a {
-    display: block;
-    padding: 1em;
-    color: white;
-    text-decoration: none;
+nav a:hover {
+  background: var(--brand-hover);
 }
 
-nav ul li a:hover {
-    background-color: #555;
+nav a.active {
+  background: white;
+  color: var(--brand-hover);
+  font-weight: 600;
 }
 
+/* 🧭 Hovedinnhold */
 main {
-    padding: 2em;
-}
-/* Hero-seksjon med profilbilde */
-.hero {
-    text-align: center;
-    padding: 50px 20px;
-    background: linear-gradient(120deg, #FFC0CB, #FFB6C1);
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
 }
 
-.hero .profile {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 4px solid white;
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-.hero h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+p {
+  font-size: 1.1rem;
+  color: var(--muted);
 }
 
-.hero p {
-    max-width: 600px;
-    margin: 0 auto 15px;
-    line-height: 1.6;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 25px;
-    background-color: #FF69B4;
-    color: white;
-    border-radius: 25px;
-    font-weight: bold;
-    margin-top: 15px;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background-color: #FF1493;
-}
-
-/* Interesser / kort */
-.interests {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.interests h2 {
-    font-size: 2em;
-    margin-bottom: 30px;
-}
-
-.interests-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.card {
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    padding: 20px;
-    max-width: 300px;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.card h3 {
-    margin-bottom: 10px;
-}
-
-/* Kontakt-seksjon */
-.contact {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.contact h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-/* Footer */
+/* ⚙️ Footer */
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 50px;
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  margin-top: 3rem;
 }
 
-/* Responsivt design */
-@media screen and (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
+/* 📱 Mobilvennlighet */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    header nav ul {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .interests-grid {
-        flex-direction: column;
-        align-items: center;
-    }
+  nav a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
 }
