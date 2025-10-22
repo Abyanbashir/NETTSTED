@@ -1,72 +1,57 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="no">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Felles nettside – Hjem</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Prosjekt – Kortbasert nettsted</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <a class="skip-link" href="#main">Hopp til hovedinnhold</a>
-
-  <nav aria-label="Hovedmeny">
-    <ul>
-      <li><a class="active" href="index.html">Hjem</a></li>
-      <li><a href="html_css.html">HTML/CSS</a></li>
-      <li><a href="persona.html">Persona</a></li>
-      <li><a href="wireframes.html">Wireframes</a></li>
-      <li><a href="brukertesting.html">Brukertesting</a></li>
-      <li><a href="systemutvikling.html">Systemutvikling</a></li>
-      <li><a href="agile.html">Agile metoder</a></li>
-      <li><a href="gruppekontrakt.html">Gruppekontrakt</a></li>
-    </ul>
-  </nav>
-
-  <main id="main">
-    <h1>Velkommen</h1>
-    <p class="lead">Her finner du alle delene av gruppeoppgaven. Klikk på et kort for å gå til riktig side.</p>
-
-    <div class="cards">
-      <a class="card" href="html_css.html">
-        <h3>Html/Css</h3>
-        <p>Mål, roller og regler.</p>
-      </a>
-
-      <a class="card" href="personas.html">
-        <h3>Personas</h3>
-        <p>Individuelle sider og innlimt kode.</p>
-      </a>
-
-      <a class="card" href="ia.html">
-        <h3>IA</h3>
-        <p>Fredrikke – behov og funksjoner.</p>
-      </a>
-
-      <a class="card" href="wireframes.html">
-        <h3>Wireframes</h3>
-        <p>Skisser av forside og underside.</p>
-      </a>
-
-      <a class="card" href="brukertesting.html">
-        <h3>Brukertesting</h3>
-        <p>Metode, funn og tiltak.</p>
-      </a>
-
-      <a class="card" href="systemutvikling.html">
-        <h3>Systemutvikling</h3>
-        <p>Metoder og begrunnelser.</p>
-      </a>
-
-      <a class="card" href="agile.html">
-        <h3>Agile metoder</h3>
-        <p>Hvorfor agile – styrker og svakheter.</p>
-      </a>
+<header class="site-header">
+  <div class="site-header__inner container">
+    <h1 class="site-title">Prosjekt – Kortbasert nettsted</h1>
+    <nav class="nav">
+      <a href="index.html" class="nav__link nav__link--active">Hjem</a>
+      <a href="personas.html" class="nav__link">Personas</a>
+      <a href="ia-wireframes.html" class="nav__link">IA & Wireframes</a>
+      <a href="brukerhistorier.html" class="nav__link">Brukerhistorier</a>
+      <a href="brukertesting-abyan.html" class="nav__link">Brukertesting (Abyan)</a>
+      <a href="systemutvikling.html" class="nav__link">Systemutviklingsmetoder</a>
+      <a href="agile.html" class="nav__link">Agile metoder</a>
+      <a href="html-css.html" class="nav__link">HTML/CSS (individuelle sider)</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero card">
+    <div>
+      <h2 style="margin:0 0 .4rem 0;">Prosjekt: Kortbasert, lyst design</h2>
+      <p style="margin:0 0 .6rem 0;">Et ryddig oppsett med <span class="badge">6 deloppgaver</span> klart til innlevering. Bruk kortene under som raske snarveier.</p>
+      <div class="cta">
+        <a class="button" href="personas.html">Gå til Personas</a>
+        <a class="button button--ghost" href="ia-wireframes.html">Se IA & Wireframes</a>
+      </div>
     </div>
-  </main>
+    <div>
+      <img class="responsive" src="https://dummyimage.com/720x420/eaf0ff/1b2556&text=Student+UX+%E2%80%94+Wireframes" alt="Illustrasjon av wireframes"/>
+    </div>
+  </section>
+
+  <section class="grid grid--2" style="margin-top:1rem">
+    <a class="card" href="personas.html"><h3>Personas</h3><p>Persona for Fredrikke + informasjonsbehov og forslag til funksjonalitet.</p></a>
+    <a class="card" href="ia-wireframes.html"><h3>IA & Wireframes</h3><p>Struktur, navigasjon, og ASCII-wireframes med begrunnelse.</p></a>
+    <a class="card" href="brukerhistorier.html"><h3>Brukerhistorier</h3><p>5–10 user stories (Canvas som eksempel) med klare mål.</p></a>
+    <a class="card" href="brukertesting-abyan.html"><h3>Brukertesting (Abyan)</h3><p>Testopplegg, funn og tiltak – kort oppsummering.</p></a>
+    <a class="card" href="systemutvikling.html"><h3>Systemutviklingsmetoder</h3><p>Kortet ned forklaring av Shaheds tekst.</p></a>
+    <a class="card" href="agile.html"><h3>Agile metoder</h3><p>Hva er smidig, hvorfor, styrker og svakheter.</p></a>
+    <a class="card" href="html-css.html"><h3>HTML/CSS – gruppesider</h3><p>Hver i gruppa limer inn sin egen HTML-side + kode.</p></a>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">© 2025 Gruppeprosjekt — Abyan & Shahed</div>
+</footer>
 </body>
 </html>
-
-
-
-
