@@ -1,28 +1,60 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="no">
 <head>
-  <meta charset="UTF-8">
-  <title>Gruppeoppgave – Abyan & Shahed</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Prosjekt – it_kortdesign</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
 <header class="site-header">
-  <h1>Gruppeoppgave – IT og ledelse</h1>
-  <nav class="nav">
-    <a href="index.html" class="active">Hjem</a>
-    <a href="html-css.html">HTML/CSS (individuelle sider)</a>
-  </nav>
+  <div class="site-header__inner container">
+    <h1 class="site-title">Prosjekt – it_kortdesign</h1>
+    <nav class="nav">
+      <a href="index.html" class="nav__link nav__link--active">Hjem</a>
+      <a href="html-css.html" class="nav__link">HTML/CSS (individuelle sider)</a>
+      <a href="personas.html" class="nav__link">Personas</a>
+      <a href="ia-wireframes.html" class="nav__link">IA & Wireframes</a>
+      <a href="brukerhistorier.html" class="nav__link">Brukerhistorier</a>
+      <a href="brukertesting-abyan.html" class="nav__link">Brukertesting (Abyan)</a>
+      <a href="systemutvikling.html" class="nav__link">Systemutviklingsmetoder</a>
+      <a href="agile.html" class="nav__link">Agile metoder</a>
+    </nav>
+  </div>
 </header>
 
 <main class="container">
-  <h2>Velkommen</h2>
-  <p>Dette nettstedet er laget som en del av den obligatoriske gruppeoppgaven av Abyan og Shahed.</p>
+<section class="hero card">
+  <div>
+    <h2 style="margin:0 0 .4rem 0;">Prosjekt: it_kortdesign</h2>
+    <p style="margin:0 0 .6rem 0;">Et ryddig oppsett med <span class="badge">6 deloppgaver</span> + HTML/CSS-sider for hver i gruppa.</p>
+    <div class="cta">
+      <a class="button" href="html-css.html">Gå til HTML/CSS-sidene</a>
+      <a class="button button--ghost" href="personas.html">Se Personas</a>
+    </div>
+  </div>
+  <div>
+    <img class="responsive" src="https://dummyimage.com/720x420/eaf0ff/1b2556&text=it_kortdesign" alt="Illustrasjon"/>
+  </div>
+</section>
+
+<section class="grid grid--2" style="margin-top:1rem">
+  <a class="card" href="html-css.html"><h3>HTML/CSS – gruppesider</h3><p>To individuelle sider – Abyan og Shahed.</p></a>
+  <a class="card" href="personas.html"><h3>Personas</h3><p>Persona for Fredrikke + informasjonsbehov og funksjonalitet.</p></a>
+  <a class="card" href="ia-wireframes.html"><h3>IA & Wireframes</h3><p>Struktur, navigasjon og wireframes.</p></a>
+  <a class="card" href="brukerhistorier.html"><h3>Brukerhistorier</h3><p>5–10 user stories for LMS.</p></a>
+  <a class="card" href="brukertesting-abyan.html"><h3>Brukertesting (Abyan)</h3><p>Opplegg, funn og tiltak.</p></a>
+  <a class="card" href="systemutvikling.html"><h3>Systemutviklingsmetoder</h3><p>Kortversjon.</p></a>
+  <a class="card" href="agile.html"><h3>Agile metoder</h3><p>Hvorfor, styrker og svakheter.</p></a>
+</section>
 </main>
 
 <footer class="site-footer">
-  <p>© 2025 Gruppe Abyan & Shahed</p>
+  <div class="container">© 2025 – it_kortdesign • Abyan & Shahed</div>
 </footer>
-
 </body>
 </html>
