@@ -1,0 +1,40 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f6f8fc;
+  color: #1c1c1c;
+  margin: 0;
+}
+
+header {
+  background: #1c2742;
+  color: white;
+  padding: 1rem;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background: #1c2742;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
