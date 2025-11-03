@@ -4,107 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gruppekontrakt</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-        /* Grunnleggende styling */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
             margin: 0;
             padding: 0;
-            background: #f7f8fa;
-            color: #333;
-            line-height: 1.6;
         }
 
-        /* Header */
         header {
-            background: #0056b3;
-            color: white;
+            background-color: #0056b3;
+            color: #fff;
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
 
         header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
+            margin: 0;
+            font-size: 2.5rem;
         }
 
         header p {
+            margin: 5px 0 0;
             font-size: 1.1rem;
-            opacity: 0.9;
         }
 
-        /* Main med grid */
         main {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 40px auto;
             padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 15px 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+            background-color: #2575fc;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
         }
 
         section {
-            background: linear-gradient(135deg, #ffffff, #f0f4f8);
-            border-radius: 12px;
-            padding: 25px 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.25s, box-shadow 0.25s;
-            position: relative;
+            margin-bottom: 40px;
         }
 
-        section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-        }
-
-        section h2 {
-            color: #0056b3;
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
-
-        section h2 i {
-            margin-right: 10px;
-            color: #2575fc;
-        }
-
-        section p {
-            margin-bottom: 10px;
-        }
-
-        section ul {
-            padding-left: 20px;
-        }
-
-        section ul li {
-            margin-bottom: 8px;
-        }
-
-        /* Footer */
         footer {
             text-align: center;
-            background: #0056b3;
-            color: white;
             padding: 20px 0;
+            background-color: #2575fc;
+            color: #fff;
             margin-top: 50px;
             font-size: 0.9rem;
         }
 
-        /* Responsive */
-        @media(max-width: 600px) {
+        @media(max-width: 768px) {
+            th, td {
+                padding: 12px 10px;
+                font-size: 0.95rem;
+            }
+
             header h1 {
                 font-size: 2rem;
             }
 
-            main {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            header p {
+                font-size: 1rem;
             }
         }
     </style>
@@ -112,64 +93,45 @@
 <body>
     <header>
         <h1>Gruppekontrakt</h1>
-        <p>Vår avtale for effektivt og profesjonelt samarbeid i prosjektet</p>
+        <p>Vår avtale for effektivt og profesjonelt samarbeid</p>
     </header>
 
     <main>
-        <section class="mål">
-            <h2><i class="fas fa-bullseye"></i>Mål og Ambisjoner</h2>
-            <p>Vi ønsker å samarbeide konstruktivt og levere et komplett nettsted innen fristen 20. november, samtidig som vi lærer og oppnår gode resultater sammen.</p>
-        </section>
-
-        <section class="arbeidsform">
-            <h2><i class="fas fa-cogs"></i>Arbeidsform</h2>
-            <ul>
-                <li>Miks av fysisk og digitalt samarbeid</li>
-                <li>Fordeling av oppgaver med klare ansvarsområder</li>
-                <li>Vi tester og hjelper hverandre underveis</li>
-            </ul>
-        </section>
-
-        <section class="kommunikasjon">
-            <h2><i class="fas fa-comments"></i>Kommunikasjonskanaler</h2>
-            <ul>
-                <li>Primært: Teams</li>
-                <li>Sekundært: E-post og SMS</li>
-            </ul>
-        </section>
-
-        <section class="moter">
-            <h2><i class="fas fa-calendar-alt"></i>Møtefrekvens</h2>
-            <ul>
-                <li>Ukentlig gruppemøte: torsdag kl. 17:00</li>
-                <li>Ekstra digitale møter ved behov</li>
-            </ul>
-        </section>
-
-        <section class="regler">
-            <h2><i class="fas fa-gavel"></i>Andre regler</h2>
-            <ul>
-                <li>Alle bidrar til avtalt tid</li>
-                <li>Gi beskjed hvis frister ikke nås</li>
-                <li>Respektere hverandres ideer og meninger</li>
-            </ul>
-        </section>
-
-        <section class="sanksjoner">
-            <h2><i class="fas fa-exclamation-triangle"></i>Sanksjoner ved regelbrudd</h2>
-            <ul>
-                <li>1. gang: muntlig påminnelse</li>
-                <li>2. gang: skriftlig varsling til gruppen</li>
-                <li>3. gang: varsling til veileder</li>
-            </ul>
-        </section>
-
-        <section class="signaturer">
-            <h2><i class="fas fa-signature"></i>Signaturer</h2>
-            <ul>
-                <li>Abyan: ____________________</li>
-                <li>Shahed: ____________________</li>
-            </ul>
+        <section>
+            <table>
+                <tr>
+                    <th>Seksjon</th>
+                    <th>Detaljer</th>
+                </tr>
+                <tr>
+                    <td>Mål og Ambisjoner</td>
+                    <td>Vi ønsker å samarbeide konstruktivt og levere et komplett nettsted innen fristen 20. november, samtidig som vi lærer og oppnår gode resultater sammen.</td>
+                </tr>
+                <tr>
+                    <td>Arbeidsform</td>
+                    <td>Miks av fysisk og digitalt samarbeid, klare ansvarsområder, testing og hjelp underveis.</td>
+                </tr>
+                <tr>
+                    <td>Kommunikasjonskanaler</td>
+                    <td>Primært: Teams. Sekundært: E-post og SMS.</td>
+                </tr>
+                <tr>
+                    <td>Møtefrekvens</td>
+                    <td>Ukentlig gruppemøte: torsdag kl. 17:00. Ekstra digitale møter ved behov.</td>
+                </tr>
+                <tr>
+                    <td>Andre regler</td>
+                    <td>Alle bidrar til avtalt tid. Gi beskjed hvis frister ikke nås. Respektere hverandres ideer og meninger.</td>
+                </tr>
+                <tr>
+                    <td>Sanksjoner ved regelbrudd</td>
+                    <td>1. gang: muntlig påminnelse. 2. gang: skriftlig varsling. 3. gang: varsling til veileder.</td>
+                </tr>
+                <tr>
+                    <td>Signaturer</td>
+                    <td>Abyan: ____________________ <br> Shahed: ____________________</td>
+                </tr>
+            </table>
         </section>
     </main>
 
@@ -178,6 +140,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
