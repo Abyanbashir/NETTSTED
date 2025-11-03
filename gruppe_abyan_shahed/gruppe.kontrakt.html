@@ -14,20 +14,43 @@
         line-height: 1.6;
     }
 
+    /* Header med navigasjon */
     header {
         background: #0056b3;
         color: white;
-        text-align: center;
-        padding: 50px 20px;
     }
 
-    header h1 {
+    nav {
+        display: flex;
+        justify-content: center;
+        padding: 15px 20px;
+        background: #0041a3;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+
+    nav a:hover {
+        color: #a0c4ff;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
         margin: 0;
         font-size: 2.5rem;
     }
 
-    header p {
-        margin: 10px 0 0;
+    .hero p {
+        margin-top: 10px;
         font-size: 1.1rem;
         opacity: 0.9;
     }
@@ -43,13 +66,13 @@
         border-radius: 8px;
         padding: 25px 30px;
         margin-bottom: 25px;
-        border-left: 5px solid #2575fc;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
 
     section h2 {
         margin-top: 0;
         margin-bottom: 15px;
-        color: #0056b3;
+        color: #333;
         font-size: 1.5rem;
     }
 
@@ -76,7 +99,7 @@
     }
 
     @media(max-width: 600px) {
-        header h1 {
+        .hero h1 {
             font-size: 2rem;
         }
 
@@ -87,22 +110,41 @@
         main {
             padding: 0 15px;
         }
+
+        nav {
+            flex-direction: column;
+        }
+
+        nav a {
+            margin: 8px 0;
+        }
     }
 </style>
 </head>
 <body>
+
 <header>
-    <h1>Gruppekontrakt</h1>
-    <p>Vår avtale for effektivt og profesjonelt samarbeid i prosjektet</p>
+    <nav>
+        <a href="#mal">Mål</a>
+        <a href="#arbeidsform">Arbeidsform</a>
+        <a href="#kommunikasjon">Kommunikasjon</a>
+        <a href="#moter">Møter</a>
+        <a href="#regler">Regler</a>
+        <a href="#sanksjoner">Sanksjoner</a>
+    </nav>
+    <div class="hero">
+        <h1>Gruppekontrakt</h1>
+        <p>Vår avtale for effektivt og profesjonelt samarbeid i prosjektet</p>
+    </div>
 </header>
 
 <main>
-    <section>
+    <section id="mal">
         <h2>Mål og Ambisjoner</h2>
         <p>Vi ønsker å samarbeide konstruktivt og levere et komplett nettsted innen fristen 20. november, samtidig som vi lærer og oppnår gode resultater sammen.</p>
     </section>
 
-    <section>
+    <section id="arbeidsform">
         <h2>Arbeidsform</h2>
         <ul>
             <li>Miks av fysisk og digitalt samarbeid</li>
@@ -111,7 +153,7 @@
         </ul>
     </section>
 
-    <section>
+    <section id="kommunikasjon">
         <h2>Kommunikasjonskanaler</h2>
         <ul>
             <li>Primært: Teams</li>
@@ -119,7 +161,7 @@
         </ul>
     </section>
 
-    <section>
+    <section id="moter">
         <h2>Møtefrekvens</h2>
         <ul>
             <li>Ukentlig gruppemøte: torsdag kl. 17:00</li>
@@ -127,7 +169,7 @@
         </ul>
     </section>
 
-    <section>
+    <section id="regler">
         <h2>Andre regler</h2>
         <ul>
             <li>Alle bidrar til avtalt tid</li>
@@ -136,7 +178,7 @@
         </ul>
     </section>
 
-    <section>
+    <section id="sanksjoner">
         <h2>Sanksjoner ved regelbrudd</h2>
         <ul>
             <li>1. gang: muntlig påminnelse</li>
@@ -149,8 +191,10 @@
 <footer>
     &copy; 2025 Prosjektnavn
 </footer>
+
 </body>
 </html>
+
 
 
 
