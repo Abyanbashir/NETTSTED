@@ -5,141 +5,149 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gruppekontrakt</title>
 <style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: #f9f9f9;
-        color: #333;
-        line-height: 1.6;
-    }
+/* Grunnleggende styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f7f8fa;
+    color: #333;
+    line-height: 1.6;
+}
 
-    /* Header med navigasjon */
-    header {
-        background: #0056b3;
-        color: white;
-    }
+/* Meny */
+nav {
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-    nav {
-        display: flex;
-        justify-content: center;
-        padding: 15px 20px;
-        background: #0041a3;
-    }
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
 
-    nav a {
-        color: white;
-        text-decoration: none;
-        margin: 0 15px;
-        font-weight: 500;
-        transition: color 0.2s;
-    }
+nav ul li {
+    margin: 0 20px;
+}
 
-    nav a:hover {
-        color: #a0c4ff;
-    }
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 15px 0;
+    display: inline-block;
+    transition: color 0.3s, border-bottom 0.3s;
+}
 
-    .hero {
-        text-align: center;
-        padding: 40px 20px;
-    }
+nav ul li a:hover {
+    color: #0056b3;
+    border-bottom: 2px solid #0056b3;
+}
 
-    .hero h1 {
-        margin: 0;
-        font-size: 2.5rem;
-    }
+/* Header */
+header {
+    text-align: center;
+    padding: 60px 20px 30px 20px;
+}
 
-    .hero p {
-        margin-top: 10px;
-        font-size: 1.1rem;
-        opacity: 0.9;
-    }
+header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
 
-    main {
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 0 20px;
-    }
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
 
-    section {
-        background: white;
-        border-radius: 8px;
-        padding: 25px 30px;
-        margin-bottom: 25px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
+/* Main innhold */
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
 
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 30px 35px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+section h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px;
+}
+
+section p, section ul li {
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #f7f8fa;
+    color: #333;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    margin-top: 50px;
+}
+
+/* Responsive */
+@media(max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
     section h2 {
-        margin-top: 0;
-        margin-bottom: 15px;
-        color: #333;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
-
-    section p, section ul {
-        font-size: 1rem;
-        margin: 0 0 10px 0;
+    nav ul {
+        flex-direction: column;
+        align-items: center;
     }
-
-    section ul {
-        padding-left: 20px;
+    nav ul li {
+        margin: 5px 0;
     }
-
-    section ul li {
-        margin-bottom: 8px;
-    }
-
-    footer {
-        text-align: center;
-        background: #2575fc;
-        color: white;
-        padding: 20px 0;
-        font-size: 0.9rem;
-        margin-top: 50px;
-    }
-
-    @media(max-width: 600px) {
-        .hero h1 {
-            font-size: 2rem;
-        }
-
-        section h2 {
-            font-size: 1.3rem;
-        }
-
-        main {
-            padding: 0 15px;
-        }
-
-        nav {
-            flex-direction: column;
-        }
-
-        nav a {
-            margin: 8px 0;
-        }
-    }
+}
 </style>
 </head>
 <body>
 
+<nav>
+    <ul>
+        <li><a href="#mål">Mål</a></li>
+        <li><a href="#arbeidsform">Arbeidsform</a></li>
+        <li><a href="#kommunikasjon">Kommunikasjon</a></li>
+        <li><a href="#moter">Møter</a></li>
+        <li><a href="#regler">Regler</a></li>
+        <li><a href="#sanksjoner">Sanksjoner</a></li>
+    </ul>
+</nav>
+
 <header>
-    <nav>
-        <a href="#mal">Mål</a>
-        <a href="#arbeidsform">Arbeidsform</a>
-        <a href="#kommunikasjon">Kommunikasjon</a>
-        <a href="#moter">Møter</a>
-        <a href="#regler">Regler</a>
-        <a href="#sanksjoner">Sanksjoner</a>
-    </nav>
-    <div class="hero">
-        <h1>Gruppekontrakt</h1>
-        <p>Vår avtale for effektivt og profesjonelt samarbeid i prosjektet</p>
-    </div>
+    <h1>Gruppekontrakt</h1>
+    <p>Vår avtale for effektivt og profesjonelt samarbeid i prosjektet</p>
 </header>
 
 <main>
-    <section id="mal">
+    <section id="mål">
         <h2>Mål og Ambisjoner</h2>
         <p>Vi ønsker å samarbeide konstruktivt og levere et komplett nettsted innen fristen 20. november, samtidig som vi lærer og oppnår gode resultater sammen.</p>
     </section>
@@ -194,6 +202,7 @@
 
 </body>
 </html>
+
 
 
 
