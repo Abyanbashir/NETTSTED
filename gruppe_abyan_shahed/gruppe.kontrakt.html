@@ -1,15 +1,10 @@
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gruppekontrakt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         /* Grunnleggende styling */
         body {
@@ -39,7 +34,7 @@
             opacity: 0.9;
         }
 
-        /* Main innhold med grid */
+        /* Main med grid */
         main {
             max-width: 1100px;
             margin: 40px auto;
@@ -50,25 +45,33 @@
         }
 
         section {
-            background: white;
+            background: linear-gradient(135deg, #ffffff, #f0f4f8);
             border-radius: 12px;
             padding: 25px 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.25s, box-shadow 0.25s;
+            position: relative;
         }
 
         section:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
         }
 
         section h2 {
             color: #0056b3;
             margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
             border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 5px;
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        section h2 i {
+            margin-right: 10px;
+            color: #2575fc;
         }
 
         section p {
@@ -114,12 +117,12 @@
 
     <main>
         <section class="mål">
-            <h2>Mål og Ambisjoner</h2>
+            <h2><i class="fas fa-bullseye"></i>Mål og Ambisjoner</h2>
             <p>Vi ønsker å samarbeide konstruktivt og levere et komplett nettsted innen fristen 20. november, samtidig som vi lærer og oppnår gode resultater sammen.</p>
         </section>
 
         <section class="arbeidsform">
-            <h2>Arbeidsform</h2>
+            <h2><i class="fas fa-cogs"></i>Arbeidsform</h2>
             <ul>
                 <li>Miks av fysisk og digitalt samarbeid</li>
                 <li>Fordeling av oppgaver med klare ansvarsområder</li>
@@ -128,7 +131,7 @@
         </section>
 
         <section class="kommunikasjon">
-            <h2>Kommunikasjonskanaler</h2>
+            <h2><i class="fas fa-comments"></i>Kommunikasjonskanaler</h2>
             <ul>
                 <li>Primært: Teams</li>
                 <li>Sekundært: E-post og SMS</li>
@@ -136,7 +139,7 @@
         </section>
 
         <section class="moter">
-            <h2>Møtefrekvens</h2>
+            <h2><i class="fas fa-calendar-alt"></i>Møtefrekvens</h2>
             <ul>
                 <li>Ukentlig gruppemøte: torsdag kl. 17:00</li>
                 <li>Ekstra digitale møter ved behov</li>
@@ -144,7 +147,7 @@
         </section>
 
         <section class="regler">
-            <h2>Andre regler</h2>
+            <h2><i class="fas fa-gavel"></i>Andre regler</h2>
             <ul>
                 <li>Alle bidrar til avtalt tid</li>
                 <li>Gi beskjed hvis frister ikke nås</li>
@@ -153,7 +156,7 @@
         </section>
 
         <section class="sanksjoner">
-            <h2>Sanksjoner ved regelbrudd</h2>
+            <h2><i class="fas fa-exclamation-triangle"></i>Sanksjoner ved regelbrudd</h2>
             <ul>
                 <li>1. gang: muntlig påminnelse</li>
                 <li>2. gang: skriftlig varsling til gruppen</li>
@@ -162,7 +165,7 @@
         </section>
 
         <section class="signaturer">
-            <h2>Signaturer</h2>
+            <h2><i class="fas fa-signature"></i>Signaturer</h2>
             <ul>
                 <li>Abyan: ____________________</li>
                 <li>Shahed: ____________________</li>
@@ -175,6 +178,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
