@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="no">
 <head>
@@ -10,43 +9,48 @@
         /* Generell styling */
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to right, #f8f9fa, #e9ecef);
-            color: #333;
+            background: linear-gradient(to right, #f0f4f8, #d9e2ec);
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #4e73df;
+            background: linear-gradient(90deg, #4e73df, #1cc88a);
             color: white;
             text-align: center;
-            padding: 40px 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 60px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
         }
 
         main {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
         section {
             background: white;
-            border-radius: 12px;
-            padding: 25px 30px;
+            border-radius: 15px;
+            padding: 30px;
             margin-bottom: 30px;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 16px 30px rgba(0,0,0,0.15);
         }
 
         h2 {
@@ -54,13 +58,36 @@
             margin-top: 0;
         }
 
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
+        p, li {
+            line-height: 1.7;
+            font-size: 1.05em;
         }
 
-        p {
-            line-height: 1.7;
+        ul {
+            list-style-type: disc;
+            padding-left: 25px;
+        }
+
+        /* Toggle knapper */
+        .toggle-button {
+            background: #1cc88a;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-bottom: 15px;
+            transition: background 0.3s;
+        }
+
+        .toggle-button:hover {
+            background: #17a673;
+        }
+
+        .toggle-content {
+            display: none;
+            margin-top: 15px;
         }
 
         /* Footer styling */
@@ -70,6 +97,15 @@
             background: #4e73df;
             color: white;
             margin-top: 40px;
+        }
+
+        @media(max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+            section {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -83,9 +119,9 @@
         <section>
             <h2>Hva er Agile?</h2>
             <p>
-                Agile systemutviklingsmetoder er en tilnærming i programvareutvikling som legger vekt på kontinuerlig forbedring, fleksibilitet og samarbeid. 
+                Agile systemutviklingsmetoder legger vekt på kontinuerlig forbedring, fleksibilitet og samarbeid. 
                 I stedet for tradisjonelle lineære metoder brukes korte utviklingssykluser kalt <strong>iterasjoner</strong> eller <strong>sprinter</strong>. 
-                Hver iterasjon leverer et fungerende produkt eller deler av det, slik at teamet kan tilpasse og forbedre produktet basert på tilbakemeldinger.
+                Hver iterasjon leverer et fungerende produkt, slik at teamet kan tilpasse og forbedre produktet basert på tilbakemeldinger.
             </p>
         </section>
 
@@ -105,32 +141,9 @@
         </section>
 
         <section>
-            <h2>Fordeler med Agile</h2>
-            <ul>
-                <li>Større fleksibilitet og raskere tilpasning til endringer.</li>
-                <li>Kontinuerlig involvering av kunder sikrer at sluttproduktet møter brukernes behov.</li>
-                <li>Feil og misforståelser oppdages tidlig, noe som sparer tid og kostnader.</li>
-                <li>Egnet for komplekse prosjekter med mange endringer underveis.</li>
-                <li>Fokus på kontinuerlig forbedring og læring i teamet.</li>
-            </ul>
-        </section>
+            <h2>Styrker og svakheter</h2>
+            <button class="toggle-button" onclick="toggleContent('strengths')">Vis/Styrker</button
 
-        <section>
-            <h2>Ulemper med Agile</h2>
-            <ul>
-                <li>Kan være utfordrende for større organisasjoner som er vant til strenge prosesser.</li>
-                <li>Krever tett samarbeid og kontinuerlig kommunikasjon, som kan være krevende å opprettholde.</li>
-                <li>Uklare krav tidlig i prosjektet kan føre til uforutsette endringer og tidsoverskridelser.</li>
-                <li>Lite dokumentasjon kan gjøre det vanskelig å overføre kunnskap til nye teammedlemmer.</li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        &copy; 2025 Agile Metoder. Alle rettigheter reservert.
-    </footer>
-</body>
-</html>
 
 
 
