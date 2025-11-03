@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="no">
 <head>
@@ -5,32 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gruppekontrakt</title>
     <style>
-        /* Grunnleggende styling */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f2f5;
+            background-color: #f9f9f9;
             color: #333;
         }
 
-        /* Header med gradient */
         header {
-            background: linear-gradient(135deg, #007BFF, #00A1FF);
+            background-color: #007BFF; /* klar blå */
             color: white;
             text-align: center;
-            padding: 80px 20px 50px 20px;
+            padding: 40px 20px;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.8rem;
-            letter-spacing: 1px;
+            font-size: 2.5rem;
         }
 
         header p {
-            font-size: 1.2rem;
             margin-top: 10px;
+            font-size: 1.2rem;
             opacity: 0.9;
         }
 
@@ -40,126 +38,122 @@
             padding: 0 20px;
         }
 
-        /* Boksene */
-        .box {
+        section {
             background-color: white;
-            border-left: 8px solid #007BFF;
             border-radius: 12px;
             padding: 25px 35px;
-            margin-bottom: 35px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             transition: transform 0.25s, box-shadow 0.25s;
         }
 
-        .box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
         }
 
-        .box h2 {
-            color: #007BFF;
+        section h2 {
+            color: #007BFF; /* blå aksent */
             margin-top: 0;
-            margin-bottom: 18px;
-            font-size: 2rem;
-            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            border-bottom: 1px solid #e0e0e0;
             padding-bottom: 5px;
         }
 
-        .box ul {
+        section ul {
             padding-left: 20px;
         }
 
-        .box ul li {
+        section ul li {
             margin-bottom: 10px;
             font-size: 1rem;
         }
 
         footer {
             text-align: center;
-            background-color: #007BFF;
-            color: white;
             padding: 25px 0;
             font-size: 0.95rem;
+            color: #555;
         }
 
         @media(max-width: 600px) {
             header h1 {
                 font-size: 2rem;
             }
-            .box h2 {
-                font-size: 1.6rem;
+            section h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Gruppekontrakt</h1>
-        <p>Profesjonelt samarbeid mellom Abyan og Shahed</p>
-    </header>
+<header>
+    <h1>Gruppekontrakt</h1>
+    <p>Vår avtale for effektivt samarbeid i prosjektet</p>
+</header>
 
-    <main>
-        <div class="box">
-            <h2>Mål og Ambisjoner</h2>
-            <p>Vi ønsker å samarbeide konstruktivt og levere et komplett nettsted innen fristen 20. november, samtidig som vi lærer og har det hyggelig sammen.</p>
-        </div>
+<main>
+    <section class="mål">
+        <h2>Mål og Ambisjoner</h2>
+        <p>Vi ønsker å samarbeide konstruktivt og levere et komplett nettsted innen fristen 20. november.</p>
+    </section>
 
-        <div class="box">
-            <h2>Arbeidsform</h2>
-            <ul>
-                <li>Miks av fysisk og digitalt samarbeid</li>
-                <li>Fordeling av oppgaver med klare ansvarsområder</li>
-                <li>Vi tester og hjelper hverandre underveis</li>
-            </ul>
-        </div>
+    <section class="arbeidsform">
+        <h2>Arbeidsform</h2>
+        <ul>
+            <li>Miks av fysisk og digitalt samarbeid</li>
+            <li>Hver oppgave fordeles og testes sammen i gruppen</li>
+        </ul>
+    </section>
 
-        <div class="box">
-            <h2>Kommunikasjon</h2>
-            <ul>
-                <li>Primært: Teams</li>
-                <li>Sekundært: E-post og SMS</li>
-            </ul>
-        </div>
+    <section class="kommunikasjon">
+        <h2>Kommunikasjonskanaler</h2>
+        <ul>
+            <li>Primært: Teams</li>
+            <li>Sekundært: E-post og SMS</li>
+        </ul>
+    </section>
 
-        <div class="box">
-            <h2>Møtefrekvens</h2>
-            <ul>
-                <li>Ukentlig gruppemøte: torsdag kl. 17:00</li>
-                <li>Ekstra digitale møter ved behov</li>
-            </ul>
-        </div>
+    <section class="moter">
+        <h2>Møtefrekvens</h2>
+        <ul>
+            <li>Ukentlig gruppemøte: torsdag kl. 17:00</li>
+            <li>Ekstra digitale møter ved behov</li>
+        </ul>
+    </section>
 
-        <div class="box">
-            <h2>Regler</h2>
-            <ul>
-                <li>Alle bidrar til avtalt tid</li>
-                <li>Gi beskjed hvis frister ikke nås</li>
-                <li>Respektere hverandres ideer og meninger</li>
-            </ul>
-        </div>
+    <section class="regler">
+        <h2>Andre regler</h2>
+        <ul>
+            <li>Alle bidrar med arbeid til avtalt tid</li>
+            <li>Gi beskjed hvis frister ikke nås</li>
+            <li>Respektere hverandres ideer og meninger</li>
+        </ul>
+    </section>
 
-        <div class="box">
-            <h2>Sanksjoner</h2>
-            <ul>
-                <li>1. gang: muntlig påminnelse</li>
-                <li>2. gang: skriftlig varsling til gruppen</li>
-                <li>3. gang: varsling til veileder</li>
-            </ul>
-        </div>
+    <section class="sanksjoner">
+        <h2>Sanksjoner ved regelbrudd</h2>
+        <ul>
+            <li>1. gang: muntlig påminnelse</li>
+            <li>2. gang: skriftlig varsling til gruppen</li>
+            <li>3. gang: varsling til veileder</li>
+        </ul>
+    </section>
 
-        <div class="box">
-            <h2>Signaturer</h2>
-            <ul>
-                <li>Abyan: ____________________</li>
-                <li>Shahed: ____________________</li>
-            </ul>
-        </div>
-    </main>
+    <section class="signaturer">
+        <h2>Signaturer</h2>
+        <ul>
+            <li>Abyan: ____________________</li>
+            <li>Shahed: ____________________</li>
+        </ul>
+    </section>
+</main>
 
-    <footer>
-        &copy; 2025 Prosjektnavn
-    </footer>
+<footer>
+    <p>&copy; 2025 Prosjektnavn</p>
+</footer>
 
 </body>
 </html>
