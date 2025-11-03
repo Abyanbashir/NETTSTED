@@ -10,82 +10,85 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f0f2f5;
+            background: #f7f8fa;
             color: #333;
             line-height: 1.6;
         }
 
+        /* Header */
         header {
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            background: linear-gradient(135deg, #0056b3, #2575fc);
             color: white;
             text-align: center;
             padding: 60px 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 10px;
             letter-spacing: 1px;
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             opacity: 0.9;
         }
 
+        /* Main innhold */
         main {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
         section {
             background: white;
-            border-radius: 12px;
-            padding: 25px 30px;
+            border-radius: 10px;
+            padding: 30px 35px;
             margin-bottom: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.25s, box-shadow 0.25s;
         }
 
         section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
         }
 
         section h2 {
-            color: #2575fc;
-            margin-bottom: 15px;
+            color: #0056b3;
+            margin-top: 0;
+            margin-bottom: 20px;
             font-size: 1.6rem;
-            display: flex;
-            align-items: center;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 5px;
         }
 
-        section h2::before {
-            content: "📝";
-            margin-right: 10px;
+        section p {
+            margin-bottom: 15px;
+            font-size: 1rem;
         }
 
-        ul {
+        section ul {
             padding-left: 20px;
         }
 
-        ul li {
+        section ul li {
             margin-bottom: 10px;
             font-size: 1rem;
         }
 
+        /* Footer */
         footer {
             text-align: center;
             background: #2575fc;
             color: white;
             padding: 20px 0;
-            margin-top: 50px;
             font-size: 0.9rem;
+            margin-top: 50px;
         }
 
-        /* Responsive design */
+        /* Responsive */
         @media(max-width: 600px) {
             header h1 {
                 font-size: 2rem;
@@ -93,19 +96,22 @@
             section h2 {
                 font-size: 1.3rem;
             }
+            main {
+                padding: 0 15px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Gruppekontrakt</h1>
-        <p>Vår avtale for effektivt og hyggelig samarbeid i prosjektet</p>
+        <p>Vår avtale for effektivt og profesjonelt samarbeid i prosjektet</p>
     </header>
 
     <main>
         <section class="mål">
             <h2>Mål og Ambisjoner</h2>
-            <p>Vi ønsker å samarbeide konstruktivt og levere et komplett nettsted innen fristen 20. november, samtidig som vi lærer og har det gøy sammen.</p>
+            <p>Vi ønsker å samarbeide konstruktivt og levere et komplett nettsted innen fristen 20. november, samtidig som vi lærer og oppnår gode resultater sammen.</p>
         </section>
 
         <section class="arbeidsform">
@@ -120,15 +126,15 @@
         <section class="kommunikasjon">
             <h2>Kommunikasjonskanaler</h2>
             <ul>
-                <li>Primært: Teams 💬</li>
-                <li>Sekundært: E-post 📧 og SMS 📱</li>
+                <li>Primært: Teams</li>
+                <li>Sekundært: E-post og SMS</li>
             </ul>
         </section>
 
         <section class="moter">
             <h2>Møtefrekvens</h2>
             <ul>
-                <li>Ukentlig gruppemøte: torsdag kl. 17:00 🗓️</li>
+                <li>Ukentlig gruppemøte: torsdag kl. 17:00</li>
                 <li>Ekstra digitale møter ved behov</li>
             </ul>
         </section>
@@ -136,28 +142,26 @@
         <section class="regler">
             <h2>Andre regler</h2>
             <ul>
-                <li>Alle bidrar til avtalt tid ⏱️</li>
-                <li>Gi beskjed hvis frister ikke nås ⚠️</li>
-                <li>Respektere hverandres ideer og meninger 🤝</li>
+                <li>Alle bidrar til avtalt tid</li>
+                <li>Gi beskjed hvis frister ikke nås</li>
+                <li>Respektere hverandres ideer og meninger</li>
             </ul>
         </section>
 
         <section class="sanksjoner">
             <h2>Sanksjoner ved regelbrudd</h2>
             <ul>
-                <li>1. gang: muntlig påminnelse 🗣️</li>
-                <li>2. gang: skriftlig varsling til gruppen ✉️</li>
-                <li>3. gang: varsling til veileder 🚨</li>
+                <li>1. gang: muntlig påminnelse</li>
+                <li>2. gang: skriftlig varsling til gruppen</li>
+                <li>3. gang: varsling til veileder</li>
             </ul>
         </section>
 
         <section class="signaturer">
             <h2>Signaturer</h2>
             <ul>
-                <li>Navn 1: ____________________</li>
-                <li>Navn 2: ____________________</li>
-                <li>Navn 3: ____________________</li>
-                <li>Navn 4: ____________________</li>
+                <li>Abyan: ____________________</li>
+                <li>Shahed: ____________________</li>
             </ul>
         </section>
     </main>
@@ -167,6 +171,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
