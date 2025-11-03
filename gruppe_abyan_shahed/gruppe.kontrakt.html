@@ -5,156 +5,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gruppekontrakt</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-
-        header {
-            background-color: #007BFF; /* klar blå */
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
-        header p {
-            margin-top: 10px;
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        section {
-            background-color: white;
-            border-radius: 12px;
-            padding: 25px 35px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.25s, box-shadow 0.25s;
-        }
-
-        section:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
-        }
-
-        section h2 {
-            color: #007BFF; /* blå aksent */
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 1.8rem;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 5px;
-        }
-
-        section ul {
-            padding-left: 20px;
-        }
-
-        section ul li {
-            margin-bottom: 10px;
-            font-size: 1rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px 0;
-            font-size: 0.95rem;
-            color: #555;
-        }
-
-        @media(max-width: 600px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            section h2 {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Gruppekontrakt for Prosjekt</h1>
+        <p>Vårt mål er å samarbeide effektivt og levere et kvalitetsprosjekt.</p>
+    </header>
 
-<header>
-    <h1>Gruppekontrakt</h1>
-    <p>Vår avtale for effektivt samarbeid i prosjektet</p>
-</header>
+    <main>
+        <section class="mål">
+            <h2>Mål og Ambisjoner</h2>
+            <p>Vi ønsker å samarbeide konstruktivt og levere et komplett nettsted innen fristen 20. november.</p>
+        </section>
 
-<main>
-    <section class="mål">
-        <h2>Mål og Ambisjoner</h2>
-        <p>Vi ønsker å samarbeide konstruktivt og levere et komplett nettsted innen fristen 20. november.</p>
-    </section>
+        <section class="arbeidsform">
+            <h2>Arbeidsform</h2>
+            <ul>
+                <li>Miks av fysisk og digitalt samarbeid</li>
+                <li>Hver oppgave fordeles og testes i gruppen</li>
+            </ul>
+        </section>
 
-    <section class="arbeidsform">
-        <h2>Arbeidsform</h2>
-        <ul>
-            <li>Miks av fysisk og digitalt samarbeid</li>
-            <li>Hver oppgave fordeles og testes sammen i gruppen</li>
-        </ul>
-    </section>
+        <section class="kommunikasjon">
+            <h2>Kommunikasjonskanaler</h2>
+            <ul>
+                <li>Primært: Teams</li>
+                <li>Sekundært: E-post og SMS</li>
+            </ul>
+        </section>
 
-    <section class="kommunikasjon">
-        <h2>Kommunikasjonskanaler</h2>
-        <ul>
-            <li>Primært: Teams</li>
-            <li>Sekundært: E-post og SMS</li>
-        </ul>
-    </section>
+        <section class="moter">
+            <h2>Møtefrekvens</h2>
+            <ul>
+                <li>Ukentlig gruppe møte: torsdag kl. 17:00</li>
+                <li>Ekstra digitale møter ved behov</li>
+            </ul>
+        </section>
 
-    <section class="moter">
-        <h2>Møtefrekvens</h2>
-        <ul>
-            <li>Ukentlig gruppemøte: torsdag kl. 17:00</li>
-            <li>Ekstra digitale møter ved behov</li>
-        </ul>
-    </section>
+        <section class="regler">
+            <h2>Andre regler</h2>
+            <ul>
+                <li>Alle bidrar med arbeid til avtalt tid</li>
+                <li>Gi beskjed hvis frister ikke nås</li>
+                <li>Respektere hverandres ideer og meninger</li>
+            </ul>
+        </section>
 
-    <section class="regler">
-        <h2>Andre regler</h2>
-        <ul>
-            <li>Alle bidrar med arbeid til avtalt tid</li>
-            <li>Gi beskjed hvis frister ikke nås</li>
-            <li>Respektere hverandres ideer og meninger</li>
-        </ul>
-    </section>
+        <section class="sanksjoner">
+            <h2>Sanksjoner ved regelbrudd</h2>
+            <ul>
+                <li>1. gang: muntlig påminnelse</li>
+                <li>2. gang: skriftlig varsling til gruppen</li>
+                <li>3. gang: varsling til veileder</li>
+            </ul>
+        </section>
 
-    <section class="sanksjoner">
-        <h2>Sanksjoner ved regelbrudd</h2>
-        <ul>
-            <li>1. gang: muntlig påminnelse</li>
-            <li>2. gang: skriftlig varsling til gruppen</li>
-            <li>3. gang: varsling til veileder</li>
-        </ul>
-    </section>
+        <section class="signaturer">
+            <h2>Signaturer</h2>
+            <ul>
+                <li>Navn 1: ____________________</li>
+                <li>Navn 2: ____________________</li>
+                <li>Navn 3: ____________________</li>
+                <li>Navn 4: ____________________</li>
+            </ul>
+        </section>
+    </main>
 
-    <section class="signaturer">
-        <h2>Signaturer</h2>
-        <ul>
-            <li>Abyan: ____________________</li>
-            <li>Shahed: ____________________</li>
-        </ul>
-    </section>
-</main>
-
-<footer>
-    <p>&copy; 2025 Prosjektnavn</p>
-</footer>
-
+    <footer>
+        <p>&copy; 2025 Vårt Prosjektnavn</p>
+    </footer>
 </body>
 </html>
 
