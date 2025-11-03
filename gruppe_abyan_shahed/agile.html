@@ -3,135 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agile metoder</title>
+    <title>Gruppekontrakt</title>
     <style>
-        /* --- Generelt --- */
+        /* Grunnleggende styling */
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f6f8;
-            color: #222;
+            background: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
         }
 
-        /* --- Header --- */
+        /* Toppmeny */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #007BFF; /* Klar blå farge */
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
         header {
-            background-color: #294073; /* Klar blå */
-            color: #ffffff; /* Header-tekst hvit */
+            background: #007BFF;
+            color: white;
             text-align: center;
-            padding: 1.8rem 1rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            padding: 60px 20px;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 2.2em;
-            letter-spacing: 0.5px;
+            font-size: 3rem;
+            margin-bottom: 10px;
         }
 
-        /* --- Hovedinnhold --- */
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
         main {
-            max-width: 900px;
-            margin: 3rem auto;
-            background-color: #ffffff;
-            padding: 2.5rem 3rem;
-            border-radius: 12px;
-            box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
         section {
-            margin-bottom: 2rem;
+            background: white;
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        h2 {
-            color: #000000; /* Seksjonsoverskrifter sort */
-            font-size: 1.5em;
-            margin-top: 1.5rem;
-            margin-bottom: 0.8rem;
-            border-left: 5px solid #294073; /* Klar blå kantlinje */
-            padding-left: 10px;
-            letter-spacing: 0.5px;
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
-        p {
-            line-height: 1.7;
-            margin: 0.8rem 0 1.2rem 0;
-            color: #000000;
+        section h2 {
+            color: #007BFF;
+            margin-bottom: 15px;
+            font-size: 1.6rem;
         }
 
-        /* --- Footer --- */
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
         footer {
             text-align: center;
-            background-color: #294073; /* Klar blå */
+            background: #007BFF;
             color: white;
-            padding: 1rem;
-            font-size: 0.95em;
-            margin-top: 3rem;
-            box-shadow: 0 -3px 8px rgba(0,0,0,0.15);
+            padding: 20px 0;
+            margin-top: 50px;
+            font-size: 0.9rem;
         }
 
-        /* --- Responsiv for mobil --- */
-        @media (max-width: 700px) {
-            main {
-                padding: 1.5rem 1.5rem;
-                margin: 1rem;
+        /* Responsive design */
+        @media(max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
             }
-            h2 {
-                font-size: 1.3em;
+            section h2 {
+                font-size: 1.3rem;
+            }
+            nav a {
+                margin: 0 10px;
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
-
 <body>
-<header>
-    <h1>Agile metoder</h1>
-</header>
 
-<main>
-    <section>
-        <h2>Hva er agile metoder?</h2>
-        <p>
-            Agile systemutviklingsmetoder er en tilnærming som brukes i programvareutvikling og legger vekt på kontinuerlig forbedring i arbeidsprosesser, 
-            der fleksibilitet og godt samarbeid står sentralt. I motsetning til tradisjonelle metoder, hvor utviklingsprosessen har en fast og lineær plan, 
-            består agile metoder av korte utviklingssykluser kalt iterasjoner eller sprinter.
-        </p>
-        <p>
-            I hver iterasjon skal teamet levere et fungerende produkt eller deler av det. Dette gir mulighet til å gjøre endringer og forbedringer basert på tilbakemeldinger fra kunder og brukere, slik at sluttproduktet bedre oppfyller krav og behov. 
-            Agile systemutviklingsmetoder kan praktiseres gjennom ulike rammeverk som Scrum, Kanban og Extreme Programming (XP), som alle bygger på prinsippene i Agile Manifesto fra 2001 (Agile Alliance, u.å.).
-        </p>
-        <p>
-            Agile metoder legger vekt på individers verdi og samarbeid fremfor prosesser og verktøy, velfungerende programvare fremfor omfattende dokumentasjon, og samarbeid med kunder fremfor å kun følge kontrakter. 
-            Det legges også stor vekt på refleksjon og læring slik at teamene hele tiden kan forbedre arbeidsmåten sin (Agile Alliance, u.å.).
-        </p>
-    </section>
+    <nav>
+        <a href="#mål">Mål</a>
+        <a href="#arbeidsform">Arbeidsform</a>
+        <a href="#kommunikasjon">Kommunikasjon</a>
+        <a href="#moter">Møter</a>
+        <a href="#regler">Regler</a>
+        <a href="#sanksjoner">Sanksjoner</a>
+        <a href="#signaturer">Signaturer</a>
+    </nav>
 
-    <section>
-        <h2>Hvorfor tas det i bruk?</h2>
-        <p>
-            Agile systemutviklingsmetoder tas i bruk fordi de gir større fleksibilitet og sørger for at sluttproduktet faktisk oppfyller brukernes behov. Når kunder og brukere involveres gjennom hele prosessen, 
-            kan feil og misforståelser oppdages tidlig, noe som sparer både tid og kostnader.  
-        </p>
-        <p>
-            Agile metoder gjør komplekse prosjekter lettere å håndtere, spesielt når det oppstår kontinuerlige endringer underveis. Sammenlignet med tradisjonelle metoder gir agile tilnærminger større frihet 
-            og reduserer forsinkelser som følge av et strengt rammeverk (Agile Alliance, u.å.).
-        </p>
-    </section>
+    <header>
+        <h1>Gruppekontrakt</h1>
+        <p>Vår avtale for effektivt og hyggelig samarbeid i prosjektet</p>
+    </header>
 
-    <section>
-        <h2>Svakheter og styrker</h2>
-        <p>
-            Agile metoder har mange styrker, som fleksibilitet, rask tilpasning, tett samarbeid med kunder og kontinuerlig forbedring. Samtidig finnes det svakheter: metoden krever erfarne team, 
-            tett kommunikasjon og kan være vanskelig å bruke i prosjekter med faste krav og tidsrammer.
-        </p>
-    </section>
-</main>
+    <main>
+        <section id="mål">
+            <h2>Mål og Ambisjoner</h2>
+            <p>Vi ønsker å samarbeide konstruktivt og levere et komplett nettsted innen fristen 20. november, samtidig som vi lærer og har det gøy sammen.</p>
+        </section>
 
-<footer>
-    <p>&copy;Agile Metoder — skrevet av Abyan</p>
-</footer>
+        <section id="arbeidsform">
+            <h2>Arbeidsform</h2>
+            <ul>
+                <li>Miks av fysisk og digitalt samarbeid</li>
+                <li>Fordeling av oppgaver med klare ansvarsområder</li>
+                <li>Vi tester og hjelper hverandre underveis</li>
+            </ul>
+        </section>
+
+        <section id="kommunikasjon">
+            <h2>Kommunikasjonskanaler</h2>
+            <ul>
+                <li>Primært: Teams</li>
+                <li>Sekundært: E-post og SMS</li>
+            </ul>
+        </section>
+
+        <section id="moter">
+            <h2>Møtefrekvens</h2>
+            <ul>
+                <li>Ukentlig gruppemøte: torsdag kl. 17:00</li>
+                <li>Ekstra digitale møter ved behov</li>
+            </ul>
+        </section>
+
+        <section id="regler">
+            <h2>Andre regler</h2>
+            <ul>
+                <li>Alle bidrar til avtalt tid</li>
+                <li>Gi beskjed hvis frister ikke nås</li>
+                <li>Respektere hverandres ideer og meninger</li>
+            </ul>
+        </section>
+
+        <section id="sanksjoner">
+            <h2>Sanksjoner ved regelbrudd</h2>
+            <ul>
+                <li>1. gang: muntlig påminnelse</li>
+                <li>2. gang: skriftlig varsling til gruppen</li>
+                <li>3. gang: varsling til veileder</li>
+            </ul>
+        </section>
+
+        <section id="signaturer">
+            <h2>Signaturer</h2>
+            <ul>
+                <li>Navn 1: ____________________</li>
+                <li>Navn 2: ____________________</li>
+                <li>Navn 3: ____________________</li>
+                <li>Navn 4: ____________________</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Prosjektnavn
+    </footer>
+
 </body>
 </html>
+
 
 
 
