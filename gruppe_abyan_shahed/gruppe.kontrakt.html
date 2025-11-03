@@ -5,131 +5,138 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gruppekontrakt</title>
 <style>
-/* Grunnleggende styling */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f7f8fa;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* Meny */
-nav {
-    background: white;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    padding: 15px 0;
-    display: inline-block;
-    transition: color 0.3s, border-bottom 0.3s;
-}
-
-nav ul li a:hover {
-    color: #0056b3;
-    border-bottom: 2px solid #0056b3;
-}
-
-/* Header */
-header {
-    text-align: center;
-    padding: 60px 20px 30px 20px;
-}
-
-header h1 {
-    font-size: 2.8rem;
-    margin-bottom: 10px;
-}
-
-header p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-}
-
-/* Main innhold */
-main {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-section {
-    background: white;
-    border-radius: 10px;
-    padding: 30px 35px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.25s, box-shadow 0.25s;
-}
-
-section:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-section h2 {
-    color: #333;
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 1.6rem;
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 5px;
-}
-
-section p, section ul li {
-    font-size: 1rem;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    background: #f7f8fa;
-    color: #333;
-    padding: 20px 0;
-    font-size: 0.9rem;
-    margin-top: 50px;
-}
-
-/* Responsive */
-@media(max-width: 600px) {
-    header h1 {
-        font-size: 2rem;
+    /* Grunnleggende styling */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f7f7f7;
+        color: #333;
+        line-height: 1.6;
+        scroll-behavior: smooth;
     }
-    section h2 {
-        font-size: 1.3rem;
+
+    /* Toppmeny */
+    nav {
+        background: #ffffff;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        z-index: 100;
     }
+
     nav ul {
-        flex-direction: column;
-        align-items: center;
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+        padding: 10px 0;
     }
+
     nav ul li {
-        margin: 5px 0;
+        margin: 0 20px;
     }
-}
+
+    nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+        color: #555;
+    }
+
+    /* Header */
+    header {
+        text-align: center;
+        padding: 60px 20px 40px 20px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    header p {
+        font-size: 1.1rem;
+        opacity: 0.8;
+    }
+
+    /* Main innhold */
+    main {
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 0 20px;
+    }
+
+    section {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 30px 25px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    section:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    section h2 {
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+        border-bottom: 2px solid #e0e0e0;
+        padding-bottom: 5px;
+    }
+
+    section ul {
+        padding-left: 20px;
+    }
+
+    section ul li {
+        margin-bottom: 10px;
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        background: #f1f1f1;
+        color: #333;
+        padding: 20px 0;
+        font-size: 0.9rem;
+        margin-top: 50px;
+    }
+
+    /* Responsive */
+    @media(max-width: 600px) {
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        section h2 {
+            font-size: 1.3rem;
+        }
+    }
 </style>
 </head>
 <body>
 
+<!-- Meny -->
 <nav>
     <ul>
         <li><a href="#mål">Mål</a></li>
@@ -148,60 +155,7 @@ footer {
 
 <main>
     <section id="mål">
-        <h2>Mål og Ambisjoner</h2>
-        <p>Vi ønsker å samarbeide konstruktivt og levere et komplett nettsted innen fristen 20. november, samtidig som vi lærer og oppnår gode resultater sammen.</p>
-    </section>
 
-    <section id="arbeidsform">
-        <h2>Arbeidsform</h2>
-        <ul>
-            <li>Miks av fysisk og digitalt samarbeid</li>
-            <li>Fordeling av oppgaver med klare ansvarsområder</li>
-            <li>Vi tester og hjelper hverandre underveis</li>
-        </ul>
-    </section>
-
-    <section id="kommunikasjon">
-        <h2>Kommunikasjonskanaler</h2>
-        <ul>
-            <li>Primært: Teams</li>
-            <li>Sekundært: E-post og SMS</li>
-        </ul>
-    </section>
-
-    <section id="moter">
-        <h2>Møtefrekvens</h2>
-        <ul>
-            <li>Ukentlig gruppemøte: torsdag kl. 17:00</li>
-            <li>Ekstra digitale møter ved behov</li>
-        </ul>
-    </section>
-
-    <section id="regler">
-        <h2>Andre regler</h2>
-        <ul>
-            <li>Alle bidrar til avtalt tid</li>
-            <li>Gi beskjed hvis frister ikke nås</li>
-            <li>Respektere hverandres ideer og meninger</li>
-        </ul>
-    </section>
-
-    <section id="sanksjoner">
-        <h2>Sanksjoner ved regelbrudd</h2>
-        <ul>
-            <li>1. gang: muntlig påminnelse</li>
-            <li>2. gang: skriftlig varsling til gruppen</li>
-            <li>3. gang: varsling til veileder</li>
-        </ul>
-    </section>
-</main>
-
-<footer>
-    &copy; 2025 Prosjektnavn
-</footer>
-
-</body>
-</html>
 
 
 
