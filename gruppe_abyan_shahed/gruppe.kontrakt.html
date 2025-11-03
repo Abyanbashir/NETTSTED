@@ -15,18 +15,41 @@
             line-height: 1.6;
         }
 
+        /* Toppmeny */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #007BFF; /* Klar blå farge */
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
         header {
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            background: #007BFF;
             color: white;
             text-align: center;
             padding: 60px 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         header h1 {
             font-size: 3rem;
             margin-bottom: 10px;
-            letter-spacing: 1px;
         }
 
         header p {
@@ -55,16 +78,9 @@
         }
 
         section h2 {
-            color: #2575fc;
+            color: #007BFF;
             margin-bottom: 15px;
             font-size: 1.6rem;
-            display: flex;
-            align-items: center;
-        }
-
-        section h2::before {
-            content: "📝";
-            margin-right: 10px;
         }
 
         ul {
@@ -78,7 +94,7 @@
 
         footer {
             text-align: center;
-            background: #2575fc;
+            background: #007BFF;
             color: white;
             padding: 20px 0;
             margin-top: 50px;
@@ -93,22 +109,37 @@
             section h2 {
                 font-size: 1.3rem;
             }
+            nav a {
+                margin: 0 10px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
+
+    <nav>
+        <a href="#mål">Mål</a>
+        <a href="#arbeidsform">Arbeidsform</a>
+        <a href="#kommunikasjon">Kommunikasjon</a>
+        <a href="#moter">Møter</a>
+        <a href="#regler">Regler</a>
+        <a href="#sanksjoner">Sanksjoner</a>
+        <a href="#signaturer">Signaturer</a>
+    </nav>
+
     <header>
         <h1>Gruppekontrakt</h1>
         <p>Vår avtale for effektivt og hyggelig samarbeid i prosjektet</p>
     </header>
 
     <main>
-        <section class="mål">
+        <section id="mål">
             <h2>Mål og Ambisjoner</h2>
             <p>Vi ønsker å samarbeide konstruktivt og levere et komplett nettsted innen fristen 20. november, samtidig som vi lærer og har det gøy sammen.</p>
         </section>
 
-        <section class="arbeidsform">
+        <section id="arbeidsform">
             <h2>Arbeidsform</h2>
             <ul>
                 <li>Miks av fysisk og digitalt samarbeid</li>
@@ -117,41 +148,41 @@
             </ul>
         </section>
 
-        <section class="kommunikasjon">
+        <section id="kommunikasjon">
             <h2>Kommunikasjonskanaler</h2>
             <ul>
-                <li>Primært: Teams 💬</li>
-                <li>Sekundært: E-post 📧 og SMS 📱</li>
+                <li>Primært: Teams</li>
+                <li>Sekundært: E-post og SMS</li>
             </ul>
         </section>
 
-        <section class="moter">
+        <section id="moter">
             <h2>Møtefrekvens</h2>
             <ul>
-                <li>Ukentlig gruppemøte: torsdag kl. 17:00 🗓️</li>
+                <li>Ukentlig gruppemøte: torsdag kl. 17:00</li>
                 <li>Ekstra digitale møter ved behov</li>
             </ul>
         </section>
 
-        <section class="regler">
+        <section id="regler">
             <h2>Andre regler</h2>
             <ul>
-                <li>Alle bidrar til avtalt tid ⏱️</li>
-                <li>Gi beskjed hvis frister ikke nås ⚠️</li>
-                <li>Respektere hverandres ideer og meninger 🤝</li>
+                <li>Alle bidrar til avtalt tid</li>
+                <li>Gi beskjed hvis frister ikke nås</li>
+                <li>Respektere hverandres ideer og meninger</li>
             </ul>
         </section>
 
-        <section class="sanksjoner">
+        <section id="sanksjoner">
             <h2>Sanksjoner ved regelbrudd</h2>
             <ul>
-                <li>1. gang: muntlig påminnelse 🗣️</li>
-                <li>2. gang: skriftlig varsling til gruppen ✉️</li>
-                <li>3. gang: varsling til veileder 🚨</li>
+                <li>1. gang: muntlig påminnelse</li>
+                <li>2. gang: skriftlig varsling til gruppen</li>
+                <li>3. gang: varsling til veileder</li>
             </ul>
         </section>
 
-        <section class="signaturer">
+        <section id="signaturer">
             <h2>Signaturer</h2>
             <ul>
                 <li>Navn 1: ____________________</li>
@@ -165,6 +196,8 @@
     <footer>
         &copy; 2025 Prosjektnavn
     </footer>
+
 </body>
 </html>
+
 
