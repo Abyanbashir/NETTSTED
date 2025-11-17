@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="no">
 <head>
@@ -5,103 +6,289 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Persona — Fredrikke</title>
 
+  <!-- Valgfri: Google Font (henter fra nettet) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#f6f7fb;
-      --card:#ffffff;
-      --muted:#666;
-      --accent:#2b6cb0;
-      --radius:12px;
+      --bg: #eef3fb;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --accent: #6c8ef5;
+      --accent-2: #8fe3c0;
+      --glass: rgba(255,255,255,0.7);
+      --radius: 14px;
+      --shadow: 0 8px 30px rgba(18, 25, 40, 0.08);
+      --max-width: 1000px;
     }
     *{box-sizing:border-box}
+    html,body{height:100%}
     body{
-      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:var(--bg);
       margin:0;
-      padding:40px;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #f6f8ff 0%, var(--bg) 100%);
       display:flex;
       justify-content:center;
-      align-items:flex-start;
-      min-height:100vh;
+      padding:40px 20px;
+      color:#111827;
     }
-    .card{
-      background:var(--card);
-      padding:24px;
+
+    .wrap{
+      width:100%;
+      max-width:var(--max-width);
+      display:grid;
+      grid-template-columns: 360px 1fr;
+      gap:28px;
+      align-items:start;
+    }
+
+    /* LEFT SIDEBAR CARD */
+    .profile {
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
+      padding:22px;
       border-radius:var(--radius);
-      width:760px;
-      box-shadow:0 6px 20px rgba(20,20,40,0.08);
+      box-shadow:var(--shadow);
+      position:sticky;
+      top:28px;
+      height:fit-content;
     }
-    h1{
-      margin:0 0 6px;
-      color:var(--accent);
+    .avatar{
+      width:92px;
+      height:92px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      font-size:26px;
+      box-shadow: 0 6px 18px rgba(108,142,245,0.28);
+      margin-bottom:12px;
     }
-    h2{
-      margin-top:18px;
-      margin-bottom:8px;
-      font-size:16px;
-    }
-    .muted{
+    .small{
       color:var(--muted);
       font-size:13px;
+      margin:0 0 14px 0;
     }
-    ul,ol{
-      margin:6px 0 0 18px;
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
     }
-    footer{
-      margin-top:18px;
+    .pill{
+      background:rgba(110,127,255,0.08);
+      color:var(--accent);
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:600;
       font-size:13px;
     }
+
+    /* RIGHT MAIN CARD */
+    .card {
+      background:var(--card);
+      padding:22px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+      margin-bottom:10px;
+    }
+    .hero h1{
+      margin:0;
+      font-size:20px;
+      letter-spacing: -0.2px;
+    }
+    .muted{ color:var(--muted); font-size:13px; margin:6px 0 0 0; }
+
+    /* grid sections */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:18px;
+      margin-top:18px;
+    }
+
+    section.block{
+      background: linear-gradient(180deg, #ffffff, #fbfdff);
+      border-radius:12px;
+      padding:14px;
+      border:1px solid rgba(16,24,40,0.04);
+    }
+    section.block h3{
+      margin:0 0 8px 0;
+      font-size:15px;
+      color:#0f172a;
+    }
+    ul{ margin:0; padding-left:18px; color:#111827 }
+    li{ margin-bottom:8px; font-size:14px; color:#0f172a }
+
+    /* wide section spanning both columns */
+    .span{
+      grid-column: 1 / -1;
+    }
+
+    /* icons */
+    .icon {
+      width:18px; height:18px; display:inline-block; vertical-align: middle; margin-right:8px; opacity:0.9;
+    }
+
+    /* footer area */
+    .footer{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-top:18px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      background: linear-gradient(90deg,var(--accent), #3aa3ff);
+      color:white;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:600;
+      border:0;
+      cursor:pointer;
+      box-shadow: 0 6px 18px rgba(108,142,245,0.18);
+    }
+    .ghost{
+      background:transparent;
+      border:1px solid rgba(17,24,39,0.06);
+      padding:8px 12px;
+      border-radius:10px;
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    /* responsive */
+    @media (max-width:880px){
+      .wrap{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: 1fr; }
+      .profile{ position:relative; top:0; }
+    }
+
+    /* subtle entrance */
+    .fade-up { transform: translateY(8px); opacity:0; animation: up .55s ease forwards; }
+    .fade-up.delay { animation-delay: .08s; }
+    @keyframes up { to { transform: translateY(0); opacity:1; } }
   </style>
 </head>
-
 <body>
-  <main class="card">
-    <header>
-      <h1>Fredrikke — fersk student (20)</h1>
-      <p class="muted">Singel kvinne • Nylig flyttet på hybel</p>
-    </header>
+  <div class="wrap">
+    <!-- LEFT: profile -->
+    <aside class="profile fade-up">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="avatar">F</div>
+        <div>
+          <div style="font-weight:700">Fredrikke</div>
+          <div class="small">20 år • Fersk student</div>
+        </div>
+      </div>
 
-    <section>
-      <h2>Interesser</h2>
-      <ul>
-        <li>Motorsport</li>
-        <li>Piano / musikk</li>
-        <li>Terrengsykling</li>
-        <li>Bli kjent med nye mennesker</li>
-      </ul>
-    </section>
+      <p class="small" style="margin-top:10px">
+        Singel kvinne som nettopp har flyttet på hybel — ønsker å finne venner, holde på hobbyer og finne struktur i studiet.
+      </p>
 
-    <section>
-      <h2>Mål & drømmer</h2>
-      <ul>
-        <li>Trygg og god overgang til studentlivet</li>
-        <li>Bygge vennskap og et sosialt nettverk</li>
-        <li>Mestre studiene og finne rutiner</li>
-        <li>Holde på hobbyene sine</li>
-      </ul>
-    </section>
+      <div class="meta" style="margin-top:12px">
+        <div class="pill">Motorsport</div>
+        <div class="pill">Piano</div>
+        <div class="pill">Terrengsykling</div>
+      </div>
 
-    <section>
-      <h2>Utfordringer</h2>
-      <ul>
-        <li>Føler seg ensom i starten</li>
-        <li>Mangler oversikt over studenttilbud</li>
-        <li>Stress rundt økonomi og budsjett</li>
-      </ul>
-    </section>
+      <div style="margin-top:14px">
+        <div style="font-size:13px; color:#111827; font-weight:600; margin-bottom:6px">Livsstil</div>
+        <div class="small">Aktiv, budsjettbevisst og sosial — bruker Instagram, TikTok og studentgrupper.</div>
+      </div>
 
-    <section>
-      <h2>Informasjonsbehov</h2>
-      <ol>
-        <li>Praktiske studentressurser (bolig, økonomi, mat, helse)</li>
-        <li>Sosiale møteplasser og aktiviteter</li>
-        <li>Studieteknikk og veiledning</li>
-      </ol>
-    </section>
+      <div style="margin-top:14px; display:flex; gap:10px">
+        <button class="btn" onclick="alert('Legg til handling: last ned PDF eller del')">Last ned</button>
+        <button class="ghost" onclick="alert('Legg til handling: del')">Del</button>
+      </div>
+    </aside>
 
-    <footer>
-      <p class="muted">Persona: Fredrikke — studentmålgruppe</p>
-    </footer>
-  </main>
+    <!-- RIGHT: hovedinnhold -->
+    <main class="card fade-up delay">
+      <div class="hero">
+        <div>
+          <h1>Persona: Fredrikke — fersk student</h1>
+          <div class="muted">Oversikt som passer for UX, markedsføring og studenttjenester</div>
+        </div>
+
+        <div style="text-align:right">
+          <div style="font-size:13px; color:var(--muted)">Status</div>
+          <div style="font-weight:700; color:#0f172a">Onboarding • Høy prioritet</div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <section class="block">
+          <h3><svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v20M2 12h20" stroke="#6c8ef5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Interesser</h3>
+          <ul>
+            <li>Motorsport — ønsker å finne klubber og events</li>
+            <li>Piano / musikk — ser etter øvingsfellesskap</li>
+            <li>Terrengsykling — vil finne lokale turgrupper</li>
+            <li>Utforske nye studentaktiviteter og vennskap</li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h3><svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 6v6l4 2" stroke="#6c8ef5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Mål & drømmer</h3>
+          <ul>
+            <li>Trygg overgang til studentlivet</li>
+            <li>Bygge et sosialt nettverk og varige vennskap</li>
+            <li>Mestre studiene og skape gode rutiner</li>
+            <li>Fortsette hobbyer uten å måtte gi dem opp</li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h3><svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M12 3v18" stroke="#8fe3c0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Utfordringer</h3>
+          <ul>
+            <li>Kjenner på ensomhet og savner struktur</li>
+            <li>Mangler oversikt over klubber, linjeforeninger og aktiviteter</li>
+            <li>Økonomisk press — trenger tips til budsjett og studentrabatter</li>
+          </ul>
+        </section>
+
+        <section class="block span">
+          <h3><svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M3 7h18M3 12h18M3 17h18" stroke="#111827" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Informasjonsbehov</h3>
+          <ul>
+            <li><strong>Praktisk:</strong> Hvordan bruke studentportaler, helse- og boliginfo, og økonomiske ordninger</li>
+            <li><strong>Sosialt:</strong> Enkel oversikt og søk etter klubbtilbud, arrangementskalender og «bli med»-knapper</li>
+            <li><strong>Studiemestring:</strong> Studietips, veiledningstider, frister og støtteapparat</li>
+            <li><strong>Livsmestring:</strong> Budsjettmaler, student-oppskrifter, mental helse-ressurser</li>
+          </ul>
+        </section>
+
+      </div>
+
+      <div class="footer">
+        <div class="small">Anbefalte nettsidefunksjoner: interaktiv kalender, «Finn klubber»-matching, personlig dashboard og trinnvise guider.</div>
+        <div style="display:flex; gap:10px">
+          <button class="btn" onclick="alert('Vis prototype av nettsidefunksjoner (placeholder)')">Vis prototype</button>
+          <button class="ghost" onclick="alert('Eksporter til PDF (placeholder)')">Eksporter</button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    // små UX-tillegg (kan fjernes)
+    document.querySelectorAll('.btn').forEach(b=>{
+      b.addEventListener('click', e=>{
+        // placeholders — bytt ut med reell funksjonalitet senere
+      });
+    });
+  </script>
 </body>
 </html>
