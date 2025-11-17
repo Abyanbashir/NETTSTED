@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="no">
 <head>
@@ -11,7 +13,7 @@
       --text:#111111;
       --muted:#555555;
       --border:#e5e5e5;
-      --radius:14px;
+      --radius:12px;
       --maxw:1000px;
     }
     *{box-sizing:border-box}
@@ -26,37 +28,20 @@
     }
     .wrap{width:100%;max-width:var(--maxw)}
     header{
-      background:var(--card);
-      padding:20px;
-      border-radius:var(--radius);
-      border:1px solid var(--border);
-      margin-bottom:18px;
       text-align:center;
+      margin-bottom:18px;
     }
-    header h1{margin:0;font-size:22px;letter-spacing:0.6px}
-    header p{margin:8px 0 0;color:var(--muted)}
-
-    main { display:grid; gap:18px; }
-
-    section{
-      background:var(--card);
-      padding:18px;
-      border-radius:12px;
-      border:1px solid var(--border);
-    }
-
-    h2{margin:0 0 10px 0;font-size:18px}
-    p{color:var(--muted);line-height:1.6;margin:0 0 12px 0}
-    ul{color:var(--muted); padding-left:18px; margin:0 0 12px 0}
-    li{margin-bottom:8px}
+    header h1{margin:0;font-size:22px}
+    header p{margin:8px 0 0;color:var(--muted);font-size:14px}
 
     .sitemap-wrap{
+      background:var(--card);
+      padding:18px;
+      border-radius:10px;
+      border:1px solid var(--border);
       display:flex;
       justify-content:center;
-      padding:12px;
-      background:#fff;
-      border-radius:8px;
-      border:1px dashed var(--border);
+      align-items:center;
     }
     .sitemap-wrap img{
       width:100%;
@@ -66,42 +51,36 @@
       border-radius:6px;
     }
 
-    .note{color:var(--muted);font-size:14px}
-    footer{margin-top:8px;text-align:right;color:var(--muted);font-size:13px}
-
-    @media print{
-      body{padding:0}
-      header{border-radius:0}
+    .caption{
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+      margin-top:10px;
     }
+
+    footer{margin-top:14px;text-align:right;color:var(--muted);font-size:13px}
+    @media print{ body{padding:0} header{margin-bottom:6px} }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <h1>Informasjonsarkitektur</h1>
-      <p class="note">Visuell oversikt og sitemap basert på personaen Fredrikke (fersk student)</p>
+      <h1>Informasjonsarkitektur (IA)</h1>
+      <p class="note">Visuell sitemap basert på personaen Fredrikke</p>
     </header>
 
     <main>
-      <section>
-        <h2>Kort forklaring</h2>
-        <p>Dette sitemapet viser nettstedets struktur og hierarki. Strukturen er utviklet basert på personaen Fredrikke, en fersk student som trenger en enkel og oversiktlig inngang til studiestart, aktiviteter og praktisk informasjon.</p>
-      </section>
+      <div class="sitemap-wrap" role="img" aria-label="Sitemap som viser forsiden og hovedseksjonene: Studentaktiviteter, Studieliv, Praktisk informasjon, Ny på campus og Kontakt & støtte.">
+        <!-- Pass på at sitemap.png ligger i samme mappe som ia.html -->
+        <img src="sitemap.png" alt="Sitemap: Forside → Studentaktiviteter, Studieliv, Praktisk informasjon, Ny på campus, Kontakt & støtte">
+      </div>
 
-      <section>
-        <h2>Site Map (visuell)</h2>
-        <div class="sitemap-wrap">
-          <!-- DITT CANVA-BILDE -->
-          <img src="../bilder/sitemap.png" alt="Sitemap - nettstedstruktur for nye studenter" class= "sitemap">
-        </div>
-      </section>
-
-      
+      <div class="caption">Bildet viser struktur og hierarki — bruk bildet som hovedleveranse for IA.</div>
+    </main>
 
     <footer>
-      
+      <div>Laget av [Ditt navn]</div>
     </footer>
   </div>
 </body>
 </html>
-
