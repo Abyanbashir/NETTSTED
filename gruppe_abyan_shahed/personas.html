@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="no">
 <head>
@@ -6,165 +5,311 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Persona — Fredrikke</title>
 
-  <!-- Enkel inline CSS: endre fargen her hvis du vil -->
+  <!-- Enkel, profesjonell styling i én fil -->
   <style>
     :root{
-      --bg: #f3f6ff;       /* sidebakgrunn */
-      --card: #ffffff;     /* kortbakgrunn */
-      --accent: #3763e8;   /* hovedfarge (endre for å personalisere) */
-      --text: #111827;
+      --page-bg: #f4f6fb;
+      --card-bg: #ffffff;
+      --accent: #2f57d8;      /* endre for egen farge */
+      --accent-2: #5ecfa3;
       --muted: #6b7280;
-      --radius: 10px;
-      --maxw: 760px;
+      --text: #0f172a;
+      --radius: 12px;
+      --maxw: 1100px;         /* større maks-bredde for "fyller mer" */
     }
-    * { box-sizing: border-box; }
+    *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg,#f7f9ff 0%, var(--page-bg) 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:28px;
       display:flex;
       justify-content:center;
-      padding:36px 16px;
     }
-    .container{
+
+    .layout {
       width:100%;
       max-width:var(--maxw);
     }
 
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    header.site {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:18px;
     }
-
-    header{
+    .brand {
       display:flex;
       gap:14px;
       align-items:center;
-      margin-bottom:14px;
     }
-    .avatar{
-      width:64px;
-      height:64px;
-      border-radius:50%;
-      background:var(--accent);
-      color:white;
+    .logo {
+      width:56px; height:56px; border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:white; display:flex; align-items:center; justify-content:center;
+      font-weight:700; font-size:20px;
+      box-shadow: 0 8px 24px rgba(47,87,216,0.12);
+    }
+    .site-title { font-size:18px; font-weight:700; margin:0; }
+    .site-sub { color:var(--muted); font-size:13px; margin-top:3px; }
+
+    /* MAIN GRID */
+    .main {
+      display:grid;
+      grid-template-columns: 320px 1fr;
+      gap:22px;
+    }
+
+    /* SIDEBAR */
+    aside.sidebar {
+      position:sticky; top:28px;
+    }
+    .card {
+      background:var(--card-bg);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow: 0 8px 28px rgba(10,20,40,0.06);
+    }
+    .profile-name { font-weight:700; font-size:18px; margin:0; }
+    .profile-sub { color:var(--muted); font-size:13px; margin-top:6px; }
+
+    .avatar {
+      width:84px; height:84px; border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),#6aa7ff);
+      display:flex; align-items:center; justify-content:center; color:white;
+      font-weight:700; font-size:28px; margin-bottom:12px;
+    }
+
+    .pills { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .pill { background:rgba(47,87,216,0.08); color:var(--accent); padding:6px 10px; border-radius:999px; font-weight:600; font-size:13px; }
+
+    .muted { color:var(--muted); font-size:13px; }
+
+    /* HOVEDINNHOLD */
+    .content {
       display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
-      font-size:24px;
+      flex-direction:column;
+      gap:16px;
     }
-    h1{ margin:0; font-size:20px; }
-    .subtitle{ color:var(--muted); font-size:13px; margin-top:4px; }
-
-    section { margin-top:14px; }
-    h2{ font-size:15px; margin:0 0 8px 0; }
-    ul{ margin:0; padding-left:18px; }
-    li{ margin-bottom:8px; font-size:14px; color:var(--text); }
-
-    .row{
+    .hero {
       display:flex;
-      gap:12px;
-      flex-wrap:wrap;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:18px;
     }
-    .pill{
-      background:rgba(55,99,232,0.08);
-      color:var(--accent);
-      padding:6px 10px;
-      border-radius:999px;
-      font-weight:600;
-      font-size:13px;
-    }
+    .hero-left h1 { margin:0; font-size:22px; letter-spacing:-0.3px; }
+    .hero-left p { margin:8px 0 0 0; color:var(--muted); }
 
-    /* knapp */
-    .btn{
-      background:var(--accent);
-      color:white;
-      padding:8px 12px;
+    /* Cards grid i innhold */
+    .grid {
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:14px;
+    }
+    .block {
+      padding:14px;
+      border-radius:10px;
+      background:linear-gradient(180deg,#ffffff,#fbfdff);
+      border:1px solid rgba(15,23,42,0.04);
+    }
+    .block h3 { margin:0 0 8px 0; font-size:15px; }
+    .block ul { margin:0; padding-left:18px; }
+    .block li { margin-bottom:8px; color:var(--text); font-size:14px; }
+
+    /* wide block spanning two columns */
+    .span { grid-column: 1 / -1; display:flex; justify-content:space-between; gap:14px; align-items:center; }
+
+    .metrics { display:flex; gap:12px; align-items:center; }
+    .metric {
+      background: rgba(47,87,216,0.06);
+      padding:10px 12px;
       border-radius:8px;
-      border:0;
-      cursor:pointer;
-      font-weight:600;
+      min-width:110px;
+      text-align:center;
+    }
+    .metric strong { display:block; font-size:18px; }
+
+    footer.sitefoot { margin-top:18px; display:flex; justify-content:space-between; align-items:center; color:var(--muted); font-size:13px; }
+
+    /* Responsivt */
+    @media (max-width:1000px){
+      .main { grid-template-columns: 1fr; }
+      aside.sidebar { position:relative; top:0; }
+      .grid { grid-template-columns: 1fr; }
+      .span { flex-direction:column; align-items:flex-start; gap:8px; }
     }
 
-    /* mobilvennlig */
-    @media (max-width:520px){
-      .avatar{ width:56px; height:56px; font-size:20px; }
-    }
+    /* små animasjoner */
+    .fade { transform: translateY(6px); opacity:0; animation:fade .45s ease forwards; }
+    .fade.delay { animation-delay:.06s; }
+    @keyframes fade { to { transform:translateY(0); opacity:1; } }
+
+    /* Kommentarer i CSS: endre --accent for å tilpasse farge */
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <!-- HEADER: bytt navn, initialer i avatar -->
-      <header>
-        <div class="avatar">F</div>
+  <div class="layout">
+    <!-- SITE HEADER -->
+    <header class="site">
+      <div class="brand">
+        <div class="logo">F</div>
         <div>
-          <h1>Fredrikke — fersk student (20)</h1>
-          <div class="subtitle">Singel • Nylig flyttet på hybel • Leter etter venner og aktiviteter</div>
+          <div class="site-title">Persona: Fredrikke</div>
+          <div class="site-sub">Fersk student • UX / markedsføring</div>
         </div>
-      </header>
+      </div>
 
-      <!-- INTERESSER -->
-      <section>
-        <h2>Interesser</h2>
-        <div class="row">
-          <!-- Legg til / fjern "pill" for interesser -->
-          <div class="pill">Motorsport</div>
-          <div class="pill">Piano</div>
-          <div class="pill">Terrengsykling</div>
+      <!-- enkel "meta" -->
+      <div style="text-align:right">
+        <div class="muted">Opprettet:</div>
+        <div style="font-weight:700">November 2025</div>
+      </div>
+    </header>
+
+    <!-- MAIN AREA: SIDEBAR + INNHOLD -->
+    <div class="main">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="card fade">
+          <div class="avatar">F</div>
+          <div class="profile-name">Fredrikke, 20</div>
+          <div class="profile-sub">Singel • Nylig flyttet på hybel</div>
+
+          <div style="margin-top:12px">
+            <div class="muted" style="font-weight:700; margin-bottom:6px">Kort om</div>
+            <div class="muted">Leter etter venner, klubber for hobbyer og rutiner for studiene.</div>
+          </div>
+
+          <div style="margin-top:12px">
+            <div class="muted" style="font-weight:700; margin-bottom:6px">Interesser</div>
+            <div class="pills">
+              <div class="pill">Motorsport</div>
+              <div class="pill">Piano</div>
+              <div class="pill">Terrengsykling</div>
+            </div>
+          </div>
         </div>
-      </section>
 
-      <!-- MÅL & DRØMMER -->
-      <section>
-        <h2>Mål & drømmer</h2>
-        <ul>
-          <li>Trygg overgang til studentlivet</li>
-          <li>Bygge nye vennskap og et sosialt nettverk</li>
-          <li>Mestre studiene og holde på hobbyene</li>
-        </ul>
-      </section>
+        <div style="height:14px"></div>
 
-      <!-- UTFORDRINGER -->
-      <section>
-        <h2>Utfordringer</h2>
-        <ul>
-          <li>Føler seg litt ensom i starten</li>
-          <li>Mangler oversikt over klubber og aktiviteter</li>
-          <li>Begrenset studentbudsjett</li>
-        </ul>
-      </section>
+        <div class="card fade delay" aria-hidden="true">
+          <div style="font-weight:700; margin-bottom:8px">Kontakt / kilde</div>
+          <div class="muted" style="font-size:13px">Laget av: Ditt navn</div>
+          <div class="muted" style="font-size:13px">Formål: UX-arbeid, markedsføring, studenttjenester</div>
+        </div>
+      </aside>
 
-      <!-- INFORMASJONSBEHOV -->
-      <section>
-        <h2>Informasjonsbehov</h2>
-        <ul>
-          <li>Praktisk info: bolig, studentportal, helse</li>
-          <li>Sosialt: kalender med arrangementer og medlemsmuligheter</li>
-          <li>Studiestøtte: studietips, frister og veiledningstider</li>
-        </ul>
-      </section>
+      <!-- HOVEDINNHOLD -->
+      <main class="content">
+        <div class="card fade">
+          <div class="hero">
+            <div class="hero-left">
+              <h1>Fredrikke — fersk student</h1>
+              <p class="muted">Stor vekt på å finne sosiale arenaer, samtidig som hun trenger struktur for studier og økonomi.</p>
+            </div>
 
-      <!-- ENKEL HANDLING -->
-      <section style="margin-top:16px; display:flex; justify-content:space-between; align-items:center;">
-        <div style="color:var(--muted); font-size:13px">Lagret: persona / studentmålgruppe</div>
-        <button class="btn" onclick="alert('Her kan du legge til eksportfunksjon senere')">Lagre / Eksporter</button>
-      </section>
+            <div class="metrics" aria-hidden="true">
+              <div class="metric"><strong>20</strong><span class="muted">Alder</span></div>
+              <div class="metric"><strong>3</strong><span class="muted">Hovedinteresser</span></div>
+            </div>
+          </div>
+
+          <div style="height:12px"></div>
+
+          <div class="grid">
+            <section class="block">
+              <h3>Utfordringer</h3>
+              <ul>
+                <li>Kjenner på ensomhet etter flytting</li>
+                <li>Mangler oversikt over studenttilbud og foreninger</li>
+                <li>Begrenset budsjett og behov for praktisk hjelp</li>
+              </ul>
+            </section>
+
+            <section class="block">
+              <h3>Mål & drømmer</h3>
+              <ul>
+                <li>Føle seg hjemme i det nye studentmiljøet</li>
+                <li>Oppnå gode studievaner og skapa rutiner</li>
+                <li>Fortsette med motorsport, piano og sykling</li>
+              </ul>
+            </section>
+
+            <section class="block span">
+              <div style="flex:1">
+                <h3>Informasjonsbehov</h3>
+                <ul>
+                  <li><strong>Praktisk:</strong> Boliginfo, helse, studentportal, økonomi</li>
+                  <li><strong>Sosialt:</strong> Kalender for arrangementer, søk etter klubber</li>
+                  <li><strong>Støtte:</strong> Studieteknikk, veiledningstider, mental helse</li>
+                </ul>
+              </div>
+
+              <div style="min-width:260px; margin-left:12px;">
+                <h3 style="margin-top:0">Forslag til nettsidefunksjoner</h3>
+                <ul>
+                  <li>Interaktiv kalender med «Meld deg på»-knapp</li>
+                  <li>«Finn klubber»-filter (interesse + dagtid)</li>
+                  <li>Personlig dashboard med frister og anbefalinger</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="block">
+              <h3>Livsstil</h3>
+              <ul>
+                <li>Aktiv, budsjettbevisst og sosialsøkende</li>
+                <li>Bruker Instagram, TikTok og Facebook-grupper</li>
+              </ul>
+            </section>
+
+            <section class="block">
+              <h3>Holdninger</h3>
+              <ul>
+                <li>Åpen for nye erfaringer</li>
+                <li>Setter pris på et inkluderende miljø</li>
+                <li>Ambisiøs, men føler stress ved mangel på struktur</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+
+        <!-- Footer / liten avslutning -->
+        <div class="card fade delay">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+            <div>
+              <div style="font-weight:700">Hvordan vise dette i presentasjon</div>
+              <div class="muted" style="margin-top:6px">Sett personaen på en A4-slide: bilde/initial, korte bullets for mål, utfordringer og anbefalinger.</div>
+            </div>
+
+            <div style="text-align:right">
+              <div class="muted">Versjon</div>
+              <div style="font-weight:700">1.0</div>
+            </div>
+          </div>
+        </div>
+
+      </main>
     </div>
+
+    <footer class="sitefoot">
+      <div>Lagret som: <strong>Fredrikke — persona</strong></div>
+      <div class="muted">Tips: Endre farge ved å redigere <code>--accent</code> i toppen av filen</div>
+    </footer>
+
   </div>
 
-  <!-- korte forklaringer du kan fjerne -->
+  <!-- Lett forklaring (fjern i ferdig versjon) -->
   <script>
-    /* Tips for redigering:
-       - Endre initial i .avatar (bokstav F)
-       - Endre farge ved å endre --accent i <style>
-       - Legg til / fjern <div class="pill"> for interesser
-       - Knappen er nå en placeholder; bytt alert() med funksjon senere
+    /* Kjappe tips:
+       - Bytt initial i .logo eller .avatar (F) for å vise at du har tilpasset
+       - Endre hovedfarge: se --accent i <style> på toppen
+       - For å gjøre den enda mer "egen": bytt 'Laget av: Ditt navn' i sidebar
     */
   </script>
 </body>
 </html>
+
