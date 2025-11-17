@@ -4,203 +4,48 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Persona — Fredrikke (innlevering)</title>
-
-  <!-- Enkel CSS + print-stil for PDF/A4 -->
+  <title>Prosjekt - Gruppe</title>
   <style>
-    :root{
-      --bg:#f7f8fc;
-      --card:#ffffff;
-      --accent:#2f57d8;
-      --muted:#6b7280;
-      --text:#0f172a;
-      --radius:10px;
-      --maxw:900px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      display:flex;
-      justify-content:center;
-      padding:28px;
-    }
-    .wrap{
-      width:100%;
-      max-width:var(--maxw);
-    }
-    header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:18px;
-    }
-    .brand {
-      display:flex;
-      gap:12px;
-      align-items:center;
-    }
-    .logo{
-      width:56px; height:56px; border-radius:10px;
-      background:linear-gradient(135deg,var(--accent),#7bbfff);
-      display:flex; align-items:center; justify-content:center; color:white;
-      font-weight:700; font-size:20px;
-    }
-    main.card{
-      background:var(--card);
-      padding:20px;
-      border-radius:var(--radius);
-      box-shadow:0 8px 24px rgba(10,20,40,0.06);
-    }
-    h1{margin:0; font-size:20px}
-    .meta{color:var(--muted); font-size:13px; margin-top:6px}
-    section{margin-top:14px}
-    h2{margin:0 0 8px 0; font-size:16px}
-    ul{margin:0; padding-left:18px}
-    li{margin-bottom:8px}
-    .quote{font-style:italic; color:var(--accent); margin-top:8px}
-
-    /* Kodeboks-stil (for å lime inn koden din som læreren ber om) */
-    pre{
-      background:#0f172a; color:#f8fafc; padding:12px; border-radius:8px; overflow:auto; white-space:pre-wrap;
-      font-family: monospace; font-size:13px; line-height:1.4;
-      margin-top:12px;
-    }
-    code{font-family:monospace}
-
-    footer{margin-top:18px; color:var(--muted); font-size:13px; display:flex; justify-content:space-between;}
-
-    /* PRINT: A4-tilpasset */
-    @media print{
-      body{padding:0}
-      .wrap{max-width:800px}
-      header, footer{display:none}
-      main.card{box-shadow:none; border-radius:0; padding:12mm}
-    }
-
-    @media (max-width:720px){
-      .wrap{padding:0 12px}
-    }
+    body{font-family:Arial,Helvetica,sans-serif;background:#f4f6fb;margin:0;padding:32px;}
+    .wrap{max-width:1000px;margin:0 auto;}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
+    .logo{background:linear-gradient(135deg,#2f57d8,#7bbfff);color:#fff;padding:10px 14px;border-radius:8px;font-weight:700;}
+    nav a{display:inline-block;margin-right:12px;color:#2f57d8;text-decoration:none;font-weight:600;}
+    .card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 8px 24px rgba(10,20,40,0.06);}
+    ul{padding-left:18px}
+    footer{color:#6b7280;margin-top:16px;font-size:13px}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div class="brand">
-        <div class="logo">F</div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="logo">Prosjekt</div>
         <div>
-          <div style="font-weight:700">Fredrikke — persona</div>
-          <div class="meta">Fersk student • Innlevering: Personas</div>
+          <div style="font-weight:700">Gruppe - Nettsted</div>
+          <div style="color:#6b7280;font-size:13px">Innlevering: 20. november</div>
         </div>
       </div>
-      <div style="text-align:right" class="meta">
-        Dato: <strong>20. november</strong><br>
-        Versjon: 1.0
-      </div>
+      <nav>
+        <a href="index.html">Forside</a>
+        <a href="persona-fredrikke.html">Persona: Fredrikke</a>
+        <!-- Legg til flere undersider her -->
+      </nav>
     </header>
 
     <main class="card">
-      <!-- Persona-innhold -->
-      <h1>Persona: Fredrikke — fersk student</h1>
-      <div class="meta">20 år • Singel • Nylig flyttet på hybel</div>
+      <h1>Velkommen</h1>
+      <p>Dette er prosjektets forside. Klikk på lenken <strong>Persona: Fredrikke</strong> for å se personasiden.</p>
 
-      <section>
-        <h2>Kort beskrivelse</h2>
-        <p>Fredrikke er en fersk student som nettopp har flyttet på hybel og skal starte sitt første studieår. Hun ønsker å bli kjent med mennesker på campus, finne klubber som passer hennes interesser (motorsport, piano, terrengsykling) og etablere gode studie- og hverdagsrutiner.</p>
-        <div class="quote">«Jeg vil finne folk å sykle med — men jeg vet ikke hvor jeg skal lete»</div>
-      </section>
-
-      <section>
-        <h2>Demografi og teknisk kompetanse</h2>
-        <ul>
-          <li><strong>Alder:</strong> 20 år</li>
-          <li><strong>Sivilstatus:</strong> Singel</li>
-          <li><strong>Bosted:</strong> Hybel (flyttet hjemmefra)</li>
-          <li><strong>Digital kompetanse:</strong> God — bruker mobilapper, sosiale medier og studentportaler daglig</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Mål og drømmer</h2>
-        <ul>
-          <li>Få en trygg og god start på studentlivet</li>
-          <li>Bygge nye vennskap og et sosialt nettverk</li>
-          <li>Opprettholde hobbyer som motorsport, piano og sykling</li>
-          <li>Mestre studiene og skape rutiner</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Utfordringer og frustrasjoner</h2>
-        <ul>
-          <li>Føler seg ensom og mangler et nettverk i starten</li>
-          <li>Usikker på hvor og hvordan hun finner klubber og aktiviteter</li>
-          <li>Begrenset studentøkonomi</li>
-          <li>Behov for enkle, konkrete instrukser for studentportaler og påmelding</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Livsstil og holdninger</h2>
-        <ul>
-          <li>Aktiv og uteglad (terrengsykling)</li>
-          <li>Sosial, men litt sjenert i nye miljøer</li>
-          <li>Ambisiøs, men blir fort stresset uten oversikt</li>
-          <li>Foretrekker klare steg-for-steg guider og visuelle kalendere</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Informasjonsbehov</h2>
-        <ul>
-          <li><strong>Praktisk:</strong> Hvordan bruke studentportal, boliginfo, helse og økonomiske ordninger</li>
-          <li><strong>Sosialt:</strong> Oversikt over klubber, kalender for arrangementer, «bli med»-knapper</li>
-          <li><strong>Studier:</strong> Frister, veiledning, studietips</li>
-          <li><strong>Livsmestring:</strong> Budsjettmaler, studentoppskrifter, mental helse-ressurser</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Anbefalte nettsidefunksjoner</h2>
-        <ul>
-          <li>Interaktiv kalender med påmelding</li>
-          <li>«Finn klubber»-søk (filtrering på interesse, tidspunkt) </li>
-          <li>Personlig dashboard med frister og anbefalinger</li>
-          <li>En «Ny på campus»-guide (trinnvis)</li>
-        </ul>
-      </section>
-
-      <!-- KODEBOKS: lim inn koden du har skrevet (slik læreren ba om) -->
-      <section>
-        <h2>Koden jeg brukte (legg inn din HTML-kode her)</h2>
-        <p class="meta">Oppgavekrav: Lim inn koden til hver gruppemedlem på en egen underside ved bruk av &lt;code&gt; / &lt;pre&gt;.</p>
-
-        <!-- Her viser du et eksempel på hvordan du limte inn din egen HTML (erstatte med din kode) -->
-        <pre><code>&lt;!-- Eksempel på enkel "om meg"-side som hver elev skal lime inn --&gt;
-&lt;!doctype html&gt;
-&lt;html lang="no"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8"&gt;
-  &lt;title&gt;Om meg - Elev&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Hei, jeg heter [Ditt navn]&lt;/h1&gt;
-  &lt;p&gt;Kort om meg: Jeg studerer ...&lt;/p&gt;
-  &lt;img src="bilde.jpg" alt="Mitt bilde"&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-
-        <p class="muted">Bytt ut eksempelkoden med DIN egen HTML-kode før innlevering.</p>
-      </section>
-
+      <h3>Husk</h3>
+      <ul>
+        <li>Hver elev skal ha sin egen underside med HTML-kode (lim inn koden i en &lt;pre&gt;&lt;code&gt; på sin underside).</li>
+        <li>Pakk alle filene (html, css, bilder) i en zip før opplasting til Canvas.</li>
+      </ul>
     </main>
 
     <footer>
-      <div class="meta">Laget av: Ditt navn (endre før innlevering)</div>
-      <div class="meta">Tips: For PDF - velg Print → Save as PDF</div>
+      <div>Lagret som: gruppe-nettsted • Husk å bytte navn og informasjon til deres gruppe</div>
     </footer>
   </div>
 </body>
