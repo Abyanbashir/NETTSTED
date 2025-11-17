@@ -1,41 +1,37 @@
+
 <!doctype html>
 <html lang="no">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Persona — Fredrikke</title>
+  <title>Persona — Fredrikke (innlevering)</title>
 
-  <!-- Enkel, profesjonell styling i én fil -->
+  <!-- Enkel CSS + print-stil for PDF/A4 -->
   <style>
     :root{
-      --page-bg: #f4f6fb;
-      --card-bg: #ffffff;
-      --accent: #2f57d8;      /* endre for egen farge */
-      --accent-2: #5ecfa3;
-      --muted: #6b7280;
-      --text: #0f172a;
-      --radius: 12px;
-      --maxw: 1100px;         /* større maks-bredde for "fyller mer" */
+      --bg:#f7f8fc;
+      --card:#ffffff;
+      --accent:#2f57d8;
+      --muted:#6b7280;
+      --text:#0f172a;
+      --radius:10px;
+      --maxw:900px;
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: "Inter", Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg,#f7f9ff 0%, var(--page-bg) 100%);
+      font-family: Arial, Helvetica, sans-serif;
+      background:var(--bg);
       color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:28px;
       display:flex;
       justify-content:center;
+      padding:28px;
     }
-
-    .layout {
+    .wrap{
       width:100%;
       max-width:var(--maxw);
     }
-
-    header.site {
+    header{
       display:flex;
       justify-content:space-between;
       align-items:center;
@@ -43,273 +39,170 @@
     }
     .brand {
       display:flex;
-      gap:14px;
+      gap:12px;
       align-items:center;
     }
-    .logo {
+    .logo{
       width:56px; height:56px; border-radius:10px;
-      background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      color:white; display:flex; align-items:center; justify-content:center;
-      font-weight:700; font-size:20px;
-      box-shadow: 0 8px 24px rgba(47,87,216,0.12);
-    }
-    .site-title { font-size:18px; font-weight:700; margin:0; }
-    .site-sub { color:var(--muted); font-size:13px; margin-top:3px; }
-
-    /* MAIN GRID */
-    .main {
-      display:grid;
-      grid-template-columns: 320px 1fr;
-      gap:22px;
-    }
-
-    /* SIDEBAR */
-    aside.sidebar {
-      position:sticky; top:28px;
-    }
-    .card {
-      background:var(--card-bg);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow: 0 8px 28px rgba(10,20,40,0.06);
-    }
-    .profile-name { font-weight:700; font-size:18px; margin:0; }
-    .profile-sub { color:var(--muted); font-size:13px; margin-top:6px; }
-
-    .avatar {
-      width:84px; height:84px; border-radius:12px;
-      background:linear-gradient(135deg,var(--accent),#6aa7ff);
+      background:linear-gradient(135deg,var(--accent),#7bbfff);
       display:flex; align-items:center; justify-content:center; color:white;
-      font-weight:700; font-size:28px; margin-bottom:12px;
+      font-weight:700; font-size:20px;
+    }
+    main.card{
+      background:var(--card);
+      padding:20px;
+      border-radius:var(--radius);
+      box-shadow:0 8px 24px rgba(10,20,40,0.06);
+    }
+    h1{margin:0; font-size:20px}
+    .meta{color:var(--muted); font-size:13px; margin-top:6px}
+    section{margin-top:14px}
+    h2{margin:0 0 8px 0; font-size:16px}
+    ul{margin:0; padding-left:18px}
+    li{margin-bottom:8px}
+    .quote{font-style:italic; color:var(--accent); margin-top:8px}
+
+    /* Kodeboks-stil (for å lime inn koden din som læreren ber om) */
+    pre{
+      background:#0f172a; color:#f8fafc; padding:12px; border-radius:8px; overflow:auto; white-space:pre-wrap;
+      font-family: monospace; font-size:13px; line-height:1.4;
+      margin-top:12px;
+    }
+    code{font-family:monospace}
+
+    footer{margin-top:18px; color:var(--muted); font-size:13px; display:flex; justify-content:space-between;}
+
+    /* PRINT: A4-tilpasset */
+    @media print{
+      body{padding:0}
+      .wrap{max-width:800px}
+      header, footer{display:none}
+      main.card{box-shadow:none; border-radius:0; padding:12mm}
     }
 
-    .pills { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
-    .pill { background:rgba(47,87,216,0.08); color:var(--accent); padding:6px 10px; border-radius:999px; font-weight:600; font-size:13px; }
-
-    .muted { color:var(--muted); font-size:13px; }
-
-    /* HOVEDINNHOLD */
-    .content {
-      display:flex;
-      flex-direction:column;
-      gap:16px;
+    @media (max-width:720px){
+      .wrap{padding:0 12px}
     }
-    .hero {
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      gap:18px;
-    }
-    .hero-left h1 { margin:0; font-size:22px; letter-spacing:-0.3px; }
-    .hero-left p { margin:8px 0 0 0; color:var(--muted); }
-
-    /* Cards grid i innhold */
-    .grid {
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap:14px;
-    }
-    .block {
-      padding:14px;
-      border-radius:10px;
-      background:linear-gradient(180deg,#ffffff,#fbfdff);
-      border:1px solid rgba(15,23,42,0.04);
-    }
-    .block h3 { margin:0 0 8px 0; font-size:15px; }
-    .block ul { margin:0; padding-left:18px; }
-    .block li { margin-bottom:8px; color:var(--text); font-size:14px; }
-
-    /* wide block spanning two columns */
-    .span { grid-column: 1 / -1; display:flex; justify-content:space-between; gap:14px; align-items:center; }
-
-    .metrics { display:flex; gap:12px; align-items:center; }
-    .metric {
-      background: rgba(47,87,216,0.06);
-      padding:10px 12px;
-      border-radius:8px;
-      min-width:110px;
-      text-align:center;
-    }
-    .metric strong { display:block; font-size:18px; }
-
-    footer.sitefoot { margin-top:18px; display:flex; justify-content:space-between; align-items:center; color:var(--muted); font-size:13px; }
-
-    /* Responsivt */
-    @media (max-width:1000px){
-      .main { grid-template-columns: 1fr; }
-      aside.sidebar { position:relative; top:0; }
-      .grid { grid-template-columns: 1fr; }
-      .span { flex-direction:column; align-items:flex-start; gap:8px; }
-    }
-
-    /* små animasjoner */
-    .fade { transform: translateY(6px); opacity:0; animation:fade .45s ease forwards; }
-    .fade.delay { animation-delay:.06s; }
-    @keyframes fade { to { transform:translateY(0); opacity:1; } }
-
-    /* Kommentarer i CSS: endre --accent for å tilpasse farge */
   </style>
 </head>
 <body>
-  <div class="layout">
-    <!-- SITE HEADER -->
-    <header class="site">
+  <div class="wrap">
+    <header>
       <div class="brand">
         <div class="logo">F</div>
         <div>
-          <div class="site-title">Persona: Fredrikke</div>
-          <div class="site-sub">Fersk student • UX / markedsføring</div>
+          <div style="font-weight:700">Fredrikke — persona</div>
+          <div class="meta">Fersk student • Innlevering: Personas</div>
         </div>
       </div>
-
-      <!-- enkel "meta" -->
-      <div style="text-align:right">
-        <div class="muted">Opprettet:</div>
-        <div style="font-weight:700">November 2025</div>
+      <div style="text-align:right" class="meta">
+        Dato: <strong>20. november</strong><br>
+        Versjon: 1.0
       </div>
     </header>
 
-    <!-- MAIN AREA: SIDEBAR + INNHOLD -->
-    <div class="main">
-      <!-- SIDEBAR -->
-      <aside class="sidebar">
-        <div class="card fade">
-          <div class="avatar">F</div>
-          <div class="profile-name">Fredrikke, 20</div>
-          <div class="profile-sub">Singel • Nylig flyttet på hybel</div>
+    <main class="card">
+      <!-- Persona-innhold -->
+      <h1>Persona: Fredrikke — fersk student</h1>
+      <div class="meta">20 år • Singel • Nylig flyttet på hybel</div>
 
-          <div style="margin-top:12px">
-            <div class="muted" style="font-weight:700; margin-bottom:6px">Kort om</div>
-            <div class="muted">Leter etter venner, klubber for hobbyer og rutiner for studiene.</div>
-          </div>
+      <section>
+        <h2>Kort beskrivelse</h2>
+        <p>Fredrikke er en fersk student som nettopp har flyttet på hybel og skal starte sitt første studieår. Hun ønsker å bli kjent med mennesker på campus, finne klubber som passer hennes interesser (motorsport, piano, terrengsykling) og etablere gode studie- og hverdagsrutiner.</p>
+        <div class="quote">«Jeg vil finne folk å sykle med — men jeg vet ikke hvor jeg skal lete»</div>
+      </section>
 
-          <div style="margin-top:12px">
-            <div class="muted" style="font-weight:700; margin-bottom:6px">Interesser</div>
-            <div class="pills">
-              <div class="pill">Motorsport</div>
-              <div class="pill">Piano</div>
-              <div class="pill">Terrengsykling</div>
-            </div>
-          </div>
-        </div>
+      <section>
+        <h2>Demografi og teknisk kompetanse</h2>
+        <ul>
+          <li><strong>Alder:</strong> 20 år</li>
+          <li><strong>Sivilstatus:</strong> Singel</li>
+          <li><strong>Bosted:</strong> Hybel (flyttet hjemmefra)</li>
+          <li><strong>Digital kompetanse:</strong> God — bruker mobilapper, sosiale medier og studentportaler daglig</li>
+        </ul>
+      </section>
 
-        <div style="height:14px"></div>
+      <section>
+        <h2>Mål og drømmer</h2>
+        <ul>
+          <li>Få en trygg og god start på studentlivet</li>
+          <li>Bygge nye vennskap og et sosialt nettverk</li>
+          <li>Opprettholde hobbyer som motorsport, piano og sykling</li>
+          <li>Mestre studiene og skape rutiner</li>
+        </ul>
+      </section>
 
-        <div class="card fade delay" aria-hidden="true">
-          <div style="font-weight:700; margin-bottom:8px">Kontakt / kilde</div>
-          <div class="muted" style="font-size:13px">Laget av: Ditt navn</div>
-          <div class="muted" style="font-size:13px">Formål: UX-arbeid, markedsføring, studenttjenester</div>
-        </div>
-      </aside>
+      <section>
+        <h2>Utfordringer og frustrasjoner</h2>
+        <ul>
+          <li>Føler seg ensom og mangler et nettverk i starten</li>
+          <li>Usikker på hvor og hvordan hun finner klubber og aktiviteter</li>
+          <li>Begrenset studentøkonomi</li>
+          <li>Behov for enkle, konkrete instrukser for studentportaler og påmelding</li>
+        </ul>
+      </section>
 
-      <!-- HOVEDINNHOLD -->
-      <main class="content">
-        <div class="card fade">
-          <div class="hero">
-            <div class="hero-left">
-              <h1>Fredrikke — fersk student</h1>
-              <p class="muted">Stor vekt på å finne sosiale arenaer, samtidig som hun trenger struktur for studier og økonomi.</p>
-            </div>
+      <section>
+        <h2>Livsstil og holdninger</h2>
+        <ul>
+          <li>Aktiv og uteglad (terrengsykling)</li>
+          <li>Sosial, men litt sjenert i nye miljøer</li>
+          <li>Ambisiøs, men blir fort stresset uten oversikt</li>
+          <li>Foretrekker klare steg-for-steg guider og visuelle kalendere</li>
+        </ul>
+      </section>
 
-            <div class="metrics" aria-hidden="true">
-              <div class="metric"><strong>20</strong><span class="muted">Alder</span></div>
-              <div class="metric"><strong>3</strong><span class="muted">Hovedinteresser</span></div>
-            </div>
-          </div>
+      <section>
+        <h2>Informasjonsbehov</h2>
+        <ul>
+          <li><strong>Praktisk:</strong> Hvordan bruke studentportal, boliginfo, helse og økonomiske ordninger</li>
+          <li><strong>Sosialt:</strong> Oversikt over klubber, kalender for arrangementer, «bli med»-knapper</li>
+          <li><strong>Studier:</strong> Frister, veiledning, studietips</li>
+          <li><strong>Livsmestring:</strong> Budsjettmaler, studentoppskrifter, mental helse-ressurser</li>
+        </ul>
+      </section>
 
-          <div style="height:12px"></div>
+      <section>
+        <h2>Anbefalte nettsidefunksjoner</h2>
+        <ul>
+          <li>Interaktiv kalender med påmelding</li>
+          <li>«Finn klubber»-søk (filtrering på interesse, tidspunkt) </li>
+          <li>Personlig dashboard med frister og anbefalinger</li>
+          <li>En «Ny på campus»-guide (trinnvis)</li>
+        </ul>
+      </section>
 
-          <div class="grid">
-            <section class="block">
-              <h3>Utfordringer</h3>
-              <ul>
-                <li>Kjenner på ensomhet etter flytting</li>
-                <li>Mangler oversikt over studenttilbud og foreninger</li>
-                <li>Begrenset budsjett og behov for praktisk hjelp</li>
-              </ul>
-            </section>
+      <!-- KODEBOKS: lim inn koden du har skrevet (slik læreren ba om) -->
+      <section>
+        <h2>Koden jeg brukte (legg inn din HTML-kode her)</h2>
+        <p class="meta">Oppgavekrav: Lim inn koden til hver gruppemedlem på en egen underside ved bruk av &lt;code&gt; / &lt;pre&gt;.</p>
 
-            <section class="block">
-              <h3>Mål & drømmer</h3>
-              <ul>
-                <li>Føle seg hjemme i det nye studentmiljøet</li>
-                <li>Oppnå gode studievaner og skapa rutiner</li>
-                <li>Fortsette med motorsport, piano og sykling</li>
-              </ul>
-            </section>
+        <!-- Her viser du et eksempel på hvordan du limte inn din egen HTML (erstatte med din kode) -->
+        <pre><code>&lt;!-- Eksempel på enkel "om meg"-side som hver elev skal lime inn --&gt;
+&lt;!doctype html&gt;
+&lt;html lang="no"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Om meg - Elev&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hei, jeg heter [Ditt navn]&lt;/h1&gt;
+  &lt;p&gt;Kort om meg: Jeg studerer ...&lt;/p&gt;
+  &lt;img src="bilde.jpg" alt="Mitt bilde"&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
-            <section class="block span">
-              <div style="flex:1">
-                <h3>Informasjonsbehov</h3>
-                <ul>
-                  <li><strong>Praktisk:</strong> Boliginfo, helse, studentportal, økonomi</li>
-                  <li><strong>Sosialt:</strong> Kalender for arrangementer, søk etter klubber</li>
-                  <li><strong>Støtte:</strong> Studieteknikk, veiledningstider, mental helse</li>
-                </ul>
-              </div>
+        <p class="muted">Bytt ut eksempelkoden med DIN egen HTML-kode før innlevering.</p>
+      </section>
 
-              <div style="min-width:260px; margin-left:12px;">
-                <h3 style="margin-top:0">Forslag til nettsidefunksjoner</h3>
-                <ul>
-                  <li>Interaktiv kalender med «Meld deg på»-knapp</li>
-                  <li>«Finn klubber»-filter (interesse + dagtid)</li>
-                  <li>Personlig dashboard med frister og anbefalinger</li>
-                </ul>
-              </div>
-            </section>
+    </main>
 
-            <section class="block">
-              <h3>Livsstil</h3>
-              <ul>
-                <li>Aktiv, budsjettbevisst og sosialsøkende</li>
-                <li>Bruker Instagram, TikTok og Facebook-grupper</li>
-              </ul>
-            </section>
-
-            <section class="block">
-              <h3>Holdninger</h3>
-              <ul>
-                <li>Åpen for nye erfaringer</li>
-                <li>Setter pris på et inkluderende miljø</li>
-                <li>Ambisiøs, men føler stress ved mangel på struktur</li>
-              </ul>
-            </section>
-          </div>
-        </div>
-
-        <!-- Footer / liten avslutning -->
-        <div class="card fade delay">
-          <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
-            <div>
-              <div style="font-weight:700">Hvordan vise dette i presentasjon</div>
-              <div class="muted" style="margin-top:6px">Sett personaen på en A4-slide: bilde/initial, korte bullets for mål, utfordringer og anbefalinger.</div>
-            </div>
-
-            <div style="text-align:right">
-              <div class="muted">Versjon</div>
-              <div style="font-weight:700">1.0</div>
-            </div>
-          </div>
-        </div>
-
-      </main>
-    </div>
-
-    <footer class="sitefoot">
-      <div>Lagret som: <strong>Fredrikke — persona</strong></div>
-      <div class="muted">Tips: Endre farge ved å redigere <code>--accent</code> i toppen av filen</div>
+    <footer>
+      <div class="meta">Laget av: Ditt navn (endre før innlevering)</div>
+      <div class="meta">Tips: For PDF - velg Print → Save as PDF</div>
     </footer>
-
   </div>
-
-  <!-- Lett forklaring (fjern i ferdig versjon) -->
-  <script>
-    /* Kjappe tips:
-       - Bytt initial i .logo eller .avatar (F) for å vise at du har tilpasset
-       - Endre hovedfarge: se --accent i <style> på toppen
-       - For å gjøre den enda mer "egen": bytt 'Laget av: Ditt navn' i sidebar
-    */
-  </script>
 </body>
 </html>
 
