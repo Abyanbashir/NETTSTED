@@ -1,52 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="no">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informasjonsarkitektur</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #eef2f5; margin: 0; }
-        header { background: #4e73df; color: #fff; text-align: center; padding: 40px 20px; }
-        main { max-width: 900px; margin: 30px auto; padding: 0 20px; }
-        section { background: #fff; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
-        h2 { color: #4e73df; }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
-        th { background: #4e73df; color: white; }
-        tr:nth-child(even) { background: #f7f9fc; }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Informasjonsarkitektur</title>
+
+  <style>
+    :root{
+      --bg:#f4f4f4;
+      --card:#ffffff;
+      --text:#111;
+      --muted:#555;
+      --border:#e5e5e5;
+      --radius:14px;
+      --maxw:900px;
+    }
+    body{
+      margin:0;
+      font-family:Arial;
+      background:var(--bg);
+      display:flex;
+      justify-content:center;
+      padding:28px 16px;
+      color:var(--text);
+    }
+    .wrap{
+      max-width:var(--maxw);
+      width:100%;
+    }
+    header{
+      background:white;
+      padding:30px;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      margin-bottom:20px;
+      text-align:center;
+    }
+    section{
+      background:white;
+      padding:20px;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      margin-bottom:20px;
+    }
+    ul{color:var(--muted);padding-left:20px}
+    li{margin-bottom:8px}
+    p{color:var(--muted);line-height:1.6}
+  </style>
 </head>
+
 <body>
- 
-        <section>
-            <h2>Informasjonsarkitektur (IA)</h2>
-            <p>Informasjonsarkitektur handler om hvordan informasjon på en nettside, app eller system er organisert og presentert, slik at brukeren enkelt kan finne det de leter etter. IA fokuserer på struktur, navigasjon og kategorisering av innhold.</p>
+  <div class="wrap">
 
-            <h3>Hovedkomponenter i IA</h3>
-            <ul>
-                <li><strong>Organisering:</strong> Hvordan innholdet grupperes i kategorier eller seksjoner. Eksempel: Klær → Herre / Dame.</li>
-                <li><strong>Navigasjon:</strong> Hvordan brukeren beveger seg gjennom systemet. Eksempel: Menyer, brødsmuler (breadcrumbs).</li>
-                <li><strong>Merking:</strong> Hvordan innhold og funksjoner navngis tydelig. Eksempel: “Kjøp nå” i stedet for “Send”.</li>
-                <li><strong>Søk:</strong> Systemets evne til å hjelpe brukeren finne informasjon raskt. Eksempel: Søkefelt med filtre.</li>
-                <li><strong>Forståelse av brukere:</strong> IA bygger på innsikt om brukernes behov. Eksempel: Nettside for pensjonister bør ha store knapper og tydelig tekst.</li>
-            </ul>
+    <header>
+      <h1>Informasjonsarkitektur</h1>
+      <p>Basert på personaen Fredrikke, 20 år – fersk student</p>
+    </header>
 
-            <h3>Eksempel på IA-struktur</h3>
-            <pre>
-Hjem
-├── Klær
-│   ├── Herre
-│   └── Dame
-├── Sko
-│   ├── Herre
-│   └── Dame
-├── Tilbehør
-│   ├── Vesker
-│   └── Belter
-├── Om oss
-└── Kontakt
-            </pre>
-        </section>
-    </main>
+    <section>
+      <h2>1. Oversikt over IA (Informasjonsarkitektur)</h2>
+      <ul>
+        <li><strong>Forside:</strong> Hurtigknapper + velkomst</li>
+        <li><strong>Studentaktiviteter:</strong> Klubber, kalender, søk & filter</li>
+        <li><strong>Studieliv:</strong> Studieteknikk, timeplan, tips</li>
+        <li><strong>Praktisk informasjon:</strong> Bolig, økonomi, helse</li>
+        <li><strong>Ny på campus:</strong> Ny student-guide</li>
+        <li><strong>Kontakt & støtte:</strong> Rådgivning, FAQ</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Prioritering</h2>
+      <p>Basert på Fredrikkes behov er de viktigste sidene fremst i meny og på forsiden:</p>
+      <ul>
+        <li>Finn aktiviteter</li>
+        <li>Studietips</li>
+        <li>Praktisk hjelp</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Begrunnelse for IA-valg</h2>
+      <p>
+        IA-en er laget for en fersk student som føler seg litt overveldet og trenger raske, enkle valg.
+        Strukturen er flat, tydelig og delt inn i få kategorier. 
+        “Studentaktiviteter” og “Ny på campus” er prioritert fordi disse løser Fredrikkes viktigste utfordringer:
+        å få oversikt, bli trygg og bli kjent med miljøet.
+      </p>
+    </section>
+
+  </div>
 </body>
 </html>

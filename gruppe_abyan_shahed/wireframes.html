@@ -1,54 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="no">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA og Wireframe</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #eef2f5; margin: 0; }
-        header { background: #4e73df; color: #fff; text-align: center; padding: 40px 20px; }
-        main { max-width: 900px; margin: 30px auto; padding: 0 20px; }
-        section { background: #fff; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
-        h2 { color: #4e73df; }
-        pre { background: #f7f9fc; padding: 15px; border-radius: 8px; overflow-x: auto; }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wireframes</title>
+
+  <style>
+    :root{
+      --bg:#f4f4f4;
+      --card:#ffffff;
+      --text:#111;
+      --muted:#555;
+      --border:#e5e5e5;
+      --radius:12px;
+      --maxw:900px;
+    }
+    body{
+      margin:0;
+      font-family:Arial;
+      display:flex;
+      justify-content:center;
+      padding:28px;
+      background:var(--bg);
+      color:var(--text);
+    }
+    .wrap{
+      width:100%;
+      max-width:var(--maxw);
+    }
+    header{
+      background:white;
+      padding:30px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      margin-bottom:20px;
+      text-align:center;
+    }
+    .card{
+      background:white;
+      border:1px dashed var(--border);
+      padding:18px;
+      border-radius:var(--radius);
+      margin-bottom:20px;
+    }
+    /* Wireframe shapes */
+    .bar, .hero, .box, .rowbox {
+      border:1px dashed #ccc;
+      border-radius:6px;
+      background:#fafafa;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:#777;
+      margin-bottom:12px;
+      font-weight:bold;
+    }
+    .bar{height:50px}
+    .hero{height:120px}
+    .row{
+      display:flex;
+      gap:10px;
+    }
+    .rowbox{
+      height:80px;
+      flex:1;
+    }
+    .listitem{
+      border:1px dashed #ccc;
+      padding:10px;
+      margin-bottom:8px;
+      border-radius:6px;
+      background:#fff;
+    }
+    p{color:var(--muted);line-height:1.5}
+  </style>
 </head>
+
 <body>
+  <div class="wrap">
+    
     <header>
-        <h1>Wireframe</h1>
-        <p>Kort forklaring og visuell skisse</p>
+      <h1>Wireframe</h1>
+      <p>Forside + underside • Struktur basert på personaen Fredrikke</p>
     </header>
 
-    <main>
-            <h2>Kort hva er Wireframe?</h2>
-            <p>En wireframe er en forenklet visuell skisse av en nettside, app eller digital løsning. Den viser struktur, layout og plassering av elementer, men fokuserer ikke på grafisk design, farger eller bilder. Hensikten er å planlegge og teste brukeropplevelse (UX) før man lager det endelige designet.Hovedformål med wireframes
-Struktur: Viser hvordan innhold og funksjoner er organisert på siden.
-Navigasjon: Illustrerer menyer, knapper og lenker, slik at man kan se hvordan brukeren beveger seg gjennom systemet.
-Prioritering av innhold: Hjelper å avgjøre hvilke elementer som er viktigst og bør stå mest synlig.
-Forbedre brukervennlighet: Gjør det lettere å teste og justere før utvikling, slik at brukeren får en logisk og enkel opplevelse.
-Kommunikasjon: Gir utviklere, designere og kunder et felles grunnlag for diskusjon og planlegging.
-Typer wireframes
-Lavoppløselig (low-fidelity): En enkel skisse, ofte i sort-hvitt, tegnet for hånd eller digitalt, kun med bokser og plassholdere.
-Høyoppløselig (high-fidelity): Mer detaljert, kan inkludere knappetekster, ikoner og grunnleggende interaksjon, men fortsatt uten full grafikk.</p>
-        </section>
+    <!-- FORSIDE WIREFRAME -->
+    <div class="card">
+      <h2>Wireframe – Forside</h2>
 
-        <section>
-            <h2>Eksempel på Wireframe</h2>
-            <pre>
-Header
-┌─────────────────────────────┐
-│ Logo       Meny             │
-└─────────────────────────────┘
-Main Content
-├── Seksjon 1: Tekst
-├── Seksjon 2: Bilde / Video
-├── Seksjon 3: Tabell / Liste
-Footer
-┌─────────────────────────────┐
-│ Kontakt | Sosiale medier     │
-└─────────────────────────────┘
-            </pre>
-        </section>
-    </main>
+      <div class="bar">HEADER: Logo + Navigasjon</div>
+      <div class="hero">Hero seksjon (intro + knapper)</div>
+
+      <div class="row">
+        <div class="rowbox">Knapp: Finn aktiviteter</div>
+        <div class="rowbox">Knapp: Studietips</div>
+        <div class="rowbox">Knapp: Ny på campus</div>
+      </div>
+
+      <div>
+        <div class="rowbox" style="height:90px;margin-top:12px;">Anbefalte aktiviteter</div>
+      </div>
+
+      <p><strong>Forklaring:</strong> CTA-knappene ligger høyt for å gi Fredrikke rask tilgang til det hun trenger mest: aktiviteter, tips og praktisk info.</p>
+    </div>
+
+    <!-- UNDERSIDE WIREFRAME -->
+    <div class="card">
+      <h2>Wireframe – Underside «Studentaktiviteter»</h2>
+
+      <div class="bar">HEADER</div>
+
+      <div class="box" style="height:40px;">Tittel: Studentaktiviteter</div>
+      <div class="box" style="height:40px;">Søkefelt</div>
+      <div class="row">
+        <div class="rowbox">Filter</div>
+        <div class="rowbox">Kategorier</div>
+      </div>
+
+      <div class="listitem"><strong>Terrengsykling</strong> – Les mer</div>
+      <div class="listitem"><strong>Piano-gruppe</strong> – Les mer</div>
+
+      <p><strong>Forklaring:</strong> Enkel navigasjon med søk og filter gjør at Fredrikke finner klubber som matcher hennes interesser raskt.</p>
+    </div>
+
+  </div>
 </body>
 </html>
