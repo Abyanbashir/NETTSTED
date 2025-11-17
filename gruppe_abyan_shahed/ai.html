@@ -12,7 +12,7 @@
       --muted:#555555;
       --border:#e5e5e5;
       --radius:14px;
-      --maxw:900px;
+      --maxw:1000px;
     }
     *{box-sizing:border-box}
     body{
@@ -33,8 +33,8 @@
       margin-bottom:18px;
       text-align:center;
     }
-    header h1{margin:0;font-size:20px}
-    header p{margin:6px 0 0;color:var(--muted)}
+    header h1{margin:0;font-size:22px;letter-spacing:0.6px}
+    header p{margin:8px 0 0;color:var(--muted)}
 
     main { display:grid; gap:18px; }
 
@@ -45,120 +45,95 @@
       border:1px solid var(--border);
     }
 
-    h2{margin:0 0 10px 0}
+    h2{margin:0 0 10px 0;font-size:18px}
     p{color:var(--muted);line-height:1.6;margin:0 0 12px 0}
     ul{color:var(--muted); padding-left:18px; margin:0 0 12px 0}
     li{margin-bottom:8px}
 
-    .codebox{
-      background:#fafafa;
-      border:1px dashed #e0e0e0;
+    .sitemap-wrap{
+      display:flex;
+      justify-content:center;
       padding:12px;
+      background:#fff;
       border-radius:8px;
-      font-family:monospace;
-      color:var(--muted);
-      white-space:pre-wrap;
+      border:1px dashed var(--border);
+    }
+    .sitemap-wrap img{
+      width:100%;
+      max-width:920px;
+      height:auto;
+      display:block;
+      border-radius:6px;
     }
 
+    .note{color:var(--muted);font-size:14px}
     footer{margin-top:8px;text-align:right;color:var(--muted);font-size:13px}
 
     @media print{
       body{padding:0}
-      header{border-radius:0;margin-bottom:6px}
+      header{border-radius:0}
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <h1>Informasjonsarkitektur — nettsted for nye studenter</h1>
-      <p>Struktur og prioritering basert på persona: Fredrikke (fersk student)</p>
+      <h1>Informasjonsarkitektur</h1>
+      <p class="note">Visuell oversikt og sitemap basert på personaen Fredrikke (fersk student)</p>
     </header>
 
     <main>
       <section>
-        <h2>1. Hovedstruktur (oversikt)</h2>
-        <p>Følgende sider dekker Fredrikkes primære behov: oversikt over aktiviteter, studiestøtte og praktisk informasjon.</p>
-        <ul>
-          <li><strong>Forside</strong> — Velkomst, hurtigknapper, anbefalte aktiviteter</li>
-          <li><strong>Studentaktiviteter</strong> — Klubbliste, kalender, søk & filter</li>
-          <li><strong>Studieliv</strong> — Studieteknikk, planlegging, veiledning</li>
-          <li><strong>Praktisk informasjon</strong> — Bolig, økonomi, helse</li>
-          <li><strong>Ny på campus</strong> — Trinnvis guide og sjekkliste for nye studenter</li>
-          <li><strong>Kontakt & støtte</strong> — FAQ, rådgiverkontakt, nødnumre</li>
-        </ul>
+        <h2>Kort forklaring</h2>
+        <p>Dette sitemapet viser nettstedets struktur og hierarki. Strukturen er utviklet basert på personaen Fredrikke, en fersk student som trenger en enkel og oversiktlig inngang til studiestart, aktiviteter og praktisk informasjon.</p>
       </section>
 
       <section>
-        <h2>2. Navigasjonsforslag</h2>
-        <p>Menyen øverst bør være kort og tydelig; prioriter de viktigste valg som vises først. Forslag til menypunkter:</p>
-        <ul>
-          <li>Forside</li>
-          <li>Studentaktiviteter</li>
-          <li>Studieliv</li>
-          <li>Praktisk informasjon</li>
-          <li>Ny på campus</li>
-          <li>Kontakt</li>
-        </ul>
+        <h2>Site Map (visuell)</h2>
+        <div class="sitemap-wrap">
+          <!-- DITT CANVA-BILDE -->
+          <img src="sitemap.png" alt="Sitemap - nettstedstruktur for nye studenter">
+        </div>
       </section>
 
       <section>
-        <h2>3. Prioritering (hva vises først på forsiden)</h2>
-        <p>Forsiden bør vise høyprioritert innhold øverst — dette gir Fredrikke rask tilgang uten å lete:</p>
-        <ul>
-          <li>Hurtigknapper: "Finn aktiviteter", "Studietips", "Ny på campus"</li>
-          <li>Søkefelt for aktiviteter</li>
-          <li>Liste med anbefalte aktiviteter / kommende arrangementer</li>
-          <li>Kort lenke til praktisk hjelp (bolig, økonomi, helse)</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>4. Brukerreise (eksempel)</h2>
-        <p>Konsekvent, enkel steg-for-steg-reise som dekker Fredrikkes behov:</p>
-        <ol style="color:var(--muted); padding-left:18px">
-          <li>Land på forsiden → ser hurtigknapper</li>
-          <li>Klikker "Finn aktiviteter" → kommer til søkeresultater med filter</li>
-          <li>Velger aktivitet → ser detaljside med "Meld deg på"</li>
-          <li>Trenger praktisk info → bruker "Ny på campus"-guiden eller Kontakt</li>
-        </ol>
-      </section>
-
-      <section>
-        <h2>5. Sitemap (tekstlig visualisering)</h2>
-        <div class="codebox">
-Home
-├─ Forside
+        <h2>Sitemap (tekstlig oversikt)</h2>
+        <div class="note">
+<pre style="margin:0; white-space:pre-wrap;">
+FORSIDE
 ├─ Studentaktiviteter
 │  ├─ Klubbliste
 │  ├─ Kalender
+│  ├─ Søk & filter
 │  └─ Detaljside (aktivitet)
 ├─ Studieliv
 │  ├─ Studieteknikk
-│  ├─ Timeplanverktøy
-│  └─ Tips for semesteret
+│  ├─ Timeplan
+│  └─ Tips for første semester
 ├─ Praktisk informasjon
 │  ├─ Bolig
 │  ├─ Økonomi
 │  └─ Helse & støtte
 ├─ Ny på campus
+│  ├─ Ny student-guide
+│  ├─ Kart & viktige steder
+│  └─ Sjekkliste første uke
 └─ Kontakt & støtte
+   ├─ Studentrådgiver
+   ├─ FAQ
+   └─ Viktige telefonnumre
+</pre>
         </div>
       </section>
 
       <section>
-        <h2>6. Begrunnelse for valg</h2>
-        <p>Valgene er gjort med utgangspunkt i Fredrikkes behov: hun er ny, søker oversikt og raske handlinger. Derfor er strukturen flat (få hovedkategorier), tydelig og prioritert slik at hun ikke blir overveldet. «Studentaktiviteter» og «Ny på campus» er prioritert fordi de gir rask verdi tidlig i studieforløpet.</p>
-      </section>
-
-      <section>
-        <h2>7. Leveringsinstruks</h2>
-        <p>Dette kan leveres som en egen underside i prosjektet (filnavn: <code>ia.html</code>) eller inkluderes i rapporten. For print: åpne siden i nettleser → Print → Save as PDF.</p>
+        <h2>Begrunnelse</h2>
+        <p>Strukturen er designet for å være intuitiv for nye studenter. Fredrikke trenger rask tilgang til studentaktiviteter for å møte nye mennesker, studietips for å mestre hverdagen, og praktisk informasjon som bolig og økonomi. Derfor er disse kategoriene plassert øverst i hierarkiet for å gjøre navigasjonen enkel, logisk og tilgjengelig.</p>
       </section>
     </main>
 
     <footer>
-      <div>Basert på persona: Fredrikke — fersk student • Laget av: [Ditt navn]</div>
+      <div>Basert på personaen Fredrikke — Laget av [Ditt navn]</div>
     </footer>
   </div>
 </body>
