@@ -1,178 +1,78 @@
-/* shahed.css — forbedret (erstatt eksisterende) */
-/* Paste this into shahed.css and hard-refresh the page */
+/* shahed.css — enkel og pen (fikset flex-syntax + små forbedringer) */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-.shahed{
+:root{
   --bg: #fbfbfc;
-  --card:#ffffff;
+  --card: #ffffff;
   --text:#222;
   --muted:#6f6b69;
   --accent:#7c5c9a;
-  --accent-2:#f4e8fb;
   --radius:12px;
-  --shadow: 0 10px 28px rgba(33,28,32,0.06);
-  --wrap:1100px;
-  font-family: 'Poppins', Arial, sans-serif;
+  --max-width:1100px;
+  --shadow: 0 8px 22px rgba(30,24,30,0.06);
+  --gap:20px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,'Poppins',Arial,sans-serif;
+  background:var(--bg);
   color:var(--text);
-  background: var(--bg);
   -webkit-font-smoothing:antialiased;
-  padding-bottom:36px;
 }
 
-/* global wrapper */
-.shahed .wrap{
-  width:92%;
-  max-width:var(--wrap);
-  margin:0 auto;
-}
+/* wrapper */
+.shahed .wrap{width:92%;max-width:var(--max-width);margin:0 auto}
 
-/* Header */
-.shahed .site-header{ padding:16px 0; border-bottom:1px solid rgba(0,0,0,0.04) }
-.shahed .brand{ font-weight:600; font-size:20px; text-decoration:none; color:var(--text) }
-.shahed .main-nav{ display:flex; gap:16px; align-items:center }
-.shahed .main-nav a{ text-decoration:none; color:var(--text); font-weight:600; padding:6px 8px; border-radius:8px }
-.shahed .main-nav a:hover{ color:var(--accent) }
-
-/* Hero */
-.shahed .hero{ padding:40px 0 20px }
-.shahed .hero-inner{
-  display:flex;
-  gap:28px;
-  align-items:center;
-  justify-content:space-between;
-  align-content:center;
-  /* keep hero content narrower so it doesn't span whole page */
-  max-width:100%;
-}
-.shahed .hero-text{ flex:1 1 60%; min-width:220px; max-width:720px }
-.shahed .hero-text h1{ font-size:32px; margin:0 0 10px }
-.shahed .subtitle{ color:var(--muted); margin:6px 0 14px; font-size:15px; line-height:1.45 }
-
-/* CTA */
-.shahed .btn{
-  display:inline-block;
-  background: linear-gradient(90deg,var(--accent), #a678c8);
-  color:#fff;
-  padding:10px 14px;
-  border-radius:10px;
+/* header */
+.header{border-bottom:1px solid rgba(0,0,0,0.04)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{font-weight:600;text-decoration:none;color:var(--text)}
+.nav a{
+  margin-left:14px;
   text-decoration:none;
+  color:var(--text);
   font-weight:600;
+  padding:6px 8px;
+  border-radius:8px;
+  display:inline-block; /* sikrer riktig klikkområde */
 }
+.nav a:hover{color:var(--accent)}
 
-/* Hero image — smaller and neat */
-.shahed .hero-image{
-  flex:0 0 auto;
-  width:220px;                  /* smaller width */
-  max-width:28%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.shahed .hero-image img{
-  width:100% !important;
-  height:260px !important;
-  object-fit:cover !important;
-  border-radius:14px;
-  box-shadow:var(--shadow);
-  display:block !important;
-}
+/* hero */
+.hero{padding:36px 0}
+.hero-inner{display:flex;align-items:center;gap:24px;justify-content:space-between;flex-wrap:wrap}
+/* --- FIKSET: riktig syntaks --- */
+.hero-text{flex:1; min-width:220px; max-width:700px}
+.hero-text h1{margin:0;font-size:30px}
+.lead{color:var(--muted);margin-top:8px}
+.btn{display:inline-block;margin-top:12px;padding:10px 14px;background:var(--accent);color:#fff;border-radius:9px;text-decoration:none;font-weight:600}
 
-/* Main grid */
-.shahed .main-grid{
-  display:grid;
-  grid-template-columns:1fr 300px;
-  gap:28px;
-  margin-top:18px;
-}
-@media (max-width:920px){
-  .shahed .hero-inner{ flex-direction:column-reverse; }
-  .shahed .main-grid{ grid-template-columns:1fr; }
-  .shahed .hero-image{ width:100%; max-width:320px }
-}
+/* hero photo */
+.hero-photo img{width:220px;height:260px;object-fit:cover;border-radius:12px;box-shadow:var(--shadow);display:block}
 
-/* Card */
-.shahed .card{
-  background:var(--card);
-  padding:18px;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  border:1px solid rgba(0,0,0,0.03);
-}
+/* main layout */
+.main-grid{display:grid;grid-template-columns:1fr 300px;gap:var(--gap);padding:28px 0}
+@media (max-width:900px){.main-grid{grid-template-columns:1fr}.hero-photo img{width:200px;height:230px}}
 
-/* Sidebar: compact + sticky on large screens */
-.shahed .side-card{ padding-top:12px }
-.shahed .side-card .contact{ margin-top:12px }
-@media(min-width:920px){
-  .shahed .side-card{ position:relative }
-  .shahed .side-card{ top:0 }
-  .shahed .side-card.sticky{ position:sticky; top:110px } /* add class "sticky" to aside if desired */
-}
+/* cards */
+.card{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.03)}
+.muted{color:var(--muted)}
 
-/* Text helpers */
-.shahed .muted{ color:var(--muted) }
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.gallery img{width:100%;height:110px;object-fit:cover;border-radius:10px;display:block;box-shadow:0 6px 18px rgba(0,0,0,0.05)}
+@media (max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.gallery{grid-template-columns:1fr}.gallery img{height:150px}}
 
-/* Gallery: consistent thumbnail sizing, rounded & shadowed */
-.shahed .images-row{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap:10px;
-  margin-top:14px;
-  align-items:stretch;
-}
-.shahed .images-row img{
-  width:100% !important;
-  height:110px !important;       /* slightly shorter thumbnails for balance */
-  object-fit:cover !important;
-  border-radius:10px;
-  box-shadow: 0 8px 18px rgba(22,20,20,0.05);
-  transition: transform .16s ease, box-shadow .16s ease;
-}
-.shahed .images-row img:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(22,20,20,0.08);
-}
+/* sidebar */
+.sidebar ul{padding-left:18px;margin-top:8px}
+.footer{border-top:1px solid rgba(0,0,0,0.04);padding:18px 0;text-align:center;color:var(--muted);font-size:14px}
 
-/* Make right-side profile image small card (in screenshot it looked big) */
-.shahed .profile-card{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:10px;
-  padding:14px;
-  border-radius:12px;
-  background:linear-gradient(180deg, #fff, #fcfbfc);
-  box-shadow: 0 8px 18px rgba(22,20,20,0.04);
-}
-.shahed .profile-card img{
-  width:160px;
-  height:160px;
-  border-radius:12px;
-  object-fit:cover;
-  box-shadow:var(--shadow);
-}
+/* Ensure images never overflow */
+.shahed img{max-width:100%;height:auto;display:block}
 
-/* Footer */
-.shahed .site-footer{
-  border-top:1px solid rgba(0,0,0,0.04);
-  padding:18px 0;
-  margin-top:30px;
-  color:var(--muted);
-  text-align:center;
-  font-size:14px;
-}
+/* small nicety: focus */
+a:focus{outline:3px solid rgba(124,92,154,0.12);outline-offset:3px}
 
-/* Accessibility focus */
-.shahed a:focus{ outline:3px solid rgba(124,92,154,0.12); outline-offset:3px }
-
-/* Small screens: stack gallery into 2 or 1 columns */
-@media (max-width:900px){
-  .shahed .images-row{ grid-template-columns: repeat(2, 1fr) }
-}
-@media (max-width:480px){
-  .shahed .images-row{ grid-template-columns:1fr }
-  .shahed .images-row img{ height:150px !important }
-  .shahed .hero-text h1{ font-size:26px }
-  .shahed .hero-image img{ height:220px !important; width:200px !important }
-}
 
