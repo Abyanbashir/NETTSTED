@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="no">
 <head>
@@ -60,6 +58,28 @@
 
     footer{margin-top:14px;text-align:right;color:var(--muted);font-size:13px}
     @media print{ body{padding:0} header{margin-bottom:6px} }
+
+    .section-title {
+      font-size:18px;
+      margin-top:20px;
+      margin-bottom:6px;
+      color:var(--text);
+      font-weight:bold;
+    }
+
+    .section-text {
+      font-size:14px;
+      color:var(--muted);
+      line-height:1.5;
+      margin-bottom:14px;
+    }
+
+    /* Enkel respons for små skjermer */
+    @media (max-width:520px){
+      body{padding:16px}
+      header h1{font-size:18px}
+      .sitemap-wrap{padding:12px}
+    }
   </style>
 </head>
 <body>
@@ -71,16 +91,29 @@
 
     <main>
       <div class="sitemap-wrap" role="img" aria-label="Sitemap som viser forsiden og hovedseksjonene: Studentaktiviteter, Studieliv, Praktisk informasjon, Ny på campus og Kontakt & støtte.">
-        <!-- Pass på at sitemap.png ligger i samme mappe som ia.html -->
+        <!-- Pass på at sitemap.jpg ligger i undermappen 'bilder' ved siden av denne HTML-filen -->
         <img src="bilder/sitemap.jpg" alt="Sitemap: Forside → Studentaktiviteter, Studieliv, Praktisk informasjon, Ny på campus, Kontakt & støtte">
       </div>
 
       <div class="caption">Bildet viser struktur og hierarki — bruk bildet som hovedleveranse for IA.</div>
+
+      <!-- Kort faglig forklaring av IA-valgene (wireframe i egen fil) -->
+      <section class="ia-explanation" style="margin-top:20px;">
+        <h2 class="section-title">Begrunnelse for informasjonsarkitekturen</h2>
+        <p class="section-text">
+          Informasjonsarkitekturen er utformet med tanke på personaen Fredrikke — en fersk student som trenger rask og tydelig tilgang til både sosiale tilbud,
+          praktisk informasjon og støtte. Vi har derfor valgt en hierarkisk struktur med Forside som hovednode og fem primære kategorier:
+          Studentaktiviteter, Studieliv, Praktisk informasjon, Ny på campus og Kontakt & støtte. Hver hovedkategori inneholder relevante underseksjoner
+          som gjør det enkelt å finne spesifikk informasjon (for eksempel kalender og klubbliste under Studentaktiviteter, og bolig/økonomi under Praktisk informasjon).
+          Denne strukturen reduserer søketid og gjør navigasjonen intuitiv for en bruker som ønsker oversikt og raske svar i starten av studieforløpet.
+        </p>
+      </section>
     </main>
 
     <footer>
-      <div>Laget av [Ditt navn]</div>
+      <div>Laget av [Ditt navn] — Gruppe: [Gruppenavn]</div>
     </footer>
   </div>
 </body>
 </html>
+
