@@ -185,6 +185,166 @@ nav a:hover::after {
   </section>
 
   <!-- Du kan legge til Shahed sin del her senere -->
+<section class="card">
+  <h3>Shahed</h3>
+  <p>➡️ Se ferdig side: <a href="medlemmer/shahed.html" target="_blank">Åpne Shaheds HTML-side</a></p>
+
+  <h4>HTML-kode</h4>
+  <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="no"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+  &lt;title&gt;ByShahed — Shahed Ayoub&lt;/title&gt;
+  &lt;link rel="stylesheet" href="shahed.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="site"&gt;
+
+  &lt;header class="header"&gt;
+    &lt;div class="container"&gt;
+      &lt;a class="brand" href="#"&gt;ByShahed&lt;/a&gt;
+      &lt;nav class="nav"&gt;
+        &lt;a href="#om-meg"&gt;Om meg&lt;/a&gt;
+        &lt;a href="#hobbier"&gt;Interesser&lt;/a&gt;
+        &lt;a href="#kontakt"&gt;Kontakt&lt;/a&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;section class="hero"&gt;
+    &lt;div class="container hero-inner"&gt;
+      &lt;div class="hero-text"&gt;
+        &lt;h1&gt;Hei — jeg er Shahed&lt;/h1&gt;
+        &lt;p class="lead"&gt;Student i IT &amp; ledelse · teknologi, reise og skjønnhet.&lt;/p&gt;
+        &lt;a class="btn" href="#om-meg"&gt;Lær mer&lt;/a&gt;
+      &lt;/div&gt;
+
+      &lt;div class="hero-photo"&gt;
+        &lt;img src="../bilder/Meg.JPG" alt="Portrett av Shahed"&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;main class="container main-grid"&gt;
+    &lt;article id="om-meg" class="card"&gt;
+      &lt;h2&gt;Om meg&lt;/h2&gt;
+      &lt;p&gt;Jeg heter &lt;strong&gt;Shahed Ayoub&lt;/strong&gt;, er 20 år og studerer IT og ledelse. Jeg har bakgrunn fra Palestina og har bodd i Norge i snart 11 år. Jeg liker å kombinere struktur og kreativitet.&lt;/p&gt;
+      &lt;p class="muted"&gt;Jeg trives i samarbeid og ønsker å bidra til løsninger som gjør hverdagen enklere.&lt;/p&gt;
+
+      &lt;div class="gallery"&gt;
+        &lt;img src="../bilder/Reise.jpg" alt="Reise"&gt;
+        &lt;img src="../bilder/Blomster.JPG" alt="Blomster"&gt;
+        &lt;img src="../bilder/skin.jpeg" alt="Shahed"&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+
+    &lt;aside class="card sidebar"&gt;
+      &lt;h3&gt;Interesser&lt;/h3&gt;
+      &lt;p class="muted"&gt;Teknologi · Skjønnhet · Reiseliv · Familie&lt;/p&gt;
+
+      &lt;p&gt;Jeg elsker å reise, være med venner og familie, og jeg er glad i sminke og skjønnhet — det gir meg kreativ energi.&lt;/p&gt;
+
+      &lt;ul&gt;
+        &lt;li&gt;Reise &amp; kultur&lt;/li&gt;
+        &lt;li&gt;Skjønnhet &amp; sminke&lt;/li&gt;
+        &lt;li&gt;Teknologi&lt;/li&gt;
+      &lt;/ul&gt;
+
+      &lt;h4 id="kontakt"&gt;Kontakt&lt;/h4&gt;
+      &lt;p&gt;&lt;a href="mailto:shahed@email.com"&gt;shahed@email.com&lt;/a&gt;&lt;/p&gt;
+    &lt;/aside&gt;
+  &lt;/main&gt;
+
+  &lt;footer class="footer"&gt;
+    &lt;div class="container"&gt;
+      &lt;p&gt;© 2025 Shahed Ayoub&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+  </code></pre>
+
+  <h4>🎨 CSS-kode til Shahed</h4>
+  <pre><code>
+/* shahed.css — enkel, ryddig og pen */
+
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* GRUNNLEGGENDE */
+body {
+  background: #faedf4;
+  font-family: 'Inter', system-ui;
+  color: #000;
+  line-height: 1.7;
+}
+
+/* CONTAINER */
+.container { width: 92%; max-width: 1100px; margin: 0 auto; }
+
+/* HEADER */
+.header {
+  background: #fff;
+  padding: 1.2rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand { font-size: 1.4rem; font-weight: 700; color: #000; }
+.nav { display: flex; gap: 1.6rem; }
+
+/* HERO */
+.hero { padding: 3.5rem 0 2rem; }
+.hero-inner { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+.hero-photo img {
+  width: 490px;
+  height: 490px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* MAIN */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2.5rem;
+  margin-top: 1.2rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1.6rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+}
+
+.gallery {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1rem;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 1.6rem 0;
+  color: #000;
+}
+  </code></pre>
+</section>
+
 </main>
 
 <footer class="site-footer">
