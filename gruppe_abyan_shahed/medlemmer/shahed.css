@@ -150,7 +150,7 @@ body {
 }
 
 /* SIDEBAR */
-.sidebar p { margin-top: 0.6rem; color: #555; }
+.sidebar p { margin-top: 0.6rem; color: #000000; }
 .sidebar ul { padding-left: 1rem; margin-top: 0.8rem; }
 .sidebar li { margin-bottom: 0.5rem; }
 
