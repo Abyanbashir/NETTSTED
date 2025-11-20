@@ -1,184 +1,145 @@
-/* shahed.css — moderne, ryddig og isolert for Shahed sin side */
+/* shahed.css — enkel, tydelig og lærer-vennlig */
 
-.shaheds-nettside {
+/* Enkle farger og skrifter */
+:root{
   --bg: #fbfbfc;
   --card: #ffffff;
   --text: #222;
   --muted: #6f6b69;
   --accent: #7c5c9a;
-  --radius: 14px;
-  --shadow: 0 12px 36px rgba(30,24,30,0.06);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: var(--bg);
-  color: var(--text);
+  --radius: 12px;
+  --shadow: 0 10px 28px rgba(30,24,30,0.06);
 }
 
-/* container */
-.shaheds-nettside .container {
+/* Basis */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Container for bredde */
+.container {
   width: 92%;
   max-width: 1150px;
   margin: 0 auto;
 }
 
-/* header */
-.shaheds-nettside .site-header {
+/* Header */
+.site-header {
   padding: 18px 0;
   border-bottom: 1px solid rgba(0,0,0,0.04);
 }
-.shaheds-nettside .brand {
+.brand {
   float: left;
   font-weight: 600;
   font-size: 18px;
   text-decoration: none;
   color: var(--text);
 }
-.shaheds-nettside .main-nav {
+.main-nav {
   float: right;
   display: inline-flex;
   gap: 14px;
 }
-.shaheds-nettside .main-nav a {
-  font-weight: 600;
-  color: var(--text);
+.main-nav a {
   text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
   padding: 6px 8px;
   border-radius: 8px;
 }
-.shaheds-nettside .main-nav a:hover {
-  color: var(--accent);
-}
+.main-nav a:hover { color: var(--accent); }
 
-/* hero */
-.shaheds-nettside .hero {
-  padding: 70px 0 40px 0;
-}
-.shaheds-nettside .hero-inner {
+/* Hero */
+.hero { padding: 60px 0 30px; clear: both; }
+.hero-inner {
   display: flex;
-  gap: 30px;
-  justify-content: space-between;
+  gap: 28px;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-wrap: wrap; /* gjør siden mobilvennlig */
 }
-.shaheds-nettside .hero-text {
-  flex: 1 1 60%;
-  max-width: 640px;
-}
-.shaheds-nettside .hero-text h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-.shaheds-nettside .lead {
-  font-size: 15px;
-  color: var(--muted);
-  margin-bottom: 18px;
-}
+.hero-text { flex: 1 1 60%; max-width: 640px; }
+.hero-text h1 { margin: 0 0 10px 0; font-size: 36px; line-height: 1.05; }
+.lead { color: var(--muted); margin-bottom: 14px; }
 
-/* CTA-knapp */
-.shaheds-nettside .btn {
+/* Knapp */
+.btn {
+  display: inline-block;
   background: var(--accent);
-  color: #fff;
+  color: white;
   padding: 10px 14px;
   border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
 }
 
-/* hero-bilde */
-.shaheds-nettside .hero-photo img {
+/* Hero-bilde (til høyre) */
+.hero-photo img {
   width: 320px;
   height: 410px;
   object-fit: cover;
-  border-radius: 14px;
+  border-radius: 12px;
   box-shadow: var(--shadow);
+  display: block;
 }
 
-/* main-grid — skyver interessedelen mer til høyre */
-.shaheds-nettside .main-grid {
+/* Hovedinnhold: to kolonner */
+.main-grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 60px;
-  margin-top: 10px; /* nærmere hero */
-}
-@media (max-width: 920px) {
-  .shaheds-nettside .main-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
+  grid-template-columns: 1.3fr 1fr; /* venstre litt større enn høyre */
+  gap: 50px;                       /* avstand mellom kolonnene */
+  margin-top: 20px;                /* mindre avstand fra hero */
 }
 
-/* cards */
-.shaheds-nettside .card {
+/* Kort (card) */
+.card {
   background: var(--card);
-  padding: 30px;
+  padding: 26px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
 
-/* OM MEG */
-.shaheds-nettside .content-card {
-  padding: 34px;
-  line-height: 1.6;
-}
-.shaheds-nettside .content-card h2 {
-  margin-top: 0;
-  font-size: 22px;
-}
+/* Om meg spesifikt */
+.content-card { padding: 34px; line-height: 1.6; }
+.content-card h2 { margin-top: 0; }
 
-/* Galleri – store og pene bilder */
-.shaheds-nettside .gallery {
+/* Galleri - større bilder */
+.gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 22px;
+  gap: 16px;
+  margin-top: 18px;
 }
-.shaheds-nettside .gallery img {
+.gallery img {
   width: 100%;
-  height: 220px !important;
+  height: 220px;     /* større thumbnails */
   object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 10px 26px rgba(0,0,0,0.06);
-}
-
-/* sidebar */
-.shaheds-nettside .sidebar {
-  padding-top: 10px;
-}
-.shaheds-nettside .list-light {
-  padding-left: 18px;
-  margin-top: 10px;
-}
-.shaheds-nettside .small {
-  font-size: 14px;
-  color: var(--muted);
-}
-
-/* sticky sidebar */
-@media (min-width: 920px) {
-  .shaheds-nettside .sticky {
-    position: sticky;
-    top: 120px;
-  }
-}
-
-/* footer */
-.shaheds-nettside .site-footer {
-  text-align: center;
-  padding: 28px 0;
-  margin-top: 50px;
-  color: var(--muted);
-}
-
-/* bilde-sikkerhet */
-.shaheds-nettside img {
-  max-width: 100%;
+  border-radius: 14px;
   display: block;
 }
 
-/* fokus */
-.shaheds-nettside a:focus {
-  outline: 3px solid rgba(124,92,154,0.14);
-  outline-offset: 4px;
+/* Sidebar */
+.sidebar { padding-top: 10px; }
+.list-light { padding-left: 18px; margin-top: 10px; }
+.small { color: var(--muted); font-size: 14px; }
+
+/* Footer */
+.site-footer { text-align: center; padding: 28px 0; margin-top: 40px; color: var(--muted); }
+
+/* Mobilvennlig: gjør én kolonne under 920px */
+@media (max-width: 920px) {
+  .main-grid { grid-template-columns: 1fr; gap: 28px; }
+  .hero-photo img { width: 240px; height: 300px; margin: 0 auto; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* Enkel tilgjengelighet */
+a:focus { outline: 3px solid rgba(124,92,154,0.12); outline-offset: 3px; }
 
 
 
