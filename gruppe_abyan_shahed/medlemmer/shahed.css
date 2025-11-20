@@ -1,214 +1,70 @@
 
-/* style.css
-   Legg denne filen ved siden av index.html.
-   Bildene hentes fra mappen "bilder/" slik du bruker i HTML.
+/* Scoped stylesheet for ByShahed (style-shahed.css)
+   Place this file next to index.html and keep images in folder "bilder/".
+   All rules are scoped under the .byshahed wrapper to avoid colliding with group/shared styles.
 */
 
-/* Import Google-font (valgfritt — fungerer når du er online) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-
-:root{
+.byshahed{
   --bg: #f7f6f4;
-  --card-bg: rgba(255,255,255,0.9);
-  --text: #3f2f2a;
-  --muted: #897b73;
-  --accent: #b77f66;
-  --accent-2: #f4d7c9;
+  --card-bg: rgba(255,255,255,0.95);
+  --text: #4a3b2d;
+  --muted: #7a6d63;
+  --accent: #b28a6b;
+  --accent-2: #f3d6c0;
   --shadow: 0 12px 30px rgba(33,24,20,0.06);
   --container-width: 1000px;
   --radius: 14px;
-}
-
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin: 0;
-  font-family: 'Inter', Arial, sans-serif;
+  display: block;
   background: linear-gradient(180deg, var(--bg), #ffffff 60%);
   color: var(--text);
+  font-family: 'Inter', Arial, sans-serif;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-  line-height: 1.6;
+  line-height:1.6;
+  padding-bottom: 28px; /* ensures footer spacing */
 }
 
-/* A shared container to center content */
-.container{
+.byshahed .container{
   width: 90%;
   max-width: var(--container-width);
   margin: 0 auto;
 }
 
 /* NAV */
-.nav{
+.byshahed .nav{
   background: rgba(95,87,80,0.04);
   border-bottom: 1px solid rgba(0,0,0,0.03);
 }
-.nav .container{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 18px;
-  padding: 14px 0;
-}
-.logo{
-  font-weight:700;
-  font-size:18px;
-  color:var(--text);
-  text-decoration:none;
-  letter-spacing:0.2px;
-}
-.nav-links{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:flex;
-  gap:20px;
-  align-items:center;
-}
-.nav-links li{margin:0}
-.nav-links a{
-  color:var(--text);
-  text-decoration:none;
-  font-weight:600;
-  padding:8px 10px;
-  border-radius:8px;
-  transition: all 160ms ease;
-}
-.nav-links a:hover,
-.nav-links a:focus{
-  color: white;
-  background: linear-gradient(90deg,var(--accent),var(--accent-2));
-  box-shadow: 0 6px 18px rgba(183,127,102,0.12);
-  outline: none;
-}
+.byshahed .nav .container{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
+.byshahed .logo{font-weight:700;font-size:18px;color:var(--text);text-decoration:none;letter-spacing:0.2px}
+.byshahed .nav-links{list-style:none;margin:0;padding:0;display:flex;gap:20px;align-items:center}
+.byshahed .nav-links a{color:var(--text);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px;transition:all 160ms ease}
+.byshahed .nav-links a:hover,.byshahed .nav-links a:focus{color:white;background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 6px 18px rgba(183,127,102,0.12);outline:none}
 
 /* HERO */
-.hero{
-  padding: 36px 0 18px;
-}
-.hero h1{
-  margin: 0;
-  font-size: 36px;
-  letter-spacing: -0.5px;
-}
-.hero .lead{
-  margin-top:8px;
-  color:var(--muted);
-  font-size: 15px;
-}
+.byshahed .hero{padding:36px 0 18px}
+.byshahed .hero h1{margin:0;font-size:36px;letter-spacing:-0.5px}
+.byshahed .hero .lead{margin-top:8px;color:var(--muted);font-size:15px}
 
 /* MAIN LAYOUT */
-.main{
-  display:grid;
-  grid-template-columns: 1fr 340px;
-  gap: 28px;
-  align-items:start;
-  padding-bottom: 40px;
-}
-@media (max-width: 880px){
-  .main{grid-template-columns: 1fr; padding-bottom: 28px;}
-}
+.byshahed .main{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start;padding-bottom:40px}
+@media (max-width:880px){.byshahed .main{grid-template-columns:1fr;padding-bottom:28px}}
 
 /* CARD */
-.card{
-  background: var(--card-bg);
-  padding: 22px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  border: 1px solid rgba(0,0,0,0.02);
-}
+.byshahed .card{background:var(--card-bg);padding:22px;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.02)}
+.byshahed .small-card{padding-top:26px}
 
 /* PROFILE ROW */
-.profile-row{
-  display:flex;
-  gap:18px;
-  align-items:flex-start;
-  flex-wrap:wrap;
-}
-.avatar{
-  width:160px;
-  height:160px;
-  object-fit:cover;
-  border-radius: 12px;
-  border: 3px solid rgba(255,255,255,0.6);
-  box-shadow: 0 8px 22px rgba(38,30,23,0.06);
-}
-@media (max-width:480px){
-  .avatar{width:120px;height:120px}
-}
+.byshahed .profile-row{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
+.byshahed .avatar{width:160px;height:160px;object-fit:cover;border-radius:12px;border:3px solid rgba(255,255,255,0.6);box-shadow:0 8px 22px rgba(38,30,23,0.06)}
+@media (max-width:480px){.byshahed .avatar{width:120px;height:120px}}
 
-/* TEXT */
-.profile-text h2{margin-top:0;margin-bottom:6px}
-.muted{color:var(--muted)}
+.byshahed .profile-text h2{margin-top:0;margin-bottom:6px}
+.byshahed .muted{color:var(--muted)}
 
 /* GALLERY */
-.gallery{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 18px;
-}
-.gallery img{
-  width:100%;
-  height:120px;
-  object-fit:cover;
-  border-radius:10px;
-  transition: transform 180ms ease, box-shadow 180ms ease;
-  cursor:default;
-}
-.gallery img:hover{
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 14px 30px rgba(38,30,23,0.08);
-}
-@media (max-width:900px){
-  .gallery{grid-template-columns: repeat(2, 1fr)}
-}
-@media (max-width:480px){
-  .gallery{grid-template-columns: 1fr}
-  .gallery img{height:160px}
-}
-
-/* ASIDE / SMALL CARD */
-.small-card h3{margin-top:0}
-.contact h4{margin-bottom:6px}
-.contact a{color:var(--accent);text-decoration:none;font-weight:600}
-.contact a:hover{text-decoration:underline}
-
-/* FOOTER */
-.site-footer{
-  border-top: 1px solid rgba(0,0,0,0.04);
-  padding: 18px 0;
-  background: transparent;
-}
-.site-footer p{margin:0;color:var(--muted);text-align:center;font-size:14px}
-
-/* LINKS & ACCESSIBILITY */
-a{transition: color 140ms ease}
-.nav-links a:focus, a:focus{outline: 3px solid rgba(183,127,102,0.16); outline-offset:3px}
-
-/* Utility */
-.hidden{display:none}
-
-/* Optional: small sparkle / accent under headings */
-.profile-text h2{
-  position: relative;
-  padding-bottom: 8px;
-}
-.profile-text h2::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 52px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  border-radius: 4px;
-  opacity: 0.95;
-}
-
-/* Fine tune: reduce large shadows on very small screens */
-@media (max-width: 420px){
-  .card{padding:16px}
-  .nav .container{padding:10px 0}
-  .hero h1{font-size:28px}
-}
+.byshahed .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.byshahed .gallery img{width:100%;height:120px;object-fit:cover;border-radius:10px;transition:transform 180ms ease,box-shadow 180ms ease;cursor:default}
+.byshahed .gallery img:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 14px 30px rgba(38,30,23,0.08)}
+@media (max-width:900px){.byshahed .gallery{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.byshahed .gallery{grid-template-columns:1fr}.byshahed

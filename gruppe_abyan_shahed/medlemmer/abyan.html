@@ -1,70 +1,49 @@
-
 <!DOCTYPE html>
 <html lang="no">
 <head>
   <meta charset="UTF-8">
-  <title>Om meg</title>
-<link rel="stylesheet" href="abyan.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ByShahed.no</title>
+  <link rel="stylesheet" href="style-shahed.css">
 </head>
 <body>
-
-  <!-- Header -->
-  <header>
-    <div class="logo">Abyan</div>
-    <nav>
-      <ul>
-        <li><a href="#om">Om meg</a></li>
-        <li><a href="#interesser">Interesser</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Hero-seksjon -->
-  <main>
-    <section id="om" class="hero">
-      <img src="../bilder/profil.jpeg" alt="Profilbilde av Abyan" class="profile">
-      <h1>Hei, jeg heter Abyan</h1>
-      <p>Jeg er 28 år gammel og studerer IT og ledelse. Ved siden av studiet jobber jeg som sykepleier.</p>
-      <p>Jeg ønsker å kombinere min nåværende utdanning som sykepleier sammen med IT og ledelse. Slik kan jeg følge min lidenskap for mote, kreativitet og ideutvikling.</p>
-      <a href="#interesser" class="btn">Utforsk mine interesser</a>
-    </section>
-
-    <!-- Interesser -->
-    <section id="interesser" class="interests">
-      <h2>Mine interesser</h2>
-      <div class="interests-grid">
-        <div class="card">
-          <img src="../bilder/kreativ.jpg" alt="Kreativitet">
-          <h3>Kreativitet</h3>
-          <p>Jeg har et kunstnerisk blikk og liker å utvikle nye ideer og konsepter. På sikt ønsker jeg å etablere mitt eget klesmerke og skape noe som inspirerer andre.</p>
-        </div>
-        <div class="card">
-          <img src="../bilder/pilates.jpeg" alt="Yoga og pilates">
-          <h3>Yoga og pilates</h3>
-          <p>Gjennom yoga og pilates finner jeg balanse og ro i en hektisk hverdag. Det gir meg både fysisk styrke og mental klarhet.</p>
-        </div>
-        <div class="card">
-          <img src="../bilder/reise.jpeg" alt="Reise">
-          <h3>Reise</h3>
-          <p>Jeg elsker å reise og utforske verden. Sammen med venner og familie liker jeg å utforske nye steder, prøve spennende restauranter og skape gode minner.</p>
-        </div>
+  <div class="byshahed">
+    <nav class="nav">
+      <div class="container">
+        <a class="logo" href="#">ByShahed</a>
+        <ul class="nav-links">
+          <li><a href="#hobbier">Mine interesser</a></li>
+          <li><a href="#om-meg">Om meg</a></li>
+        </ul>
       </div>
-    </section>
+    </nav>
 
-    <!-- Kontakt -->
-    <section id="kontakt" class="contact">
-      <h2>Kontakt</h2>
-      <p>Ønsker du å komme i kontakt med meg? Send meg gjerne en e-post på <a href="mailto:abyan2006@outlook.com">abyan2006@outlook.com</a></p>
-    </section>
-  </main>
+    <header class="hero">
+      <div class="container">
+        <h1>ByShahed.no</h1>
+        <p class="lead">Velkommen til min side – her får du et innblikk i mitt liv ♡</p>
+      </div>
+    </header>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Abyan — teknologi, omsorg og kreativitet</p>
-  </footer>
+    <main class="container main">
+      <section id="om-meg" class="card">
+        <div class="profile-row">
+          <img class="avatar" src="bilder/Meg.JPG" alt="Bilde av Shahed">
+          <div class="profile-text">
+            <h2>Om meg</h2>
+            <p>Jeg heter <strong>Shahed Ayoub</strong>, er 20 år gammel, og studerer IT og ledelse. Jeg har bakgrunn fra Palestina og har bodd i Norge i snart 11 år. Jeg er en målrettet og engasjert student med interesse for hvordan teknologi og ledelse kan bidra til bedre løsninger i samfunnet og arbeidslivet. Jeg liker å arbeide strukturert, samarbeide med andre og lære nye ferdigheter.</p>
+            <p class="muted">Jeg ønsker å bygge en karriere der jeg kan kombinere teknologi, mennesker og ledelse på en meningsfull måte 🌸</p>
+          </div>
+        </div>
 
-</body>
-</html>
+        <div class="gallery">
+          <img src="bilder/Meg.JPG" alt="Bilde av Shahed">
+          <img src="bilder/reise.jpg" alt="Reisebilde">
+          <img src="bilder/Blomster.JPG" alt="Blomsterbilde">
+        </div>
+      </section>
+
+      <aside class="card small-card">
+        <h3>Mine interesser</h3>
+        <p class="muted">Teknologi · Mennesker · Kultur</p>
+        <p>På fritiden bruker jeg tid med familie og venner, ser serier, hører på musikk, og liker å utforske nye trender og lære noe nytt hver dag 🌸</
