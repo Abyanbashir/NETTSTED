@@ -1,171 +1,66 @@
-/* style.css — oppdatert: bedre bildehåndtering og ryddig layout */
+/* --- Rettelser for for store bilder --- */
+/* Sørg for at dette ligger sist i style.css, så det overstyrer tidligere regler */
 
-/* Farger / variabler */
-:root{
-  --bg: #fbfbfc;
-  --card: #ffffff;
-  --text: #2b2a2a;
-  --muted: #7b7777;
-  --accent: #7c5c9a;
-  --accent-2: #f4e8fb;
-  --shadow: 0 10px 28px rgba(44,34,60,0.06);
-  --radius: 12px;
-  --wrap: 1100px;
-  --gap: 20px;
+/* Generell trygghetsregel: ingen bilde skal bli større enn sin beholder */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: 'Poppins', Arial, sans-serif;
-  background: linear-gradient(180deg, var(--bg), #fff);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
-  line-height:1.6;
+/* HERO-bilde: sterk begrensning slik at det ikke dekker hele siden */
+.hero-image img {
+  width: 100%;
+  max-width: 280px;   /* maks bredde på hero-bildet */
+  max-height: 320px;  /* maks høyde for å unngå for høyt bilde */
+  object-fit: cover;  /* crop om nødvendig uten å strekke */
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(38,30,23,0.06);
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Wrapper */
-.wrap{
-  width:92%;
-  max-width:var(--wrap);
-  margin:0 auto;
-}
-
-/* Header */
-.site-header{
-  background:transparent;
-  padding:14px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.04);
-}
-.brand{font-weight:600;color:var(--text);text-decoration:none;font-size:18px}
-.main-nav{display:flex;gap:18px;align-items:center}
-.main-nav a{color:var(--text);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px}
-.main-nav a:hover{background:var(--accent-2);color:var(--accent)}
-
-/* Hero */
-.hero{padding:28px 0 18px}
-.hero-inner{
-  display:flex;
-  gap:28px;
-  align-items:center;
-  justify-content:space-between;
-}
-/* Make the hero text column comfortable */
-.hero-text{flex:1;min-width:220px;max-width:720px}
-.hero h1{margin:0;font-size:32px}
-.subtitle{color:var(--muted);margin-top:8px}
-
-/* Hero image: constrain strongly so it never overflows */
-.hero-image{
+/* Hvis hero-layout er side-by-side, sørg for at bildet ikke tvinger kolonnen større */
+.hero-image {
   flex: 0 0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.hero-image img{
-  display:block;
-  width:100%;
-  max-width:280px;    /* <-- main cap for hero image */
-  height:auto;
-  border-radius:14px;
-  object-fit:cover;
-  box-shadow: var(--shadow);
+  width: 280px; /* behold samme width som max-width ovenfor */
+  max-width: 30%;
 }
 
-/* CTA button */
-.btn{
-  display:inline-block;
-  background:linear-gradient(90deg,var(--accent), #a678c8);
-  color:white;
-  padding:10px 16px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:600;
-  margin-top:12px;
-  transition:transform .15s ease, box-shadow .15s ease;
-}
-.btn:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(124,92,154,0.12)}
-
-/* Main grid */
-.main-grid{
-  display:grid;
-  grid-template-columns:1fr 320px;
-  gap:var(--gap);
-  padding-bottom:60px;
-}
-@media (max-width:920px){
-  .hero-inner{flex-direction:column-reverse}
-  .hero-text{max-width:100%}
-  .main-grid{grid-template-columns:1fr}
-}
-
-/* Cards */
-.card{
-  background:var(--card);
-  padding:20px;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  border:1px solid rgba(0,0,0,0.03);
-}
-.side-card{padding-top:18px}
-
-/* IMAGES ROW (brukes i "Om meg") */
-/* Use CSS Grid so images are even and responsive */
-.images-row{
-  display:grid;
+/* Om meg - bilderad (thumbnails) */
+.images-row,
+.gallery {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap:12px;
-  margin-top:14px;
-  align-items:stretch;
+  gap: 12px;
+  margin-top: 14px;
 }
-/* Constrain each thumbnail: keep height consistent with object-fit */
-.images-row img{
-  width:100%;
-  height:120px;            /* consistent thumbnail height */
-  object-fit:cover;
-  border-radius:10px;
+
+.images-row img,
+.gallery img {
+  width: 100%;
+  height: 140px;     /* lik høyde for alle thumbnails */
+  object-fit: cover; /* beskjærer pent */
+  border-radius: 10px;
   box-shadow: 0 8px 18px rgba(36,28,20,0.06);
   transition: transform .18s ease, box-shadow .18s ease;
 }
-.images-row img:hover{
+
+.images-row img:hover,
+.gallery img:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 16px 34px rgba(36,28,20,0.09);
 }
 
-/* If user has the gallery elsewhere, these rules help */
-.gallery, .gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
+/* Responsive: færre kolonner på små skjermer */
+@media (max-width: 900px) {
+  .images-row, .gallery { grid-template-columns: repeat(2, 1fr); }
+  .hero-image { width: 220px; max-width: 40%; }
 }
-.gallery img, .gallery-grid img{
-  width:100%;
-  height:120px;
-  object-fit:cover;
-  border-radius:10px;
+@media (max-width: 480px) {
+  .images-row, .gallery { grid-template-columns: 1fr; }
+  .images-row img, .gallery img { height: 160px; }
+  .hero-image { width: 180px; max-width: 100%; }
 }
 
-/* Adjust gallery for smaller screens */
-@media (max-width:900px){
-  .images-row, .gallery, .gallery-grid{ grid-template-columns: repeat(2, 1fr) }
-}
-@media (max-width:480px){
-  .images-row, .gallery, .gallery-grid{ grid-template-columns: 1fr }
-  .images-row img, .gallery img{ height:160px }
-  .hero-image img{ max-width:220px } /* smaller hero image on small screens */
-}
-
-/* Lists etc */
-.bullet{padding-left:18px;margin-top:8px}
-.muted{color:var(--muted)}
-
-/* Footer */
-.site-footer{border-top:1px solid rgba(0,0,0,0.04);padding:18px 0;text-align:center;color:var(--muted);margin-top:20px}
-
-/* Focus state for accessibility */
-a:focus{outline:3px solid rgba(124,92,154,0.14);outline-offset:3px}
-
-/* Utility: center images if they somehow are full-width */
-img{max-width:100%;display:block}
 
