@@ -1,11 +1,6 @@
-/* shahed.css — isolert moderne 2-kolonne layout for .shaheds-nettside */
+/* shahed.css — oppdatert: større hero-bilde + bredere om-meg-boks */
 
-/* Enkel font fallback */
-@media (prefers-reduced-motion: no-preference) {
-  /* no-op: keep simple */
-}
-
-/* Root colors just inside this file (won't leak) */
+/* Root + font */
 .shaheds-nettside {
   --bg: #fbfbfc;
   --card: #ffffff;
@@ -20,14 +15,14 @@
   display: block;
 }
 
-/* small container */
+/* container */
 .shaheds-nettside .container {
   width: 92%;
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* Header */
+/* header */
 .shaheds-nettside .site-header {
   padding: 16px 0;
   border-bottom: 1px solid rgba(0,0,0,0.04);
@@ -37,11 +32,12 @@
   font-size: 18px;
   text-decoration: none;
   color: var(--text);
+  float: left;
 }
 .shaheds-nettside .main-nav {
+  float: right;
   display: inline-flex;
   gap: 12px;
-  float: right;
 }
 .shaheds-nettside .main-nav a {
   text-decoration: none;
@@ -52,8 +48,8 @@
 }
 .shaheds-nettside .main-nav a:hover { color: var(--accent); }
 
-/* Hero */
-.shaheds-nettside .hero { padding: 36px 0; }
+/* hero */
+.shaheds-nettside .hero { padding: 36px 0; overflow: hidden; }
 .shaheds-nettside .hero-inner {
   display: flex;
   gap: 28px;
@@ -76,33 +72,35 @@
   font-weight: 600;
 }
 
-/* Hero-photo: constrained and nice */
+/* HERO PHOTO — STØRRE (oppdatert) */
 .shaheds-nettside .hero-photo img {
-  width: 260px;
-  height: 320px;
+  width: 340px;      /* større bredde */
+  height: 420px;     /* større høyde */
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 14px;
   box-shadow: var(--shadow);
   display: block;
 }
 
-/* Main grid: content + sidebar */
+/* main grid: VENSTRE (om-meg) større enn sidebar */
 .shaheds-nettside .main-grid {
   display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 28px;
+  grid-template-columns: 2fr 1fr;  /* venstre bredere */
+  gap: 32px;
   align-items: start;
   margin: 22px auto 0 auto;
   width: 92%;
   max-width: 1100px;
 }
+
+/* responsive adjustments */
 @media (max-width: 920px) {
   .shaheds-nettside .main-grid { grid-template-columns: 1fr; padding: 0 16px; }
-  .shaheds-nettside .hero-photo img { width: 220px; height: 260px; margin: 0 auto; }
+  .shaheds-nettside .hero-photo img { width: 260px; height: 320px; margin: 0 auto; }
   .shaheds-nettside .main-grid { gap: 18px; }
 }
 
-/* Cards look */
+/* cards */
 .shaheds-nettside .card {
   background: var(--card);
   padding: 18px;
@@ -116,11 +114,16 @@
   box-shadow: 0 20px 40px rgba(33,28,32,0.06);
 }
 
-/* content card specifics */
+/* OM MEG - større, mer luftig */
+.shaheds-nettside .content-card {
+  padding: 26px;        /* mer luft */
+  font-size: 17px;      /* litt større tekst for bedre lesbarhet */
+  line-height: 1.55;
+}
 .shaheds-nettside .content-card h2 { margin-top: 0; }
 .shaheds-nettside .muted { color: var(--muted); margin-top: 8px; }
 
-/* Gallery thumbnails — enforced small sizes (prevents giant images) */
+/* gallery (thumbnails) */
 .shaheds-nettside .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -129,7 +132,7 @@
 }
 .shaheds-nettside .gallery img {
   width: 100% !important;
-  height: 110px !important;     /* enforced thumbnail height */
+  height: 110px !important;
   object-fit: cover !important;
   border-radius: 10px;
   display: block;
@@ -143,24 +146,25 @@
   .shaheds-nettside .gallery img { height: 150px !important; }
 }
 
-/* Sidebar */
+/* sidebar */
 .shaheds-nettside .sidebar { padding-top: 6px; }
 .shaheds-nettside .list-light { padding-left: 18px; margin-top: 8px; }
 .shaheds-nettside .small { font-size: 14px; color: var(--muted); }
 
-/* Sticky sidebar on desktop */
+/* sticky sidebar desktop */
 @media (min-width: 920px) {
   .shaheds-nettside .sticky { position: sticky; top: 110px; }
 }
 
-/* Footer */
+/* footer */
 .shaheds-nettside .site-footer { margin-top: 32px; padding: 18px 0; text-align: center; color: var(--muted); font-size: 14px; }
 
-/* Safety: ensure no global CSS makes images huge */
+/* ensure images don't become huge from global styles */
 .shaheds-nettside img { max-width: 100%; height: auto; display: block; }
 
-/* Accessibility focus */
+/* focus */
 .shaheds-nettside a:focus { outline: 3px solid rgba(124,92,154,0.14); outline-offset: 4px; }
+
 
 
 
