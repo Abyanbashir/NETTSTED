@@ -106,8 +106,8 @@ body {
 
 /* HERO-BILDE (til høyre) */
 .hero-photo img {
-  width: 550px;
-  height: 550px;
+  width: 500px;
+  height: 500px;
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.06);
