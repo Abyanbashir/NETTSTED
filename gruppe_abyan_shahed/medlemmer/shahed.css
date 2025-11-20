@@ -132,7 +132,7 @@ body {
 
 /* OM MEG */
 .card h2 { margin-bottom: 0.8rem; }
-.muted { color: #666; margin-bottom: 0.8rem; }
+.muted { color: #000000; margin-bottom: 0.8rem; }
 
 /* GALLERI */
 .gallery {
@@ -177,7 +177,7 @@ body {
 
 /* enkel fokusstil for tilgjengelighet */
 a:focus {
-  outline: 3px solid rgba(124,92,154,0.12);
+  outline: 3px solid rgba(0, 0, 0, 0.12);
   outline-offset: 3px;
 }
 
