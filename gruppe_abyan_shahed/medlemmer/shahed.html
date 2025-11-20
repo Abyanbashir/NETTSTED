@@ -2,39 +2,61 @@
 <html lang="no">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ByShahed.no</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <nav>
-    <ul>
-      <li><a href="#hobbier">Mine interesser</a></li>
-      <li><a href="#om-meg">Om meg</a></li>
-    </ul>
+  <nav class="nav">
+    <div class="container">
+      <a class="logo" href="#">ByShahed</a>
+      <ul class="nav-links">
+        <li><a href="#hobbier">Mine interesser</a></li>
+        <li><a href="#om-meg">Om meg</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <header>
-    <h1>ByShahed.no</h1>
-    <p>Velkommen til min side – her får du et innblikk i mitt liv ♡ !</p>
+  <header class="hero">
+    <div class="container">
+      <h1>ByShahed.no</h1>
+      <p class="lead">Velkommen til min side – her får du et innblikk i mitt liv ♡</p>
+    </div>
   </header>
 
-  <section id="om-meg">
-    <h2>Om meg</h2>
-    <p>Jeg heter Shahed Ayoub, er 20 år gammel, og studerer IT og ledelse. Jeg har bakgrunn fra Palestina og har bodd i Norge i snart 11 år. 
-    Jeg er en målrettet og engasjert student med interesse for hvordan teknologi og ledelse kan bidra til bedre løsninger i samfunnet og arbeidslivet. 
-    Jeg liker å arbeide strukturert, samarbeide med andre og lære nye ferdigheter.
-    Gjennom studiene har jeg fått innsikt i hvordan IT kan brukes til å effektivisere prosesser, skape innovasjon og styrke kommunikasjon. Jeg ønsker å bygge en karriere der jeg kan kombinere teknologi, mennesker og ledelse på en meningsfull måte 🌸</p>
-    <img src="../bilder/Meg.JPG" alt="Bilde av Shahed">
-  </section>
+  <main class="container main">
+    <section id="om-meg" class="card">
+      <div class="profile-row">
+        <img class="avatar" src="bilder/Meg.JPG" alt="Bilde av Shahed">
+        <div class="profile-text">
+          <h2>Om meg</h2>
+          <p>Jeg heter <strong>Shahed Ayoub</strong>, er 20 år gammel, og studerer IT og ledelse. Jeg har bakgrunn fra Palestina og har bodd i Norge i snart 11 år. Jeg er en målrettet og engasjert student med interesse for hvordan teknologi og ledelse kan bidra til bedre løsninger i samfunnet og arbeidslivet. Jeg liker å arbeide strukturert, samarbeide med andre og lære nye ferdigheter.</p>
+          <p class="muted">Jeg ønsker å bygge en karriere der jeg kan kombinere teknologi, mennesker og ledelse på en meningsfull måte 🌸</p>
+        </div>
+      </div>
 
-  <section id="hobbier">
-    <h2>Mine interesser</h2>
-    <p>Jeg er interessert i teknologi, mennesker og kultur, og liker å lære hvordan digitale løsninger påvirker hverdagen vår. På fritiden bruker jeg tid med familie og venner, ser serier, hører på musikk, og liker å utforske nye trender og lære noe nytt hver dag 🌸</p>
-  </section>
+      <div class="gallery">
+        <img src="bilder/Meg.JPG" alt="Bilde av shahed">
+        <img src="bilder/Reise.jpeg" alt="reise>
+      </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Shahed's side | Kontakt: <a href="mailto:shahed@email.com">shahed@email.com</a></p>
+    <aside class="card small-card">
+      <h3>Mine interesser</h3>
+      <p class="muted">Teknologi · Mennesker · Kultur</p>
+      <p>På fritiden bruker jeg tid med familie og venner, ser serier, hører på musikk, og liker å utforske nye trender og lære noe nytt hver dag 🌸</p>
+
+      <div class="contact">
+        <h4>Kontakt</h4>
+        <p><a href="mailto:shahed@email.com">shahed@email.com</a></p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Shahed's side</p>
+    </div>
   </footer>
 </body>
 </html>
