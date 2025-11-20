@@ -104,3 +104,102 @@
 
 /* Card */
 .shahed .card {
+  background: var(--card);
+  padding:20px;
+  border-radius:var(--radius);
+  box-shadow: var(--shadow);
+  border:1px solid rgba(0,0,0,0.03);
+}
+.shahed .side-card { padding-top:18px; }
+
+/* FORCE image isolation (high specificity + !important so shared CSS can't break it) */
+.shahed img {
+  max-width:100% !important;
+  height:auto !important;
+  display:block !important;
+}
+
+/* Hero image (constrained so it never overwhelms layout) */
+.shahed .hero-image {
+  flex: 0 0 auto;
+  width: 280px;
+  max-width: 30%;
+}
+.shahed .hero-image img {
+  width:100% !important;
+  max-width:280px !important;
+  max-height:320px !important;
+  height:auto !important;
+  object-fit:cover !important;
+  border-radius:14px;
+  box-shadow:0 8px 22px rgba(38,30,23,0.06);
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* Images row / gallery - uniform thumbnails */
+.shahed .images-row {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:14px;
+  align-items:stretch;
+}
+.shahed .images-row img {
+  width:100% !important;
+  height:140px !important;
+  object-fit:cover !important;
+  border-radius:10px;
+  box-shadow:0 8px 18px rgba(36,28,20,0.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.shahed .images-row img:hover {
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:0 16px 34px rgba(36,28,20,0.09);
+}
+
+/* Fallback selectors in case gallery uses other classes/names */
+.shahed .gallery,
+.shahed .gallery-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.shahed .gallery img,
+.shahed .gallery-grid img {
+  width:100% !important;
+  height:140px !important;
+  object-fit:cover !important;
+  border-radius:10px;
+}
+
+/* Responsive adjustments */
+@media (max-width:900px) {
+  .shahed .images-row, .shahed .gallery, .shahed .gallery-grid {
+    grid-template-columns:repeat(2,1fr);
+  }
+  .shahed .hero-image { width:220px; max-width:40%; }
+}
+@media (max-width:480px) {
+  .shahed .images-row, .shahed .gallery, .shahed .gallery-grid {
+    grid-template-columns:1fr;
+  }
+  .shahed .images-row img, .shahed .gallery img { height:160px !important; }
+  .shahed .hero-image { width:180px; max-width:100%; }
+}
+
+/* Text helpers */
+.shahed .muted { color: var(--muted); }
+.shahed .bullet { padding-left:18px; margin-top:8px; }
+
+/* Footer */
+.shahed .site-footer {
+  border-top:1px solid rgba(0,0,0,0.04);
+  padding:18px 0;
+  text-align:center;
+  color:var(--muted);
+  margin-top:20px;
+}
+
+/* Accessibility focus */
+.shahed a:focus { outline:3px solid rgba(124,92,154,0.14); outline-offset:3px; }
