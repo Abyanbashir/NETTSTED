@@ -1,185 +1,67 @@
-/* shahed.css — moderne, ryddig og isolert for Shahed sin side */
 
-.shaheds-nettside {
+
+/* farger / variabler */
+:root{
   --bg: #fbfbfc;
-  --card: #ffffff;
+  --card: #fff;
   --text: #222;
   --muted: #6f6b69;
   --accent: #7c5c9a;
-  --radius: 14px;
-  --shadow: 0 12px 36px rgba(30,24,30,0.06);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: var(--bg);
-  color: var(--text);
+  --radius: 12px;
+  --shadow: 0 10px 28px rgba(30,24,30,0.06);
+}
+
+/* grunnleggende */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background:var(--bg);
+  color:var(--text);
 }
 
 /* container */
-.shaheds-nettside .container {
-  width: 92%;
-  max-width: 1150px;
-  margin: 0 auto;
-}
+.container{width:92%;max-width:1100px;margin:0 auto}
 
 /* header */
-.shaheds-nettside .site-header {
-  padding: 18px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.04);
-}
-.shaheds-nettside .brand {
-  float: left;
-  font-weight: 600;
-  font-size: 18px;
-  text-decoration: none;
-  color: var(--text);
-}
-.shaheds-nettside .main-nav {
-  float: right;
-  display: inline-flex;
-  gap: 14px;
-}
-.shaheds-nettside .main-nav a {
-  font-weight: 600;
-  color: var(--text);
-  text-decoration: none;
-  padding: 6px 8px;
-  border-radius: 8px;
-}
-.shaheds-nettside .main-nav a:hover {
-  color: var(--accent);
-}
+.header{border-bottom:1px solid rgba(0,0,0,0.04)}
+.header .container{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.brand{font-weight:600;text-decoration:none;color:var(--text)}
+.nav a{margin-left:14px;text-decoration:none;color:var(--text);font-weight:600}
 
 /* hero */
-.shaheds-nettside .hero {
-  padding: 70px 0 40px 0;
-}
-.shaheds-nettside .hero-inner {
-  display: flex;
-  gap: 30px;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.shaheds-nettside .hero-text {
-  flex: 1 1 60%;
-  max-width: 640px;
-}
-.shaheds-nettside .hero-text h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-.shaheds-nettside .lead {
-  font-size: 15px;
-  color: var(--muted);
-  margin-bottom: 18px;
-}
+.hero{padding:48px 0}
+.hero-inner{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.hero-text{flex:1;min-width:220px;max-width:700px}
+.hero-text h1{margin:0;font-size:32px}
+.lead{color:var(--muted);margin:8px 0}
+.btn{display:inline-block;padding:10px 14px;background:var(--accent);color:white;border-radius:10px;text-decoration:none;font-weight:600}
 
-/* CTA-knapp */
-.shaheds-nettside .btn {
-  background: var(--accent);
-  color: #fff;
-  padding: 10px 14px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-}
+/* hero-photo */
+.hero-photo img{width:300px;height:380px;object-fit:cover;border-radius:12px;box-shadow:var(--shadow);display:block}
 
-/* hero-bilde */
-.shaheds-nettside .hero-photo img {
-  width: 320px;
-  height: 410px;
-  object-fit: cover;
-  border-radius: 14px;
-  box-shadow: var(--shadow);
-}
+/* main layout */
+.main-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:36px;margin:20px 0}
+@media(max-width:920px){.main-grid{grid-template-columns:1fr}.hero-photo img{width:240px;height:300px;margin:0 auto}}
 
-/* main-grid — skyver interessedelen mer til høyre */
-.shaheds-nettside .main-grid {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 60px;
-  margin-top: 10px; /* nærmere hero */
-}
-@media (max-width: 920px) {
-  .shaheds-nettside .main-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-}
+/* card */
+.card{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:var(--shadow)}
+.muted{color:var(--muted)}
 
-/* cards */
-.shaheds-nettside .card {
-  background: var(--card);
-  padding: 30px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-/* OM MEG */
-.shaheds-nettside .content-card {
-  padding: 34px;
-  line-height: 1.6;
-}
-.shaheds-nettside .content-card h2 {
-  margin-top: 0;
-  font-size: 22px;
-}
-
-/* Galleri – store og pene bilder */
-.shaheds-nettside .gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 22px;
-}
-.shaheds-nettside .gallery img {
-  width: 100%;
-  height: 220px !important;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 10px 26px rgba(0,0,0,0.06);
-}
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.gallery img{width:100%;height:200px;object-fit:cover;border-radius:12px;display:block}
+@media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.gallery{grid-template-columns:1fr}.gallery img{height:220px}}
 
 /* sidebar */
-.shaheds-nettside .sidebar {
-  padding-top: 10px;
-}
-.shaheds-nettside .list-light {
-  padding-left: 18px;
-  margin-top: 10px;
-}
-.shaheds-nettside .small {
-  font-size: 14px;
-  color: var(--muted);
-}
-
-/* sticky sidebar */
-@media (min-width: 920px) {
-  .shaheds-nettside .sticky {
-    position: sticky;
-    top: 120px;
-  }
-}
+.sidebar ul{padding-left:18px;margin-top:10px}
 
 /* footer */
-.shaheds-nettside .site-footer {
-  text-align: center;
-  padding: 28px 0;
-  margin-top: 50px;
-  color: var(--muted);
-}
-
-/* bilde-sikkerhet */
-.shaheds-nettside img {
-  max-width: 100%;
-  display: block;
-}
+.footer{text-align:center;padding:24px 0;color:var(--muted);margin-top:30px}
 
 /* fokus */
-.shaheds-nettside a:focus {
-  outline: 3px solid rgba(124,92,154,0.14);
-  outline-offset: 4px;
-}
-
+a:focus{outline:3px solid rgba(124,92,154,0.12);outline-offset:3px}
 
 
 
