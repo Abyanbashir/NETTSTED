@@ -78,7 +78,7 @@ body {
 
 /* Hero-bilde (til høyre) */
 .hero-photo img {
-  width: 320px;
+  width: 410px;
   height: 410px;
   object-fit: cover;
   border-radius: 12px;
