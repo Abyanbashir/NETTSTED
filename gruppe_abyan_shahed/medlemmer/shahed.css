@@ -1,5 +1,6 @@
+/* shahed.css — forbedret (erstatt eksisterende) */
+/* Paste this into shahed.css and hard-refresh the page */
 
-/* shahed.css — komplett, isolert og ferdig */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 .shahed{
@@ -19,27 +20,30 @@
   padding-bottom:36px;
 }
 
-/* wrapper */
+/* global wrapper */
 .shahed .wrap{
   width:92%;
   max-width:var(--wrap);
   margin:0 auto;
 }
 
-/* header */
+/* Header */
 .shahed .site-header{ padding:16px 0; border-bottom:1px solid rgba(0,0,0,0.04) }
 .shahed .brand{ font-weight:600; font-size:20px; text-decoration:none; color:var(--text) }
 .shahed .main-nav{ display:flex; gap:16px; align-items:center }
 .shahed .main-nav a{ text-decoration:none; color:var(--text); font-weight:600; padding:6px 8px; border-radius:8px }
 .shahed .main-nav a:hover{ color:var(--accent) }
 
-/* hero */
+/* Hero */
 .shahed .hero{ padding:40px 0 20px }
 .shahed .hero-inner{
   display:flex;
   gap:28px;
   align-items:center;
   justify-content:space-between;
+  align-content:center;
+  /* keep hero content narrower so it doesn't span whole page */
+  max-width:100%;
 }
 .shahed .hero-text{ flex:1 1 60%; min-width:220px; max-width:720px }
 .shahed .hero-text h1{ font-size:32px; margin:0 0 10px }
@@ -56,10 +60,10 @@
   font-weight:600;
 }
 
-/* hero image */
+/* Hero image — smaller and neat */
 .shahed .hero-image{
   flex:0 0 auto;
-  width:220px;
+  width:220px;                  /* smaller width */
   max-width:28%;
   display:flex;
   align-items:center;
@@ -74,7 +78,7 @@
   display:block !important;
 }
 
-/* main grid */
+/* Main grid */
 .shahed .main-grid{
   display:grid;
   grid-template-columns:1fr 300px;
@@ -87,32 +91,28 @@
   .shahed .hero-image{ width:100%; max-width:320px }
 }
 
-/* card */
+/* Card */
 .shahed .card{
   background:var(--card);
   padding:18px;
   border-radius:var(--radius);
   box-shadow:var(--shadow);
   border:1px solid rgba(0,0,0,0.03);
-  transition: transform .16s ease, box-shadow .16s ease;
-}
-.shahed .card:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(34,28,40,0.06);
 }
 
-/* sticky sidebar (desktop) */
-@media (min-width: 920px) {
-  .shahed .side-card.sticky {
-    position: sticky;
-    top: 110px;
-  }
+/* Sidebar: compact + sticky on large screens */
+.shahed .side-card{ padding-top:12px }
+.shahed .side-card .contact{ margin-top:12px }
+@media(min-width:920px){
+  .shahed .side-card{ position:relative }
+  .shahed .side-card{ top:0 }
+  .shahed .side-card.sticky{ position:sticky; top:110px } /* add class "sticky" to aside if desired */
 }
 
-/* text helpers */
+/* Text helpers */
 .shahed .muted{ color:var(--muted) }
 
-/* gallery thumbnails */
+/* Gallery: consistent thumbnail sizing, rounded & shadowed */
 .shahed .images-row{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -122,7 +122,7 @@
 }
 .shahed .images-row img{
   width:100% !important;
-  height:110px !important;
+  height:110px !important;       /* slightly shorter thumbnails for balance */
   object-fit:cover !important;
   border-radius:10px;
   box-shadow: 0 8px 18px rgba(22,20,20,0.05);
@@ -133,7 +133,7 @@
   box-shadow: 0 16px 32px rgba(22,20,20,0.08);
 }
 
-/* profile-card (if you want to add a small profile box) */
+/* Make right-side profile image small card (in screenshot it looked big) */
 .shahed .profile-card{
   display:flex;
   flex-direction:column;
@@ -141,7 +141,7 @@
   gap:10px;
   padding:14px;
   border-radius:12px;
-  background:linear-gradient(180deg,#fff,#fcfbfc);
+  background:linear-gradient(180deg, #fff, #fcfbfc);
   box-shadow: 0 8px 18px rgba(22,20,20,0.04);
 }
 .shahed .profile-card img{
@@ -152,7 +152,7 @@
   box-shadow:var(--shadow);
 }
 
-/* footer */
+/* Footer */
 .shahed .site-footer{
   border-top:1px solid rgba(0,0,0,0.04);
   padding:18px 0;
@@ -162,7 +162,10 @@
   font-size:14px;
 }
 
-/* responsive gallery columns */
+/* Accessibility focus */
+.shahed a:focus{ outline:3px solid rgba(124,92,154,0.12); outline-offset:3px }
+
+/* Small screens: stack gallery into 2 or 1 columns */
 @media (max-width:900px){
   .shahed .images-row{ grid-template-columns: repeat(2, 1fr) }
 }
@@ -173,5 +176,3 @@
   .shahed .hero-image img{ height:220px !important; width:200px !important }
 }
 
-/* accessibility focus */
-.shahed a:focus{ outline: 3px solid rgba(124,92,154,0.12); outline-offset:3px; }
