@@ -1,71 +1,134 @@
-/* Shahed.css — enkel, pen og responsiv */
+/* Enkel og isolert Shahed-stil */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-:root{
-  --bg: #fbfbfc;
-  --card:#fff;
-  --text:#222;
-  --muted:#7a7370;
-  --accent:#8a5aa8;
-  --radius:12px;
-  --shadow: 0 8px 22px rgba(35,28,28,0.06);
-  --max-width:1100px;
+/* reset + wrapper isolasjon */
+.shahed * {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family: 'Poppins', Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
+/* layout */
+.shahed .wrap {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
 }
 
-.shahed .inner{
-  width:92%;
-  max-width:var(--max-width);
-  margin:0 auto;
+/* header */
+.shahed .site-header {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+.shahed .brand {
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #333;
+}
+.shahed .main-nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+}
+.shahed .main-nav a:hover {
+  color: #7c5c9a;
 }
 
-/* Header */
-.header{border-bottom:1px solid rgba(0,0,0,0.04)}
-.header .inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-.brand{font-weight:600;color:var(--text);text-decoration:none}
-.nav a{margin-left:16px;color:var(--text);text-decoration:none;font-weight:600;padding:6px 8px;border-radius:8px}
-.nav a:hover{background: rgba(138,90,168,0.08);color:var(--accent)}
-
-/* Hero */
-.hero{padding:30px 0}
-.hero-grid{display:flex;gap:24px;align-items:center;justify-content:space-between}
-.hero h1{margin:0;font-size:30px}
-.lead{color:var(--muted);margin-top:8px}
-.hero-photo img{width:100%;max-width:260px;height:auto;border-radius:12px;box-shadow:var(--shadow);object-fit:cover}
-
-/* Main layout */
-.main-grid{display:grid;grid-template-columns:1fr 320px;gap:28px;padding:28px 0}
-@media (max-width:900px){
-  .hero-grid{flex-direction:column-reverse}
-  .main-grid{grid-template-columns:1fr}
-  .hero-photo img{max-width:220px}
+/* hero */
+.shahed .hero {
+  padding: 40px 0;
+}
+.shahed .hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+.shahed .hero-text h1 {
+  font-size: 32px;
+}
+.shahed .subtitle {
+  color: #777;
+  margin-top: 8px;
 }
 
-/* Cards and sidebar */
-.card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.02)}
-.sidebar{padding-top:12px}
-.muted{color:var(--muted)}
+/* hero image with FIXED SIZE */
+.shahed .hero-image img {
+  width: 240px !important;
+  height: 280px !important;
+  object-fit: cover !important;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
 
-/* Gallery: neat grid with fixed height thumbnails */
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
-.gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px;display:block;box-shadow:0 6px 18px rgba(0,0,0,0.05);transition:transform .15s}
-.gallery img:hover{transform:translateY(-6px)}
+/* button */
+.shahed .btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 16px;
+  background: #7c5c9a;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
 
-/* Button */
-.btn{display:inline-block;background:linear-gradient(90deg,var(--accent), #b18ad6);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+/* main grid */
+.shahed .main-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 30px;
+  margin-top: 40px;
+}
 
-/* Footer */
-.footer{border-top:1px solid rgba(0,0,0,0.04);padding:16px 0;text-align:center;color:var(--muted);font-size:14px}
+/* card */
+.shahed .card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 18px rgba(0,0,0,0.05);
+}
+.shahed .muted {
+  color: #777;
+  margin-top: 10px;
+}
 
-/* Accessibility */
-a:focus{outline:3px solid rgba(138,90,168,0.15);outline-offset:3px}
+/* gallery */
+.shahed .images-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+.shahed .images-row img {
+  width: 100% !important;
+  height: 130px !important;
+  object-fit: cover !important;
+  border-radius: 10px;
+  box-shadow: 0px 5px 18px rgba(0,0,0,0.05);
+}
 
+/* footer */
+.shahed .site-footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  text-align: center;
+  color: #777;
+  border-top: 1px solid #eee;
+}
+
+/* responsive */
+@media(max-width: 900px){
+  .shahed .hero-inner {
+    flex-direction: column-reverse;
+  }
+  .shahed .main-grid {
+    grid-template-columns: 1fr;
+  }
+  .shahed .hero-image img {
+    width: 200px !important;
+    height: 240px !important;
+  }
+}
