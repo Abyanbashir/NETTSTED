@@ -3,18 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ByShahed.no</title>
+  <title>ByShahed.no — Shahed Ayoub</title>
   <link rel="stylesheet" href="shahed.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="shahed">
+<div class="shaheds-nettside"> <!-- unik wrapper for isolasjon -->
 
   <header class="site-header">
-    <div class="wrap">
+    <div class="container">
       <a class="brand" href="#">ByShahed</a>
-      <nav class="main-nav">
+      <nav class="main-nav" aria-label="Hovednavigasjon">
         <a href="#om-meg">Om meg</a>
         <a href="#hobbier">Interesser</a>
         <a href="#kontakt">Kontakt</a>
@@ -23,39 +22,36 @@
   </header>
 
   <section class="hero">
-    <div class="wrap hero-inner">
-
+    <div class="container hero-inner">
       <div class="hero-text">
         <h1>Hei — jeg er Shahed</h1>
-        <p class="subtitle">Student i IT & ledelse · Lidenskap for teknologi, design og meningsfullt arbeid</p>
-        <p class="cta-row"><a class="btn" href="#om-meg">Lær mer om meg</a></p>
+        <p class="lead">Student i IT & ledelse · Lidenskap for teknologi, design og meningsfullt arbeid</p>
+        <p><a class="btn" href="#om-meg">Lær mer om meg</a></p>
       </div>
 
-      <div class="hero-image">
-        <img src="../bilder/Meg.JPG" alt="Shahed">
+      <div class="hero-photo" aria-hidden="false">
+        <img src="../bilder/Meg.JPG" alt="Portrett av Shahed">
       </div>
-
     </div>
   </section>
 
-  <main class="wrap main-grid">
-    <article id="om-meg" class="card">
+  <main class="container main-grid">
+    <article id="om-meg" class="card content-card">
       <h2>Om meg</h2>
-      <p>Jeg heter <strong>Shahed Ayoub</strong>, er 20 år og studerer IT og ledelse. Jeg har bakgrunn fra Palestina og har bodd i Norge i snart 11 år. Jeg liker å kombinere struktur og kreativitet.</p>
-      <p class="muted">Jeg jobber strukturert og ønsker å bidra med meningsfulle løsninger.</p>
+      <p>Jeg heter <strong>Shahed Ayoub</strong>, er 20 år og studerer IT og ledelse. Jeg har bakgrunn fra Palestina og har bodd i Norge i snart 11 år. Jeg liker å kombinere struktur og kreativitet — spesielt der teknologi møter mennesker og ledelse.</p>
+      <p class="muted">Jeg jobber strukturert, trives i samarbeid og ønsker å bidra til løsninger som gjør hverdagen enklere for andre.</p>
 
-      <div class="images-row">
-        <img src="../bilder/Reise.jpg" alt="Reise">
+      <div class="gallery" aria-label="Mine bilder">
+        <img src="../bilder/reise.jpeg" alt="Reise">
         <img src="../bilder/Blomster.JPG" alt="Blomster">
         <img src="../bilder/Meg.JPG" alt="Shahed">
       </div>
     </article>
 
-    <aside class="card side-card">
-      <h3>Interesser</h3>
-      <p class="muted">Teknologi · Kultur · Mennesker</p>
-
-      <ul class="bullet">
+    <aside class="card sidebar sticky" aria-labelledby="interesser-tittel">
+      <h3 id="interesser-tittel">Interesser</h3>
+      <p class="muted small">Teknologi · Kultur · Mennesker</p>
+      <ul class="list-light">
         <li>Web & UX</li>
         <li>Design</li>
         <li>Moderne arbeidsflyt</li>
@@ -69,14 +65,15 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
+    <div class="container">
       <p>© 2025 Shahed Ayoub — ByShahed.no</p>
     </div>
   </footer>
 
-</div>
+</div> <!-- /.shaheds-nettside -->
 
 </body>
 </html>
+
 
 
