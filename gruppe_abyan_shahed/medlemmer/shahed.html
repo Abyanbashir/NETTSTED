@@ -1,64 +1,76 @@
-
 <!DOCTYPE html>
 <html lang="no">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ByShahed.no</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="nav">
-    <div class="container">
-      <a class="logo" href="#">ByShahed</a>
-      <ul class="nav-links">
-        <li><a href="#hobbier">Mine interesser</a></li>
-        <li><a href="#om-meg">Om meg</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <header class="hero">
-    <div class="container">
-      <h1>ByShahed.no</h1>
-      <p class="lead">Velkommen til min side – her får du et innblikk i mitt liv ♡</p>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#">ByShahed</a>
+      <nav class="main-nav">
+        <a href="#om-meg">Om meg</a>
+        <a href="#hobbier">Interesser</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
     </div>
   </header>
 
-  <main class="container main">
-    <section id="om-meg" class="card">
-      <div class="profile-row">
-        <img class="avatar" src="bilder/Meg.JPG" alt="Bilde av Shahed">
-        <div class="profile-text">
-          <h2>Om meg</h2>
-          <p>Jeg heter <strong>Shahed Ayoub</strong>, er 20 år gammel, og studerer IT og ledelse. Jeg har bakgrunn fra Palestina og har bodd i Norge i snart 11 år. Jeg er en målrettet og engasjert student med interesse for hvordan teknologi og ledelse kan bidra til bedre løsninger i samfunnet og arbeidslivet. Jeg liker å arbeide strukturert, samarbeide med andre og lære nye ferdigheter.</p>
-          <p class="muted">Jeg ønsker å bygge en karriere der jeg kan kombinere teknologi, mennesker og ledelse på en meningsfull måte 🌸</p>
-        </div>
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <h1>Hei — jeg er Shahed</h1>
+        <p class="subtitle">Student i IT & ledelse · Lidenskap for teknologi, design og meningsfullt arbeid</p>
+        <p class="cta-row"><a class="btn" href="#om-meg">Lær mer om meg</a></p>
       </div>
 
-      <div class="gallery">
-        <img src="bilder/Meg.JPG" alt="Bilde av Shahed">
-        <img src="bilder/reise.jpg" alt="Reisebilde">
-        <img src="bilder/Blomster.JPG" alt="Blomsterbilde">
+      <div class="hero-image">
+        <img src="../bilder/Meg.JPG" alt="Bilde av Shahed">
       </div>
-    </section>
+    </div>
+  </section>
 
-    <aside class="card small-card">
-      <h3>Mine interesser</h3>
-      <p class="muted">Teknologi · Mennesker · Kultur</p>
-      <p>På fritiden bruker jeg tid med familie og venner, ser serier, hører på musikk, og liker å utforske nye trender og lære noe nytt hver dag 🌸</p>
+  <main class="wrap main-grid">
+    <article id="om-meg" class="card">
+      <h2>Om meg</h2>
+      <p>Jeg heter <strong>Shahed Ayoub</strong>, er 20 år og studerer IT og ledelse. Jeg har bakgrunn fra Palestina og har bodd i Norge i snart 11 år. Jeg liker å kombinere struktur og kreativitet — spesielt der teknologi møter mennesker og ledelse.</p>
+      <p class="muted">Jeg jobber strukturert, trives i samarbeid og ønsker å bidra til løsninger som gjør hverdagen enklere for andre.</p>
 
-      <div class="contact">
+      <div class="images-row">
+        <img src="../bilder/reise.jpg" alt="Reise">
+        <img src="../bilder/Blomster.JPG" alt="Blomster">
+        <img src="../bilder/Meg.JPG" alt="Shahed">
+      </div>
+    </article>
+
+    <aside class="card side-card">
+      <h3>Interesser</h3>
+      <p class="muted">Teknologi · Kultur · Mennesker</p>
+
+      <ul class="bullet">
+        <li>Web & UX</li>
+        <li>Moderne arbeidsflyt</li>
+        <li>Design for enkelhet</li>
+      </ul>
+
+      <section id="kontakt" class="contact">
         <h4>Kontakt</h4>
-        <p><a href="mailto:shahed@email.com">shahed@email.com</a></p>
-      </div>
+        <p><a href="mailto:shahed@email.com">
+          shahed@email.com
+        </a></p>
+      </section>
     </aside>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025 Shahed's side</p>
+    <div class="wrap">
+      <p>© 2025 Shahed Ayoub — ByShahed.no</p>
     </div>
   </footer>
 </body>
 </html>
+
