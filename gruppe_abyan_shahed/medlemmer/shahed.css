@@ -1,13 +1,14 @@
-/* shahed.css — moderne, isolert og justert etter dine ønsker */
+/* shahed.css — finpassert etter dine bilder: luftig, moderne, 2-kolonne */
 
+/* Base / root */
 .shaheds-nettside {
   --bg: #fbfbfc;
   --card: #ffffff;
   --text: #222;
   --muted: #6f6b69;
   --accent: #7c5c9a;
-  --radius: 12px;
-  --shadow: 0 10px 28px rgba(33,28,32,0.06);
+  --radius: 14px;
+  --shadow: 0 12px 36px rgba(30,24,30,0.06);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   background: var(--bg);
   color: var(--text);
@@ -17,13 +18,13 @@
 /* container */
 .shaheds-nettside .container {
   width: 92%;
-  max-width: 1100px;
+  max-width: 1150px;
   margin: 0 auto;
 }
 
 /* header */
 .shaheds-nettside .site-header {
-  padding: 16px 0;
+  padding: 18px 0;
   border-bottom: 1px solid rgba(0,0,0,0.04);
 }
 .shaheds-nettside .brand {
@@ -36,7 +37,7 @@
 .shaheds-nettside .main-nav {
   float: right;
   display: inline-flex;
-  gap: 12px;
+  gap: 14px;
 }
 .shaheds-nettside .main-nav a {
   text-decoration: none;
@@ -49,11 +50,11 @@
 
 /* hero */
 .shaheds-nettside .hero {
-  padding: 60px 0; /* mer luft */
+  padding: 70px 0; /* mer luft over og under */
 }
 .shaheds-nettside .hero-inner {
   display: flex;
-  gap: 28px;
+  gap: 30px;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -61,19 +62,22 @@
 .shaheds-nettside .hero-text {
   flex: 1 1 60%;
   min-width: 260px;
-  max-width: 720px;
+  max-width: 640px; /* begrens linjebredde for bedre lesbarhet */
 }
 .shaheds-nettside .hero-text h1 {
-  margin: 0 0 8px 0;
-  font-size: 34px;
+  margin: 0 0 10px 0;
+  font-size: 40px; /* litt større */
   line-height: 1.05;
+  letter-spacing: -0.2px;
 }
 .shaheds-nettside .lead {
   color: var(--muted);
-  margin: 8px 0 14px 0;
+  margin: 10px 0 18px 0;
+  font-size: 15px;
+  line-height: 1.55;
 }
 
-/* CTA btn */
+/* CTA */
 .shaheds-nettside .btn {
   display: inline-block;
   background: var(--accent);
@@ -82,42 +86,37 @@
   border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
+  box-shadow: 0 6px 18px rgba(124,92,154,0.08);
 }
 
-/* HERO PHOTO — bigger but stays on right */
+/* hero-photo (STÅR TIL HØYRE som du ville) */
 .shaheds-nettside .hero-photo img {
-  width: 320px;   /* større */
-  height: 410px;  /* større */
+  width: 320px;
+  height: 410px;
   object-fit: cover;
   border-radius: 14px;
   box-shadow: var(--shadow);
+  display: block;
 }
 
-/* main grid */
+/* main grid — venstre bredere slik du ønsket */
 .shaheds-nettside .main-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr; /* større Om-meg */
-  gap: 32px;
-  margin: 50px auto 0 auto; /* mer luft mellom hero og om-meg */
+  grid-template-columns: 1.6fr 1fr; /* venstre litt bredere */
+  gap: 36px;
+  margin: 40px auto 0 auto;
   width: 92%;
-  max-width: 1100px;
+  max-width: 1150px;
 }
 @media (max-width: 920px) {
-  .shaheds-nettside .main-grid {
-    grid-template-columns: 1fr;
-    padding: 0 16px;
-  }
-  .shaheds-nettside .hero-photo img {
-    width: 260px;
-    height: 320px;
-    margin: 0 auto;
-  }
+  .shaheds-nettside .main-grid { grid-template-columns: 1fr; padding: 0 16px; }
+  .shaheds-nettside .hero-photo img { width: 260px; height: 320px; margin: 0 auto; }
 }
 
 /* cards */
 .shaheds-nettside .card {
   background: var(--card);
-  padding: 18px;
+  padding: 20px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   border: 1px solid rgba(0,0,0,0.03);
@@ -125,77 +124,75 @@
 }
 .shaheds-nettside .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(33,28,32,0.06);
+  box-shadow: 0 28px 56px rgba(30,24,30,0.08);
 }
 
-/* OM MEG – større og mer luft */
+/* OM MEG: mer luftig, større tekst og bedre linjeavstand */
 .shaheds-nettside .content-card {
-  padding: 30px;
+  padding: 34px;
   font-size: 17px;
-  line-height: 1.55;
+  line-height: 1.6;
+  border-radius: 14px;
 }
-.shaheds-nettside .content-card h2 {
-  margin-top: 0;
-}
-.shaheds-nettside .muted {
-  color: var(--muted);
-  margin-top: 8px;
-}
+.shaheds-nettside .content-card h2 { margin-top: 0; font-size: 22px; }
 
-/* Galleri — ENDA større bildene (premium) */
+/* Gallery — STØRRE bilder og fin spacing */
 .shaheds-nettside .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;  /* større gap */
-  margin-top: 20px;
+  gap: 18px;
+  margin-top: 22px;
 }
 .shaheds-nettside .gallery img {
   width: 100% !important;
-  height: 190px !important; /* ENDA større */
+  height: 220px !important;    /* større og mer synlig */
   object-fit: cover !important;
-  border-radius: 14px;
-  box-shadow: 0 8px 18px rgba(22,20,20,0.05);
+  border-radius: 16px;
+  display: block;
+  box-shadow: 0 10px 26px rgba(22,20,20,0.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.shaheds-nettside .gallery img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(22,20,20,0.10);
 }
 @media (max-width: 700px) {
   .shaheds-nettside .gallery { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 480px) {
   .shaheds-nettside .gallery { grid-template-columns: 1fr; }
-  .shaheds-nettside .gallery img { height: 200px !important; }
+  .shaheds-nettside .gallery img { height: 220px !important; }
 }
 
 /* sidebar */
-.shaheds-nettside .sidebar { padding-top: 6px; }
+.shaheds-nettside .sidebar { padding-top: 8px; }
 .shaheds-nettside .list-light { padding-left: 18px; margin-top: 8px; }
 .shaheds-nettside .small { font-size: 14px; color: var(--muted); }
 
+/* sticky sidebar */
 @media (min-width: 920px) {
-  .shaheds-nettside .sticky {
-    position: sticky;
-    top: 110px;
-  }
+  .shaheds-nettside .sticky { position: sticky; top: 120px; }
 }
 
 /* footer */
 .shaheds-nettside .site-footer {
-  margin-top: 60px; /* mer luft før footer */
-  padding: 18px 0;
+  margin-top: 60px;
+  padding: 28px 0;
   text-align: center;
   color: var(--muted);
   font-size: 14px;
+  border-top: 1px solid rgba(0,0,0,0.04);
 }
 
-/* guarantee images don't stretch */
-.shaheds-nettside img {
-  max-width: 100%;
-  display: block;
-}
+/* safety */
+.shaheds-nettside img { max-width: 100%; display: block; }
 
 /* focus */
 .shaheds-nettside a:focus {
   outline: 3px solid rgba(124,92,154,0.14);
   outline-offset: 4px;
 }
+
 
 
 
